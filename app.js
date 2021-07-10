@@ -9,7 +9,9 @@ hamburger.addEventListener('click', e => {
 // Hide menu when a link in the menu is clicked
 menuLinks.forEach(e => {
     e.addEventListener('click', e => {
-        toggleNav();
+        if (getViewPortWidth() < 1300) {
+            toggleNav();
+        }
     });
 });
 
@@ -24,4 +26,13 @@ function toggleNav() {
     } else {
         menu.style.transform = 'translateX(100%)';
     }
+}
+
+/**
+ * Returns the width of the viewport
+ * 
+ * @return the width of the viewport
+ */
+function getViewPortWidth() {
+    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
 }
