@@ -107,8 +107,6 @@ header {
     
     background:var(--clr-grey);
     height:100vh;
-
-    position: relative;
 }
 
 /*
@@ -247,8 +245,13 @@ nav ul {
    5.2 Header content
 */
 
-.header__content {
+.header--wrapper {
     grid-column: 2 / 3;
+    position: relative;
+}
+
+.header__content {
+    position: relative;
     z-index: 2;
 }
 
@@ -276,6 +279,7 @@ nav ul {
 }
 
 .header__content .btn--wrapper {
+    display:flex;
     margin-top:10em;
 }
 
@@ -306,6 +310,7 @@ nav ul {
     opacity: .4;
     width: var(--size);
     height: var(--size);
+    z-index: 1;
 }
 
 .cube--big {
@@ -333,6 +338,7 @@ nav ul {
    6. Media query
    ================== */
 
+/* Over 1300px */
 @media only screen and (min-width: 1300px) {
     /*
         6.1 Global
