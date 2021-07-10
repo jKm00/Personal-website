@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Source+Code+Pro:wght@200&display=swap');
+
+/**
+    Table of Content
+
+    1. Global
+    2. Variables
+    3. Typography
+    4. Buttons
+    5. Header
+        5.1 Nav
+            5.1.1 Hamburger
+            5.1.2 Nav list
+        5.2 Header content
+        5.3 Header design elements
+
+
+    **/
+
+/* ==================
+   1. Global
+   ================== */
+
+*, *::before, *::after {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    display:grid;
+    grid-template-columns: 2em 1fr 2em;
+
+    font-size: 10px;
+    min-height: 200vh;
+}
+
+/* ==================
+   2. Variables
+   ================== */
+
+:root {
+    --grid: 1em 1fr 1em;
+
+    --clr-white:#fff;
+    --clr-grey:#EFEFEF;
+    --clr-black-200:#000;
+    --clr-black-100:#121212;
+    --clr-lime:#00FFB2;
+    --clr-purple:#8321FF;
+
+    --ff-title:'Libre Baskerville', serif;
+    --ff-body:'Source Code Pro', monospace;
+    --ff-btn:Arial, Helvetica, sans-serif;
+}
+
+/* ==================
+   3. Typography
+   ================== */
+
+h1,
+h2,
+h3,
+.title {
+    font-family: var(--ff-title);
+    text-transform: uppercase;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+/* ==================
+   4. Buttons
+   ================== */
+
+.btn {
+    border-radius: 5px;
+    padding:.75em 1em;
+
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    color:var(--clr-black-200);
+
+    font-family: var(--ff-btn);
+
+    transition: background 150ms ease-in-out,
+    color 150ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+    background:var(--clr-white);
+    color:var(--clr-black-200);
+}
+
+/* ==================
+   5. Header
+   ================== */
+
+header {
+    grid-column: 1 / -1;
+
+    display:grid;
+    grid-template-columns: inherit;
+    
+    background:var(--clr-grey);
+    height:100vh;
+}
+
+/*
+   5.1 Nav
+*/
+
+nav {
+    grid-column: 2 / 3;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    height:75px;
+}
+
+.logo {;
+    width:50px;
+}
+
+/* 5.1.1 Hamburger */
+
+.hamburger {
+    width:40px;
+    height: 25px;
+    position: relative;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hamburger .line {
+    display: block;
+    width: 100%;
+    height: 5px;
+    background:#000;
+    border-radius: 5px;
+    position: absolute;
+
+    transition:transform 200ms ease-in-out, 
+    opacity 200ms ease-in-out, 
+    color 200ms ease-in-out;
+}
+
+.hamburger .upper {
+    top:0;
+}
+
+.hamburger .middle {
+    top:50%;
+    transform: translateY(-50%);
+}
+
+.hamburger .lower {
+    bottom:0;
+}
+
+.hamburger-open {
+    position: fixed;
+    right:2em;
+}
+
+.hamburger-open .line {
+    background:#ccc;
+}
+
+.hamburger-open .upper {
+    transform: translateY(10px) rotate(45deg);
+}
+
+.hamburger-open .middle {
+    opacity: 0;
+}
+
+.hamburger-open .lower {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* 5.1.2 Nav list */
+
+nav ul {
+    list-style: none;
+}
+
+.nav__list {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding:5em 2em;
+    position:fixed;
+    inset:0;
+    background:var(--clr-black-100);
+    overflow:auto;
+    z-index:50;
+
+    font-size: 1.75em;
+    font-family: var(--ff-btn);
+    text-transform: uppercase;
+
+    transform:translateX(100%);
+    transition: transform 150ms ease-out;
+}
+
+.nav__list--sub {
+    margin:.5em 0 0 1em;
+}
+
+.nav__item {
+    color:var(--clr-white);
+}
+
+.nav__item p {
+    padding:0 0 0 1em;
+}
+
+.nav__link {
+    display:block;
+    padding:.5em 1em;
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+    color:var(--clr-white);
+    text-decoration: none;
+
+    transition:background 150ms ease-in-out,
+    color 150ms ease-in-out;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+    background:var(--clr-lime);
+    color:var(--clr-black-200);
+}
+
+.contact--btn {
+    background:var(--clr-lime);
+    width:150px;
+    margin:0 auto;
+    color:var(--clr-black-200);
+}
+
+
+/*
+   5.2 Header content
+*/
+
+.header__content {
+    grid-column: 2 / 3;
+}
+
+.header__title .underline {
+    display:inline-block;
+    transform:translateY(-10px);
+    position: relative;
+}
+
+.header__title .underline::after {
+    content:'';
+    display:block;
+    width:100%;
+    height:5px;
+    background:var(--clr-lime);
+    position: absolute;
+}
+
+.header__text {
+    margin-top:1em;
+    font-family: var(--ff-btn);
+    font-weight: lighter;
+    font-size: 1.25em;;
+    text-transform: lowercase;
+}
+
+.header__content .btn--wrapper {
+    margin-top:10em;
+}
+
+.header__content .btn {
+    padding:.75em 2em;
+    font-size: 1.5em;
+}
+
+.learn-more--btn {
+    background:var(--clr-lime);
+    margin-right:.5em;
+}
+
+.socials--btn {
+    background:var(--clr-purple);
+    color:var(--clr-white);
+}
+
+/*
+   5.3 Header design elements
+
+   Adding these as elements and not creating a background picture
+   so i can create a parallax effect on them later
+*/
+
+
