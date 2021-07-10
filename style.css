@@ -107,6 +107,8 @@ header {
     
     background:var(--clr-grey);
     height:100vh;
+
+    position: relative;
 }
 
 /*
@@ -247,6 +249,7 @@ nav ul {
 
 .header__content {
     grid-column: 2 / 3;
+    z-index: 2;
 }
 
 .header__title .underline {
@@ -297,6 +300,34 @@ nav ul {
    Adding these as elements and not creating a background picture
    so i can create a parallax effect on them later
 */
+.header__cube {
+    position: absolute;
+    border-radius: 5px;
+    opacity: .4;
+    width: var(--size);
+    height: var(--size);
+}
+
+.cube--big {
+    --size:19em;
+    background:var(--clr-white);
+    right:2em;
+    bottom:15em;
+}
+
+.cube--medium {
+    --size:13em;
+    background:var(--clr-purple);
+    right:16em;
+    bottom:7em;
+}
+
+.cude--small {
+    --size:5em;
+    background:var(--clr-lime);
+    bottom:4em;
+    right:27em;
+}
 
 /* ==================
    6. Media query
