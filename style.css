@@ -419,7 +419,7 @@ nav ul {
 
     .arrow-down {
         display: block;
-        width:1em;
+        width:.75em;
         transform: translateY(-25%);
     }
     
@@ -427,6 +427,7 @@ nav ul {
         background:var(--clr-lime);
         width:100px;
         margin:0;
+        padding:1em 0;
         color:var(--clr-black-200);
     }
 
