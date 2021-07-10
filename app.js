@@ -1,12 +1,18 @@
 const hamburger = document.querySelector('.hamburger');
 const menuLinks = document.querySelectorAll('.nav__link');
 
-// Toggle menu when hamburger icon is clicked
+/**
+ * Toggle menu when hamburger icon is clicked
+ */
 hamburger.addEventListener('click', e => {
     toggleNav();
 })
 
-// Hide menu when a link in the menu is clicked
+/**
+ * Hide menu when a link in the menu is clicked.
+ * Only hides the menu when in mobile view.
+ * (Viewport is less than 1300px width)
+ */
 menuLinks.forEach(e => {
     e.addEventListener('click', e => {
         if (getViewPortWidth() < 1300) {
@@ -34,5 +40,5 @@ function toggleNav() {
  * @return the width of the viewport
  */
 function getViewPortWidth() {
-    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
+    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
