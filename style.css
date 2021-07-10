@@ -13,7 +13,7 @@
             5.1.2 Nav list
         5.2 Header content
         5.3 Header design elements
-
+    6. Media query
 
     **/
 
@@ -29,7 +29,7 @@
 
 body {
     display:grid;
-    grid-template-columns: 2em 1fr 2em;
+    grid-template-columns:3em 1fr 3em;
 
     font-size: 10px;
     min-height: 200vh;
@@ -121,7 +121,7 @@ nav {
     height:75px;
 }
 
-.logo {;
+.logo {
     width:50px;
 }
 
@@ -211,14 +211,6 @@ nav ul {
     margin:.5em 0 0 1em;
 }
 
-.nav__item {
-    color:var(--clr-white);
-}
-
-.nav__item p {
-    padding:0 0 0 1em;
-}
-
 .nav__link {
     display:block;
     padding:.5em 1em;
@@ -235,6 +227,10 @@ nav ul {
 .nav__link:focus {
     background:var(--clr-lime);
     color:var(--clr-black-200);
+}
+
+.arrow-down {
+    display: none;
 }
 
 .contact--btn {
@@ -302,4 +298,132 @@ nav ul {
    so i can create a parallax effect on them later
 */
 
+/* ==================
+   6. Media query
+   ================== */
 
+@media only screen and (min-width: 1300px) {
+    /*
+        6.1 Global
+    */
+    body {
+        grid-template-columns: 1fr 1200px 1fr;
+    }
+    /*
+        6.2 Nav
+    */
+    .hamburger {
+        display: none;
+    }
+    
+    .nav__list {
+        flex-direction: row;
+        align-items: center;
+        padding:0;
+        position:static;
+        background:transparent;
+        overflow:visible;
+    
+        font-size: 1.25em;
+    
+        transform:translateX(0);
+        transition: none;
+    }
+
+    .nav__item {
+        position: relative;
+    }
+
+    .nav__item:hover > a,
+    .nav__item:focus > a {
+        background:var(--clr-white);
+        border-radius: 5px 5px 0 0;
+        color:var(--clr-purple);
+    }
+    
+    .nav__link {
+        padding:1em 2em;
+        border-bottom:none;
+        border-radius: 5px;
+    
+        color:var(--clr-black-200);
+    }
+    
+    .nav__link:hover,
+    .nav__link:focus {
+        background:var(--clr-white);
+        color:var(--clr-purple);
+    }
+
+    .nav__item:hover .nav__list--sub {
+        display:flex;
+    }
+
+    .nav__list--sub {
+        display:none;
+        align-items:center;
+        background:var(--clr-white);
+        border-radius: 5px;
+        margin:0;
+        padding:1em 0;
+        position: absolute;
+        transform: translateX(-43%);
+    }
+
+    .me {
+        width:170px;
+    }
+
+    .about {
+        display: flex;
+        gap:.5em;
+        align-items: center;
+    }
+
+    .arrow-down {
+        display: block;
+        width:1em;
+        transform: translateY(-25%);
+    }
+    
+    .contact--btn {
+        background:var(--clr-lime);
+        width:100px;
+        margin:0;
+        color:var(--clr-black-200);
+    }
+
+    /*
+        6.3 Header content
+    */ 
+    .header__title {
+        font-size: 2.5rem;
+    }
+
+    .header__text {
+        margin-top:1em;
+        font-family: var(--ff-btn);
+        font-weight: lighter;
+        font-size: 1.75em;;
+        text-transform: lowercase;
+    }
+    
+    .header__content .btn--wrapper {
+        margin-top:10em;
+    }
+    
+    .header__content .btn {
+        padding:.75em 2em;
+        font-size: 1.5em;
+    }
+    
+    .learn-more--btn {
+        background:var(--clr-lime);
+        margin-right:.5em;
+    }
+    
+    .socials--btn {
+        background:var(--clr-purple);
+        color:var(--clr-white);
+    }
+}
