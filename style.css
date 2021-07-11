@@ -66,8 +66,29 @@ h3,
     text-transform: uppercase;
 }
 
+p {
+    font-family: var(--ff-body);
+    font-size: 1.5em;
+    line-height: 2em;
+}
+
 .title {
     font-size: 2rem;
+}
+
+.title--underline {
+    position: relative;
+}
+
+.title--underline::after {
+    content:'';
+    display: block;
+    height: 5px;
+    width:4em;
+    background:var(--clr-lime);
+
+    position: absolute;
+    bottom:.05em;
 }
 
 /* ==================
@@ -335,12 +356,51 @@ nav ul {
 }
 
 /* ==================
-   6. Media query
+   6. About
+   ================== */
+
+   .about {
+       grid-column: 1 / -1;
+       min-height: 100vh;
+
+       display: grid;
+       grid-template-columns: inherit;
+       padding:6em 0;
+   }
+
+   .about__content {
+       grid-column: 2 / 3;
+   }
+
+   .about__img {
+       width:100%;
+       height:250px;
+       margin:3em 0;
+
+       background-position: 0 -80px;
+       background-size: cover;
+   }
+
+   .about__text {
+       text-align: center;
+   }
+
+   .text--separator {
+       height:1px;
+       width:50%;
+       margin:5em auto;
+       background:var(--clr-black-200);
+       opacity: .1;
+   }
+
+
+/* ==================
+   #. Media query
    ================== */
 
 @media only screen and (min-width:1300px) {
     /*
-        6.1 Global
+        #.1 Global
     */
     body {
         grid-template-columns: 1fr 1200px 1fr;
@@ -350,7 +410,7 @@ nav ul {
 /* Over 1000px */
 @media only screen and (min-width: 1000px) {
     /*
-        6.2 Nav
+        #.2 Nav
     */
     .hamburger {
         display: none;
@@ -435,7 +495,7 @@ nav ul {
     }
 
     /*
-        6.3 Header content
+        #.3 Header content
     */ 
     .header__title {
         font-size: 2.5rem;
@@ -468,7 +528,7 @@ nav ul {
         color:var(--clr-white);
     }
 
-    /* 6.4. Header design elements */    
+    /* #.4. Header design elements */    
     .cube--big {
         --size:35em;
         background:var(--clr-white);
