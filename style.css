@@ -306,7 +306,7 @@ nav ul {
 */
 .header__cube {
     position: absolute;
-    border-radius: 5px;
+    border-radius: 10px;
     opacity: .4;
     width: var(--size);
     height: var(--size);
@@ -338,14 +338,17 @@ nav ul {
    6. Media query
    ================== */
 
-/* Over 1300px */
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width:1300px) {
     /*
         6.1 Global
     */
     body {
         grid-template-columns: 1fr 1200px 1fr;
     }
+}
+
+/* Over 1000px */
+@media only screen and (min-width: 1000px) {
     /*
         6.2 Nav
     */
@@ -463,5 +466,26 @@ nav ul {
     .socials--btn {
         background:var(--clr-purple);
         color:var(--clr-white);
+    }
+
+    /* 6.4. Header design elements */    
+    .cube--big {
+        --size:35em;
+        background:var(--clr-white);
+        top:-30%;
+    }
+    
+    .cube--medium {
+        --size:25em;
+        background:var(--clr-purple);
+        top:20%;
+        right:25em;
+    }
+    
+    .cude--small {
+        --size:15em;
+        background:var(--clr-lime);
+        top:60%;
+        right:45em;
     }
 }
