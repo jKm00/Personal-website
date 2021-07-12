@@ -410,7 +410,6 @@ nav ul {
 
     display: grid;
     grid-template-columns: inherit;
-    //min-height: 100vh;
 
     position: relative;
 }
@@ -454,41 +453,49 @@ nav ul {
     align-items: center;
     background:var(--clr-white);
     padding:5em;
+    margin-bottom:2em;
     box-shadow: 5px 5px 10px rgba(0,0,0,.1);
+
+    transition: transform 200ms ease-in-out;
+}
+
+.language__card:hover {
+    transform:scale(1.02);
 }
 
 .language__card__icon {
     width: 100px;
+    height:100px;
     filter:grayscale(1);
     transition:filter 150ms ease-in-out;
+    object-fit: contain;
 }
 
 .language__card:hover .language__card__icon {
     filter:grayscale(0);
 }
 
+.language__card__body {
+    text-align: center;
+}
+
 .language__card__body__title {
     font-size: 1rem;
-    margin-bottom:1em;
+    margin-bottom:.5em;
 }
 
 .language__card__body__text {
     line-height: 1em;
 }
 
+.language__experience {
+    display:none;
+}
+
 
 /* ==================
    #. Media query
    ================== */
-
-@media only screen and (min-width:1300px) {
-    /*
-        #.1 Global
-    */
-    body {
-        grid-template-columns: 1fr 1200px 1fr;
-    }
-}
 
 /* Over 1000px */
 @media only screen and (min-width: 870px) {
@@ -635,7 +642,6 @@ nav ul {
     /*
         #.3 About
     */ 
-    
     .about__content {
         grid-column: 2 / 3;
 
@@ -682,7 +688,8 @@ nav ul {
         grid-column: 2 / 3;
 
         display:grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap:1em;
     }
 
     .language .title {
@@ -695,32 +702,119 @@ nav ul {
     
     /* 7.1 Language card */
     
-    .language__card {
-        display:grid;
-        grid-template-columns: auto 1fr;
-        grid-gap:2em;
-        align-items: center;
-        background:var(--clr-white);
-        padding:5em;
-        box-shadow: 5px 5px 10px rgba(0,0,0,.1);
-    }
-    
-    .language__card__icon {
-        width: 100px;
-        filter:grayscale(1);
-        transition:filter 150ms ease-in-out;
-    }
-    
-    .language__card:hover .language__card__icon {
-        filter:grayscale(0);
-    }
-    
-    .language__card__body__title {
-        font-size: 1rem;
-        margin-bottom:1em;
-    }
-    
     .language__card__body__text {
-        line-height: 1em;
+        line-height: 1.5em;
+    }
+
+    .language__experience {
+        --size:10em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height:var(--size);
+        width: var(--size);
+        margin:3em auto 5em auto;
+
+        background:var(--clr-white);
+        color:var(--clr-black-200);
+        border-radius: 50%;
+
+        position: relative;
+    }
+
+    .language__experience__year {
+        font-size: 1.75rem;
+        font-family: var(--ff-btn);
+        font-weight: lighter;
+    }
+
+    .language__experience::before,
+    .language__experience::after {
+        --resize: calc(var(--size) + 1em);
+        content:'';
+        display:block;
+        height: var(--resize);
+        width: var(--resize);
+        border-radius: 50%;
+        position: absolute;
+    }
+
+    .language__experience::before {
+        background:var(--clr-black-100);
+        z-index: -2;
+    }
+
+    .language__experience::after {
+        background:var(--clr-purple);
+        z-index: -1;
+    }
+
+    .experience__max::after {
+        clip-path: polygon( 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .experience__quarter::after {
+        clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+    }
+
+    /* 7.2 Language card positioning */
+    .html {
+        grid-column: 1 / 3;
+    }
+
+    .css {
+        grid-column: 3 / 5;
+    }
+
+    .javascript {
+        grid-column: 1 / 3;;
+    }
+
+    .java {
+        grid-column: 3 / 5;
+    }
+
+    .python {
+        grid-column: 2 / 4;
+    }
+}
+
+@media only screen and (min-width:1300px) {
+    /*
+        #.1 Global
+    */
+    body {
+        grid-template-columns: 1fr 1200px 1fr;
+    }
+    
+    /* # Language */
+    .language--content {
+        grid-column: 2 / 3;
+
+        display:grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap:1em;
+    }
+
+    /* 7.2 Language card positioning */
+    .html {
+        grid-column: 1 / 3;
+    }
+
+    .css {
+        grid-column: 3 / 5;
+    }
+
+    .javascript {
+        grid-column: 5 / 7;;
+    }
+
+    .java {
+        grid-column: 2 / 4;
+    }
+
+    .python {
+        grid-column: 4 / 6;
     }
 }
