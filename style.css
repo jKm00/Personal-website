@@ -57,6 +57,7 @@ body {
     --ff-btn:Arial, Helvetica, sans-serif;
 
     --animation-duration:700ms;
+    --animation-duration-fast:300ms;
 }
 
 /* ==================
@@ -141,6 +142,10 @@ a {
 
 .fadeIn {
     animation: fadeIn var(--animation-duration) ease-out forwards;
+}
+
+.fadeIn--fast {
+    animation: fadeIn var(--animation-duration-fast) ease-out forwards;
 }
 
 /* ==================
@@ -474,6 +479,10 @@ nav ul {
     7.1 Language card
 */
 
+.language__card--outer {
+    opacity: 0;
+}
+
 .language__card {
     display:grid;
     grid-template-columns: auto 1fr;
@@ -525,7 +534,7 @@ nav ul {
    #. Media query
    ================== */
 
-/* Over 1000px */
+/* Over 870px */
 @media only screen and (min-width: 870px) {
     /*
         #.2 Nav
