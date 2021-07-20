@@ -10,7 +10,7 @@ const languagesStart = headerHeight + aboutHeight;
 
 // Only add parallax effects to dektop version
 let classAdded = false;
-if (windowWidth >= 870) {
+//if (windowWidth >= 870) {
     document.addEventListener('scroll', e => {
         const scroll = window.scrollY;
         //console.log(scroll);
@@ -26,7 +26,7 @@ if (windowWidth >= 870) {
             classAdded = true;
         }
     });
-}
+//}
 
 function fadeInCards() {
     const cards = document.querySelectorAll('.language__card--outer');

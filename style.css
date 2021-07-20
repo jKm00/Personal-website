@@ -472,6 +472,7 @@ nav ul {
 
 .language__text {
     text-align: center;
+    font-size: 1.7em;
     margin-bottom:3em;
 }
 
@@ -527,6 +528,43 @@ nav ul {
 
 .language__experience {
     display:none;
+}
+
+/* ==================
+   8. Workflow
+   ================== */
+
+.workflow {
+    grid-column: 1 / -1;
+
+    display:grid;
+    grid-template-columns: inherit;
+}
+
+.workflow--content {
+    grid-column: 2 / 3;
+    padding:5em 0;
+    min-height: 100vh;
+}
+
+.workflow .title {
+    margin-bottom:1em;
+}
+
+.workflow p {
+    margin-bottom:2em;
+    font-size: .8rem;
+}
+
+.workflow p::first-letter {
+    font-size: 5em;
+    float:left;
+}
+
+.workflow__star .star {
+    width:3em;
+    margin:.5em 1em 0 0;
+    float:left;
 }
 
 
@@ -814,6 +852,28 @@ nav ul {
 
     .python {
         grid-column: 2 / 4;
+    }
+
+    /*
+        #.1 Workflow
+    */
+
+    .workflow--content {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2em;
+    }
+
+    .workflow .title {
+        grid-row: 1 / span 3;
+    }
+
+    .workflow .title--underline::after {
+        top:1.1em;
+    }
+
+    .workflow__star {
+        grid-column: 2 / -1;
     }
 }
 
