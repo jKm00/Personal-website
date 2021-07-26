@@ -132,23 +132,6 @@ a {
 }
 
 /* ==================
-   . Animations
-   ================== */
-
-@keyframes fadeIn {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.fadeIn {
-    animation: fadeIn var(--animation-duration) ease-out forwards;
-}
-
-.fadeIn--fast {
-    animation: fadeIn var(--animation-duration-fast) ease-out forwards;
-}
-
-/* ==================
    5. Header
    ================== */
 
@@ -329,9 +312,6 @@ nav ul {
     font-weight: lighter;
     font-size: 1.25em;;
     text-transform: lowercase;
-
-    opacity: 0;
-    animation-delay: calc(var(--animation-duration) / 6);
 }
 
 .header__content .btn--wrapper {
@@ -347,17 +327,11 @@ nav ul {
 .learn-more--btn {
     background:var(--clr-lime);
     margin-right:.5em;
-
-    opacity: 0;
-    animation-delay: calc(var(--animation-duration) / 4);
 }
 
 .socials--btn {
     background:var(--clr-purple);
     color:var(--clr-white);
-
-    opacity: 0;
-    animation-delay: calc(var(--animation-duration) / 3);
 }
 
 /*
@@ -479,10 +453,6 @@ nav ul {
 /*
     7.1 Language card
 */
-
-.language__card--outer {
-    opacity: 0;
-}
 
 .language__card {
     display:grid;
