@@ -537,6 +537,95 @@ nav ul {
     float:left;
 }
 
+/* ==================
+   9. Portfolio
+   ================== */
+
+.portfolio {
+    grid-column: 1 / -1;
+    
+    display:grid;
+    grid-template-columns: inherit;
+
+    padding:5em 0;
+    text-align: center;
+
+    position: relative;
+}
+
+.portfolio::before {
+    content:'';
+    display: block;
+    position: absolute;
+    z-index: -1;
+
+    left:0;
+    right:0;
+    height:50vh;
+    background:var(--clr-lime);
+}
+
+.portfolio--content {
+    grid-column: 1 / -1;
+
+    display:grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.portfolio .title {
+    grid-column: 1 / -1;
+    margin-bottom:1.5em;
+}
+
+/*
+    9.1 Portfolio card
+*/
+
+.portfolio__card {
+    height:200px;
+    overflow: hidden;
+}
+
+.portfolio__card__img {
+    height:100%;
+    width: 100%;
+}
+
+.portfolio__card__body {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding:1em;
+    background:var(--clr-white);
+    
+    transform: translateY(0);
+
+    transition: transform 200ms ease-out;
+}
+
+.portfolio__card__body__title {
+    font-family: var(--ff-btn);
+    text-transform: unset;
+    font-size: 1rem;
+    font-weight: unset;
+}
+
+.portfolio__card__body__desc {
+    line-height: 1.4;
+    font-size: .75rem;
+    margin:1em 0;
+}
+
+/* 9.1.1 Portfolio card hover */
+
+.portfolio__card:hover .portfolio__card__body,
+.portfolio__card:focus .portfolio__card__body {
+    transform: translateY(-100%);
+}
+
 
 /* ==================
    #. Media query
