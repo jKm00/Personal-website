@@ -2,20 +2,58 @@
 
 /**
     Table of Content
+    ================
 
     1. Global
     2. Variables
     3. Typography
     4. Buttons
-    5. Header
-        5.1 Nav
-            5.1.1 Hamburger
-            5.1.2 Nav list
-        5.2 Header content
-        5.3 Header design elements
-    6. Media query
+    5. Animtaions
+    6. Header
+        6.1 Nav
+            6.1.1 Hamburger
+            6.1.2 Nav list
+        6.2 Header content
+        6.3 Header design elements
+    7. About
+    8. Languages
+        8.1 Language card
+    9. Workflow
+    10. Portfolio
+        10.1 Portfolio card
+            10.1.1 Portfolio card hover
+        10.2 Portfolio footer
+    11. Contact Bait
+    12. Footer
 
-    **/
+
+
+    Media queries
+    -------------
+
+    Width > 870px:
+            Media query > 870px: 6.1 Nav
+            Media query > 870px: 6.2 Header Content
+            Media query > 870px: 6.3 Header Design Elements
+        Media query > 870px: 7. About
+        Media query > 870px: 8. Languages
+            Media query > 870px: 8.1 Languages Card
+            Media query > 870px: 8.2 Languages Card Positioning
+        Media query > 870px: 9. Workflow
+        Media query > 870px: 10. Portfolio
+        Media query > 870px: 11. Contact Bait
+
+    Width > 1300px:
+        Media query > 1300px: 1. Global
+        Media query > 1300px: 8. Language 
+            Media query > 1300px: 8.2 Language Card Positioning 
+        Media query > 1300px: 10. Portfolio
+        Media query > 1300px: 11. Contact Bait
+
+
+    @Author Joakim Edvardsen
+
+**/
 
 /* ==================
    1. Global
@@ -51,6 +89,7 @@ body {
     --clr-black-100:#121212;
     --clr-lime:#00FFB2;
     --clr-purple:#8321FF;
+    --clr-military:#97ADA7;
 
     --ff-title:'Libre Baskerville', serif;
     --ff-body:'Source Code Pro', monospace;
@@ -132,7 +171,33 @@ a {
 }
 
 /* ==================
-   5. Header
+   5. Animtaions
+   ================== */
+
+.fade-in {
+    opacity: 0;
+    animation: fadein 1000ms ease-out forwards;
+}
+
+.fade-in--fast {
+    opacity: 0;
+    animation: fadein 500ms ease-out forwards;
+}
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* ==================
+   6. Header
    ================== */
 
 header {
@@ -146,7 +211,7 @@ header {
 }
 
 /*
-   5.1 Nav
+   6.1 Nav
 */
 
 nav {
@@ -161,7 +226,7 @@ nav {
     width:50px;
 }
 
-/* 5.1.1 Hamburger */
+/* 6.1.1 Hamburger */
 
 .hamburger {
     width:40px;
@@ -218,7 +283,7 @@ nav {
     transform: translateY(-10px) rotate(-45deg);
 }
 
-/* 5.1.2 Nav list */
+/* 6.1.2 Nav list */
 
 nav ul {
     list-style: none;
@@ -278,7 +343,7 @@ nav ul {
 
 
 /*
-   5.2 Header content
+   6.2 Header content
 */
 
 .header--wrapper {
@@ -335,7 +400,7 @@ nav ul {
 }
 
 /*
-   5.3 Header design elements
+   6.3 Header design elements
 
    Adding these as elements and not creating a background picture
    so i can create a parallax effect on them later
@@ -371,7 +436,7 @@ nav ul {
 }
 
 /* ==================
-   6. About
+   7. About
    ================== */
 
 .about {
@@ -409,7 +474,7 @@ nav ul {
 }
 
 /* ==================
-   7. Languages
+   8. Languages
    ================== */
 
 .language {
@@ -451,7 +516,7 @@ nav ul {
 }
 
 /*
-    7.1 Language card
+    8.1 Language card
 */
 
 .language__card {
@@ -501,7 +566,7 @@ nav ul {
 }
 
 /* ==================
-   8. Workflow
+   9. Workflow
    ================== */
 
 .workflow {
@@ -538,7 +603,7 @@ nav ul {
 }
 
 /* ==================
-   9. Portfolio
+   10. Portfolio
    ================== */
 
 .portfolio {
@@ -578,7 +643,7 @@ nav ul {
 }
 
 /*
-    9.1 Portfolio card
+    10.1 Portfolio card
 */
 
 .portfolio__card {
@@ -633,7 +698,7 @@ nav ul {
     color:var(--clr-white);
 }
 
-/* 9.1.1 Portfolio card hover */
+/* 10.1.1 Portfolio card hover */
 
 .portfolio__card:hover .portfolio__card__body,
 .portfolio__card:focus .portfolio__card__body {
@@ -641,7 +706,7 @@ nav ul {
 }
 
 /*
-    9.1 Portfolio footer
+    10.2 Portfolio footer
 */
 
 .portfolio__footer {
@@ -679,13 +744,99 @@ nav ul {
 }
 
 /* ==================
-   #. Media query
+   11. Contact Bait
    ================== */
 
-/* Over 870px */
+.contact-bait {
+    grid-column: 1 / -1;
+    
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background:var(--clr-military);
+    min-height: 75vh;
+    color:var(--clr-white);
+}
+
+.contact-bait__title {
+    font-size: 10vw;
+}
+
+.contact-bait__text {
+    font-size: .75rem;
+    margin-bottom:100px;
+}
+
+.contact-bait__btn {
+    background:var(--clr-lime);
+    font-size:.8rem;
+    padding:1em 3em;
+}
+
+/* ==================
+   12. Footer
+   ================== */
+
+.footer {
+    grid-column: 1 / -1;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 25vh;
+    background:var(--clr-black-100);
+    color:var(--clr-white);
+}
+
+.footer__socials {
+    display:flex;
+    gap:1em;
+    list-style: none;
+    margin-bottom:2em;
+}
+
+.footer__link {
+    display:block;
+    --size:45px;
+    height:var(--size);
+    width: var(--size);
+
+    border:2px solid var(--clr-black-200);
+    border-radius: 50%;
+
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    filter:invert(1);
+}
+
+.footer__link:hover,
+.footer__link:focus {
+    filter:invert(0);
+    border:2px solid var(--clr-white);
+    background-color:var(--clr-white);
+}
+
+.footer__text {
+    text-align: center;
+    
+    font-size: .6rem;
+    opacity: .25;
+}
+
+/* ==================
+   Media queries
+   ================== */
+
+/* Width > 870px */
 @media only screen and (min-width: 870px) {
     /*
-        #.2 Nav
+        Media query > 870px: 6.1 Nav
     */
     .hamburger {
         display: none;
@@ -770,7 +921,7 @@ nav ul {
     }
 
     /*
-        #.3 Header content
+        Media query > 870px: 6.2 Header Content
     */ 
     .header__title {
         font-size: 2.5rem;
@@ -803,7 +954,9 @@ nav ul {
         color:var(--clr-white);
     }
 
-    /* #.4. Header design elements */    
+    /*
+        Media query > 870px: 6.3 Header Design Elements
+    */    
     .cube--big {
         --size:35em;
         background:var(--clr-white);
@@ -825,7 +978,7 @@ nav ul {
     }
 
     /*
-        #.3 About
+        Media query > 870px: 7. About
     */ 
     .about__content {
         grid-column: 2 / 3;
@@ -862,7 +1015,7 @@ nav ul {
     }
 
     /*
-        #.4 Languages
+        Media query > 870px: 8. Languages
     */
     
     .language::before {
@@ -885,7 +1038,9 @@ nav ul {
         grid-column: 1 / -1;
     }
     
-    /* 7.1 Language card */
+    /* 
+        Media query > 870px: 8.1 Languages Card
+    */
     
     .language__card__body__text {
         line-height: 1.5em;
@@ -936,14 +1091,20 @@ nav ul {
     }
 
     .experience__max::after {
-        clip-path: polygon( 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .experience__two-years::after {
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 85%);
     }
 
     .experience__quarter::after {
         clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
     }
 
-    /* 7.2 Language card positioning */
+    /* 
+        Media query > 870px: 8.2 Languages Card Positioning
+    */
     .html {
         grid-column: 1 / 3;
     }
@@ -965,7 +1126,7 @@ nav ul {
     }
 
     /*
-        #.1 Workflow
+        Media query > 870px: 9. Workflow
     */
 
     .workflow--content {
@@ -987,23 +1148,33 @@ nav ul {
     }
 
     /*
-        #.1 Portfolio
+        Media query > 870px: 10. Portfolio
     */
 
     .portfolio--content {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /*
+        Media query > 870px: 11. Contact Bait
+    */
+   .contact-bait__text {
+    font-size: 1rem;
+    }
 }
 
+/* Width > 1300px */
 @media only screen and (min-width:1300px) {
     /*
-        #.1 Global
+        Media query > 1300px: 1. Global
     */
     body {
         grid-template-columns: 1fr 1200px 1fr;
     }
     
-    /* # Language */
+    /* 
+        Media query > 1300px: 8. Language 
+    */
     .language--content {
         grid-column: 2 / 3;
 
@@ -1012,7 +1183,9 @@ nav ul {
         grid-gap:1em;
     }
 
-    /* 7.2 Language card positioning */
+    /* 
+        Media query > 1300px: 8.2 Language Card Positioning 
+    */
     .html {
         grid-column: 1 / 3;
     }
@@ -1034,7 +1207,7 @@ nav ul {
     }
 
     /*
-        #.1 Portfolio
+        Media query > 1300px: 10. Portfolio
     */
 
     .portfolio--content {
@@ -1046,5 +1219,12 @@ nav ul {
 
     .portfolio__card {
         height:250px;
+    }
+
+    /*
+        Media query > 1300px: 11. Contact Bait
+    */
+   .contact-bait__title {
+    font-size: 8.25rem;
     }
 }
