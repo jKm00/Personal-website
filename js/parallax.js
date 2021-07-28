@@ -1,42 +1,87 @@
-const windowHeight = window.innerHeight;
-const windowWidth = window.innerWidth;
+const header = document.querySelector('header');
+const about = document.querySelector('.about');
+const languages = document.querySelector('.language');
 
-const headerHeight = document.querySelector('header').scrollHeight;
+let windowHeight = getWindowHeight();
+let windowWidth = getWindowWidth();
+let headerHeight = header.offsetHeight;
+let aboutHeight = about.offsetHeight;
+let languagesHeight = languages.offsetHeight;
 
-const aboutStart = windowHeight;
-const aboutHeight = document.querySelector('.about').scrollHeight;
+window.addEventListener('resize', e => {
+    windowHeight = getWindowHeight();
+    windowWidth = getWindowWidth();
+    headerHeight = header.offsetHeight;
+    aboutHeight = about.offsetHeight;
+    languagesHeight = languages.offsetHeight;
 
-const languagesStart = headerHeight + aboutHeight;
+    if (windowWidth <= 870 || windowHeight <= 650) {
+        resetParallax(headerContent);
+        headerCubes.forEach(e => {
+            resetParallax(e);
+        });
+        resetParallax(aboutTitle);
+        resetParallax(workflowTitle);
+    }
+});
 
-// Only add parallax effects to dektop version
-let classAdded = false;
-//if (windowWidth >= 870) {
-    document.addEventListener('scroll', e => {
-        const scroll = window.scrollY;
-        //console.log(scroll);
-        //console.log(languagesStart);
-
-        if (scroll >= aboutStart) {
-            const title = document.querySelector('.title--about');
-            title.style.transform = `translateY(${(scroll - aboutStart) * 0.7}px)`;
-        }
-
-        if (scroll > (languagesStart - (windowHeight / 3)) && !classAdded) {
-            fadeInCards();
-            classAdded = true;
-        }
-    });
-//}
-
-function fadeInCards() {
-    const cards = document.querySelectorAll('.language__card--outer');
-
-    let delay = 0;
-    cards.forEach(card => {
-        card.style.animationDelay = `${delay}ms`;
-        card.classList.add('fadeIn');
-        delay += 200
-    });
+/**
+ * Returns the height of the window
+ * 
+ * @returns height of the window
+ */
+ function getWindowHeight() {
+    return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 }
 
-// TODO: Make sure parallax only works on dekstop
+/**
+ *Returns the width of the window
+ * 
+ * @returns width of the window
+ */
+function getWindowWidth() {
+    return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+}
+
+const headerContent = document.querySelector('.header__content');
+const headerCubes = document.querySelectorAll('.header__cube');
+const aboutTitle = document.querySelector('.title--about');
+const workflowTitle = document.querySelector('.title--workflow');
+
+document.addEventListener('scroll', e => {
+    if (windowWidth > 870 && windowHeight > 650) {
+
+        const currentScroll = scrollY;
+        addParallax(headerContent, currentScroll, .2, 0);
+        
+        headerCubes.forEach(e => {
+            addParallax(e, currentScroll, -0.3, 0)
+        });
+        
+        addParallax(aboutTitle, currentScroll, .3, 0);
+        addParallax(workflowTitle, currentScroll, 0.4, aboutHeight + languagesHeight);
+    }
+});
+
+/**
+ * Adds parallax to the elements given in parameter
+ * 
+ * @param {*} element the element to give parallax effect on
+ * @param {*} scroll the current scroll of the website
+ * @param {*} multiplier multiplies the scroll to make it go faster or slower than the
+ * actuall scroll speed
+ * @param {*} offset the offset of the element. If the element is far down on the site you
+ * might want to offset the scroll to make it start at the top of the element
+ */
+function addParallax(element, scroll, multiplier, offset) {
+    element.style.transform = 'translateY(' + (scroll - offset) * multiplier + 'px)';
+}
+
+/**
+ * Resets the parallax effect of the element given as parameter
+ * 
+ * @param {*} element to reset the parallax effect off
+ */
+function resetParallax(element) {
+    element.style.transform = 'translateY(0)';
+}
