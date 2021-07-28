@@ -44,7 +44,7 @@ document.addEventListener('scroll', e => {
         addParallax(headerContent, currentScroll, .2, 0);
         
         headerCubes.forEach(e => {
-            addParallax(e, currentScroll, -0.3, 0)
+            addParallax(e, currentScroll, -0.3, 0);
         });
         
         addParallax(aboutTitle, currentScroll, .3, 0);
