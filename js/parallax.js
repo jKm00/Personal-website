@@ -2,12 +2,16 @@ const header = document.querySelector('header');
 const about = document.querySelector('.about');
 const languages = document.querySelector('.language');
 
+// Heights of different elements in the website
+// Used to calculate the offsets of the parallax effect on elements
+// far down the site
 let windowHeight = getWindowHeight();
 let windowWidth = getWindowWidth();
 let headerHeight = header.offsetHeight;
 let aboutHeight = about.offsetHeight;
 let languagesHeight = languages.offsetHeight;
 
+// Get height of elements when site is resized
 window.addEventListener('resize', e => {
     windowHeight = getWindowHeight();
     windowWidth = getWindowWidth();
@@ -15,6 +19,7 @@ window.addEventListener('resize', e => {
     aboutHeight = about.offsetHeight;
     languagesHeight = languages.offsetHeight;
 
+    // If site is too small, remove parallax
     if (windowWidth <= 870 || windowHeight <= 650) {
         resetParallax(headerContent);
         headerCubes.forEach(e => {
@@ -24,6 +29,29 @@ window.addEventListener('resize', e => {
         resetParallax(workflowTitle);
     }
 });
+
+// Elements to add parallax effect on
+const headerContent = document.querySelector('.header__content');
+const headerCubes = document.querySelectorAll('.header__cube');
+const aboutTitle = document.querySelector('.title--about');
+const workflowTitle = document.querySelector('.title--workflow');
+
+document.addEventListener('scroll', e => {
+    // Only add parallax if site is big enough
+    if (windowWidth > 870 && windowHeight > 650) {
+
+        const currentScroll = scrollY;
+        addParallax(headerContent, currentScroll, .2, 0);
+        
+        headerCubes.forEach(e => {
+            addParallax(e, currentScroll, -0.3, 0)
+        });
+        
+        addParallax(aboutTitle, currentScroll, .3, 0);
+        addParallax(workflowTitle, currentScroll, 0.4, aboutHeight + languagesHeight);
+    }
+});
+
 
 /**
  * Returns the height of the window
@@ -42,26 +70,6 @@ window.addEventListener('resize', e => {
 function getWindowWidth() {
     return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
 }
-
-const headerContent = document.querySelector('.header__content');
-const headerCubes = document.querySelectorAll('.header__cube');
-const aboutTitle = document.querySelector('.title--about');
-const workflowTitle = document.querySelector('.title--workflow');
-
-document.addEventListener('scroll', e => {
-    if (windowWidth > 870 && windowHeight > 650) {
-
-        const currentScroll = scrollY;
-        addParallax(headerContent, currentScroll, .2, 0);
-        
-        headerCubes.forEach(e => {
-            addParallax(e, currentScroll, -0.3, 0)
-        });
-        
-        addParallax(aboutTitle, currentScroll, .3, 0);
-        addParallax(workflowTitle, currentScroll, 0.4, aboutHeight + languagesHeight);
-    }
-});
 
 /**
  * Adds parallax to the elements given in parameter
