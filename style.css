@@ -609,8 +609,9 @@ nav ul {
 }
 
 .workflow p::first-letter {
-    font-size: 5em;
+    font-size: 4.5em;
     float:left;
+    line-height: .8em;
 }
 
 .workflow__star .star {
@@ -668,7 +669,7 @@ nav ul {
 */
 
 .portfolio__card {
-    height:200px;
+    height:350px;
     overflow: hidden;
 }
 
@@ -781,7 +782,6 @@ nav ul {
 
     position: fixed;
     inset:0;
-    //z-index: -1;
 }
 
 /*
