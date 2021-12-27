@@ -75,6 +75,7 @@ body {
 
     font-size: 10px;
     overflow-x: hidden;
+    background-color:var(--clr-black-100);
 }
 
 /* ==================
