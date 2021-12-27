@@ -651,7 +651,7 @@ nav ul {
 }
 
 .portfolio--content {
-    grid-column: 1 / -1;
+    grid-column: 2 / span 1;
 
     display:grid;
     grid-template-columns: repeat(1, 1fr);
