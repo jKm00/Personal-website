@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Source+Code+Pro:wght@200&display=swap');
+
+/* ==================
+   0. Resets
+   ================== */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+}
+
+ul {
+	list-style-type: none;
+}
+
+/* ==================
+   1. Global
+   ================== */
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	display: grid;
+	grid-template-columns: 3em 1fr 3em;
+
+	font-size: 10px;
+	overflow-x: hidden;
+	background-color: var(--clr-white);
+}
+
+.body {
+	grid-column: 1 / -1;
+	display: grid;
+	grid-template-columns: inherit;
+}
+
+.logo {
+	width: 50px;
+}
+
+/* ==================
+   2. Variables
+   ================== */
+
+:root {
+	--grid: 1em 1fr 1em;
+
+	--clr-white: #fff;
+	--clr-grey: #efefef;
+	--clr-black-200: #000;
+	--clr-black-100: #121212;
+	--clr-lime: #00ffb2;
+	--clr-purple: #8321ff;
+	--clr-military: #97ada7;
+
+	--ff-title: 'Libre Baskerville', serif;
+	--ff-body: 'Source Code Pro', monospace;
+	--ff-btn: Arial, Helvetica, sans-serif;
+
+	--animation-duration: 700ms;
+	--animation-duration-fast: 300ms;
+}
+
+/* ==================
+   3. Typography
+   ================== */
+
+h1,
+h2,
+h3,
+.title {
+	font-family: var(--ff-title);
+	text-transform: uppercase;
+}
+
+p {
+	font-family: var(--ff-body);
+	font-size: 1.5em;
+	line-height: 2em;
+}
+
+.title {
+	font-size: 2rem;
+}
+
+.title--underline {
+	position: relative;
+}
+
+.title--underline::after {
+	content: '';
+	display: block;
+	height: 5px;
+	width: 4em;
+	background: var(--clr-lime);
+
+	position: absolute;
+	bottom: 0.05em;
+}
+
+.title--arial {
+	font-family: var(--ff-btn);
+	font-weight: lighter;
+}
+
+a {
+	color: var(--clr-purple);
+}
+
+/* ==================
+   4. Buttons
+   ================== */
+
+.btn {
+	border-radius: 5px;
+	padding: 0.75em 1em;
+
+	text-decoration: none;
+	text-align: center;
+	text-transform: uppercase;
+	color: var(--clr-black-200);
+
+	font-family: var(--ff-btn);
+
+	transition: background 150ms ease-in-out, color 150ms ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+	background: var(--clr-white);
+	color: var(--clr-black-200);
+}
+
+/* ==================
+   5. Animtaions
+   ================== */
+
+.fade-in {
+	opacity: 0;
+	animation: fadein 1000ms ease-out forwards;
+}
+
+.fade-in--fast {
+	opacity: 0;
+	animation: fadein 500ms ease-out forwards;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
