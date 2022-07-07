@@ -1,1 +1,5 @@
-<h1>My portfolio</h1>
+<script lang="ts">
+</script>
+
+<style lang="scss">
+</style>
