@@ -1,4 +1,6 @@
-<script lang="ts"></script>
+<script lang="ts">
+	import Timeline from './Timeline.svelte';
+</script>
 
 <section class="languages" id="languages">
 	<div class="languages__content">
@@ -19,8 +21,8 @@
 				time and started looking into other front-end frameworks.
 			</p>
 		</div>
-		<img class="languages__timeline shadow" src="/img/timeline-simple-cropped.jpg" alt="timeline" />
 	</div>
+	<Timeline />
 </section>
 
 <style scoped lang="scss">
@@ -68,12 +70,6 @@
 			line-height: 2rem;
 			max-width: 40rem;
 			margin-bottom: 1rem;
-		}
-
-		&__timeline {
-			width: 100%;
-			max-width: 40rem;
-			margin: auto;
 		}
 	}
 </style>
