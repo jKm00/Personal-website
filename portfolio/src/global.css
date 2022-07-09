@@ -1,95 +1,133 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Source+Code+Pro:wght@200&display=swap');
 
-/* ==================
-   0. Resets
-   ================== */
+:root {
+	--clr-neutral-100: #fff;
+	--clr-neutral-200: #efefef;
+	--clr-neutral-400: #97ada7;
+	--clr-neutral-800: #121212;
+	--clr-neutral-900: #000;
+
+	--clr-main-400: #00ffb2;
+
+	--clr-accent-400: #8321ff;
+
+	--ff-primary: 'Source Code Pro', monospace;
+	--ff-secondary: 'Libre Baskerville', serif;
+	--ff-special: Arial, Helvetica, sans-serif;
+
+	--ff-body: var(--ff-primary);
+	--ff-heading: var(--ff-secondary);
+	--ff-btn: var(--ff-special);
+
+	--fw-bold: 700;
+
+	--fs-300: 0.75rem;
+	--fs-350: 0.875rem;
+	--fs-400: 1rem;
+	--fs-500: 1.25rem;
+	--fs-550: 1.5rem;
+	--fs-600: 2rem;
+	--fs-700: 2.5rem;
+
+	--fs-body: var(--fs-400);
+	--fs-primary-heading: var(--fs-600);
+	--fs-seconday-heading: var(--fs-600);
+	--fs-nav: var(--fs-300);
+	--fs-btn: var(--fs-400);
+}
+
+@media only screen and (min-width: 50rem) {
+	:root {
+		--fs-primary-heading: var(--fs-700);
+	}
+}
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
 *,
 *::before,
 *::after {
-	margin: 0;
-	padding: 0;
 	box-sizing: border-box;
 }
 
-button {
-	border: none;
-	background-color: transparent;
+/* Remove default margin */
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
 }
 
-ul {
-	list-style-type: none;
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+	list-style: none;
 }
 
-/* ==================
-   1. Global
-   ================== */
-
-html {
+/* Set core root defaults */
+html:focus-within {
 	scroll-behavior: smooth;
 }
 
-body {
-	display: grid;
-	grid-template-columns: 3em 1fr 3em;
-
-	font-size: 10px;
-	overflow-x: hidden;
-	background-color: var(--clr-white);
+/* Set core body defaults */
+body,
+.body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
 }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* ===============
+	Global styles
+	================ */
 
 .body {
-	grid-column: 1 / -1;
 	display: grid;
-	grid-template-columns: inherit;
+	grid-template-columns: 1em 1fr 1em;
+	overflow-x: hidden;
+	background-color: var(--clr-neutral-200);
 }
+
+/* Logo */
 
 .logo {
 	width: 50px;
 }
 
-/* ==================
-   2. Variables
-   ================== */
+/* Typography */
 
-:root {
-	--grid: 1em 1fr 1em;
-
-	--clr-white: #fff;
-	--clr-grey: #efefef;
-	--clr-black-200: #000;
-	--clr-black-100: #121212;
-	--clr-lime: #00ffb2;
-	--clr-purple: #8321ff;
-	--clr-military: #97ada7;
-
-	--ff-title: 'Libre Baskerville', serif;
-	--ff-body: 'Source Code Pro', monospace;
-	--ff-btn: Arial, Helvetica, sans-serif;
-
-	--animation-duration: 700ms;
-	--animation-duration-fast: 300ms;
-}
-
-/* ==================
-   3. Typography
-   ================== */
-
-h1,
-h2,
-h3,
 .title {
-	font-family: var(--ff-title);
+	font-family: var(--ff-heading);
+	font-weight: var(--fw-bold);
 	text-transform: uppercase;
-}
-
-p {
-	font-family: var(--ff-body);
-	font-size: 1.5em;
-	line-height: 2em;
-}
-
-.title {
-	font-size: 2rem;
 }
 
 .title--underline {
@@ -112,13 +150,7 @@ p {
 	font-weight: lighter;
 }
 
-a {
-	color: var(--clr-purple);
-}
-
-/* ==================
-   4. Buttons
-   ================== */
+/* Buttons */
 
 .btn {
 	border-radius: 5px;
@@ -140,28 +172,8 @@ a {
 	color: var(--clr-black-200);
 }
 
-/* ==================
-   5. Animtaions
-   ================== */
-
-.fade-in {
-	opacity: 0;
-	animation: fadein 1000ms ease-out forwards;
-}
-
-.fade-in--fast {
-	opacity: 0;
-	animation: fadein 500ms ease-out forwards;
-}
-
-@keyframes fadein {
-	from {
-		opacity: 0;
-		transform: translateY(50px);
-	}
-
-	to {
-		opacity: 1;
-		transform: translateY(0);
+@media only screen and (min-width: 1250px) {
+	.body {
+		grid-template-columns: 1fr 1200px 1fr;
 	}
 }
