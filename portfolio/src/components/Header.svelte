@@ -1,4 +1,5 @@
-<script lang="ts"></script>
+<script lang="ts">
+</script>
 
 <header id="header" class="header">
 	<div class="header__content">
@@ -16,7 +17,7 @@
 	<span class="header__cube cube--big" />
 </header>
 
-<style lang="scss">
+<style scoped lang="scss">
 	.header {
 		grid-column: 2 / -3;
 		position: relative;

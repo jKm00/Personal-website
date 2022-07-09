@@ -4,5 +4,5 @@
 
 <Header />
 
-<style lang="scss">
+<style scoped lang="scss">
 </style>
