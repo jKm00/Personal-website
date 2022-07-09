@@ -14,7 +14,7 @@
 		{
 			icons: [{ path: '/icons/javascript-original.svg', alt: 'javascript logo' }],
 			year: '2017',
-			text: 'Started basic with the web',
+			text: 'Learned some basic JS by myself',
 			placement: 'second'
 		},
 		{
@@ -24,7 +24,7 @@
 				{ path: '/icons/git-original.svg', alt: 'git logo' }
 			],
 			year: '2020',
-			text: 'Started basic with the web',
+			text: 'Started on my batchelor where i learned about object oriented programming',
 			placement: 'third'
 		},
 		{
@@ -37,7 +37,7 @@
 				{ path: '/icons/nginx-original.svg', alt: 'nginx logo' }
 			],
 			year: '2021',
-			text: 'Started basic with the web',
+			text: 'Got more into web development',
 			placement: 'fourth'
 		},
 		{
@@ -47,7 +47,7 @@
 				{ path: '/icons/typescript-original.svg', alt: ' logo' }
 			],
 			year: '2022',
-			text: 'Started basic with the web',
+			text: 'Looked into more front-end frameworks and fell in love with typescript',
 			placement: 'fifth'
 		}
 	];
@@ -61,12 +61,37 @@
 
 <style scoped lang="scss">
 	.timeline {
-		outline: 1px solid red;
 		grid-column: 1 / -1;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		grid-template-areas:
 			'first . third . fifth'
 			'. second . fourth .';
+		row-gap: 1.5rem;
+		padding: 0 2rem;
+		position: relative;
+	}
+
+	.timeline::before {
+		content: 'Timeline';
+		display: block;
+		position: absolute;
+		left: 5%;
+		top: 54%;
+		font-family: var(--ff-special);
+		text-transform: lowercase;
+		opacity: 0.7;
+	}
+
+	.timeline::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90%;
+		height: 0.3rem;
+		background-color: var(--clr-main-400);
 	}
 </style>

@@ -28,6 +28,7 @@
 	--fs-550: 1.5rem;
 	--fs-600: 2rem;
 	--fs-700: 2.5rem;
+	--fs-900: 4rem;
 
 	--fs-body: var(--fs-400);
 	--fs-primary-heading: var(--fs-600);

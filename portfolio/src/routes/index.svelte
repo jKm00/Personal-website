@@ -2,11 +2,13 @@
 	import Header from '../components/Header.svelte';
 	import About from '../components/About.svelte';
 	import Languages from '../components/Languages.svelte';
+	import Workflow from '../components/Workflow.svelte';
 </script>
 
 <Header />
 <About />
 <Languages />
+<Workflow />
 
 <style scoped lang="scss">
 </style>
