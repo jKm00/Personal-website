@@ -65,7 +65,7 @@ ol {
 }
 
 /* Set core root defaults */
-html:focus-within {
+html {
 	scroll-behavior: smooth;
 }
 
@@ -116,6 +116,10 @@ picture {
 	background-color: var(--clr-neutral-200);
 }
 
+.shadow {
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
 /* Logo */
 
 .logo {
@@ -139,7 +143,7 @@ picture {
 	display: block;
 	height: 5px;
 	width: 4em;
-	background: var(--clr-lime);
+	background: var(--clr-main-400);
 
 	position: absolute;
 	bottom: 0.05em;

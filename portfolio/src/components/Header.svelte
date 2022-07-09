@@ -19,7 +19,11 @@
 
 <style scoped lang="scss">
 	.header {
+		--nav-size: 75px;
 		grid-column: 2 / -3;
+		min-height: calc(100vh - var(--nav-size));
+		display: flex;
+		align-items: center;
 		position: relative;
 		z-index: 1;
 
