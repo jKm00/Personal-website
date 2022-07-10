@@ -54,7 +54,7 @@
 			width: 50%;
 			margin: 3em auto;
 			background: var(--clr-neutral-800);
-			opacity: 0.2;
+			opacity: 0.4;
 		}
 	}
 
@@ -72,6 +72,10 @@
 			}
 
 			&__text {
+				grid-column: 2 / 3;
+			}
+
+			& .text--separator {
 				grid-column: 2 / 3;
 			}
 		}

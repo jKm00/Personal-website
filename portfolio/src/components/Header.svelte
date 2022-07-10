@@ -114,18 +114,18 @@
 
 			& .cube--big {
 				--size: 20rem;
-				top: -7rem;
+				bottom: 35vh;
 			}
 
 			& .cube--medium {
 				--size: 15rem;
-				top: 9rem;
+				bottom: 15vh;
 				right: 16rem;
 			}
 
 			& .cube--small {
 				--size: 8rem;
-				top: 22rem;
+				bottom: 5vh;
 				right: 28rem;
 			}
 		}

@@ -5,10 +5,17 @@
 	import Workflow from '../components/Workflow.svelte';
 </script>
 
-<Header />
-<About />
-<Languages />
-<Workflow />
+<main>
+	<Header />
+	<About />
+	<Languages />
+	<Workflow />
+</main>
 
 <style scoped lang="scss">
+	main {
+		grid-column: 1 / -1;
+		display: grid;
+		grid-template-columns: inherit;
+	}
 </style>

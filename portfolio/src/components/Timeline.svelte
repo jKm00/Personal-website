@@ -67,7 +67,7 @@
 		grid-template-areas:
 			'first . third . fifth'
 			'. second . fourth .';
-		row-gap: 1.5rem;
+		row-gap: 3rem;
 		padding: 0 2rem;
 		position: relative;
 	}
@@ -77,7 +77,7 @@
 		display: block;
 		position: absolute;
 		left: 5%;
-		top: 54%;
+		top: 55%;
 		font-family: var(--ff-special);
 		text-transform: lowercase;
 		opacity: 0.7;
@@ -87,7 +87,7 @@
 		content: '';
 		display: block;
 		position: absolute;
-		top: 50%;
+		top: 54%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 90%;

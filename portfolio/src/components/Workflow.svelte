@@ -29,7 +29,7 @@
 			to the “drawing board” to try and come up with a better solution that my client is satisfied
 			with.
 		</p>
-		<p class="workflow__text full-span">
+		<p class="workflow__text workflow__text--star full-span">
 			<img src="/icons/star.svg" alt="star icon" class="star" />I like to keep my work organized.
 			With that in mind I use git as its one of the best “version controls organiser”. This allows
 			me to keep track of what’s been done and where I’m at. If my clients want to roll back to a
@@ -75,6 +75,11 @@
 			font-size: var(--fs-900);
 			float: left;
 			line-height: 1em;
+		}
+
+		&__text--star::first-letter {
+			font-size: var(--fs-body);
+			float: none;
 		}
 	}
 

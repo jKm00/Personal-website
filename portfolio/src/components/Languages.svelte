@@ -36,17 +36,6 @@
 		position: relative;
 		z-index: 1;
 
-		/* &::before {
-			content: '';
-			display: block;
-			position: absolute;
-			inset: 0;
-			bottom: 0%;
-			background: rgb(0, 255, 178);
-			background: linear-gradient(180deg, rgba(0, 255, 178, 1) 0%, rgba(255, 255, 255, 1) 100%);
-			z-index: -1;
-		} */
-
 		&__content {
 			grid-column: 2 / 3;
 		}
