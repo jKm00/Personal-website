@@ -19,7 +19,7 @@
 	<p class="event__desc">{event.text}</p>
 	<div class="event__icon--wrapper">
 		{#each event.icons as icon}
-			<img class="event__icon" src={icon.path} alt={icon.alt} />
+			<img class="event__icon" src={icon.path} alt={icon.alt} loading="lazy" />
 		{/each}
 	</div>
 </div>

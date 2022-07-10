@@ -7,7 +7,7 @@
 		<h2 class="languages__title title">Languages</h2>
 		<div class="languages__text--wrapper">
 			<p class="languages__text">
-				It all started with HTML and CSS when I was about 15-years-old. I like to design webpages
+				It all started with HTML and CSS when I was about 15-years-old. I liked to design webpages
 				and challenge myself with more and more difficult layouts and components.
 			</p>
 			<p class="languages__text">
@@ -18,7 +18,7 @@
 			<p class="languages__text">
 				In the summer of 2022 I worked for a software company where they used spring boot for their
 				backend API and vue together with typescript for their frontend. I learned a lot during this
-				time and started looking into other front-end frameworks.
+				time and started looking into other frontend frameworks.
 			</p>
 		</div>
 	</div>

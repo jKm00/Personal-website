@@ -8,8 +8,8 @@
 <main>
 	<Header />
 	<About />
-	<Languages />
 	<Workflow />
+	<Languages />
 </main>
 
 <style scoped lang="scss">
