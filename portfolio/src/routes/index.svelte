@@ -38,6 +38,7 @@
 	<Portfolio {projects} />
 	<Workflow />
 	<Languages />
+	<h2>This will be more visible</h2>
 </main>
 
 <style scoped lang="scss">
@@ -45,5 +46,14 @@
 		grid-column: 1 / -1;
 		display: grid;
 		grid-template-columns: inherit;
+	}
+
+	h2 {
+		grid-column: 1 / -1;
+		text-align: center;
+		font-size: var(--fs-primary-heading);
+		font-family: var(--ff-heading);
+		font-weight: var(--fw-bold);
+		padding: 2rem 0;
 	}
 </style>
