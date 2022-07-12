@@ -4,6 +4,10 @@
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
+		"test": "cypress run",
+		"cypress:open": "cypress open",
+		"cypress:run": "cypress run",
+		"cypress:record": "cypress run --record --key",
 		"package": "svelte-kit package",
 		"preview": "vite preview",
 		"prepare": "svelte-kit sync",
@@ -17,6 +21,7 @@
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
+		"cypress": "^10.3.0",
 		"eslint": "^8.16.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-svelte3": "^4.0.0",
