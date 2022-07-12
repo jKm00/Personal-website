@@ -5,8 +5,8 @@
 		<h2 class="about__title title title--underline">Me, myself and I</h2>
 		<img class="about__img" src="/img/me-cropped-two.jpeg" alt="Me" />
 		<p class="about__text">
-			Hi, I’m a 21-year-old computer science student from Norway. I’m currently in my second year
-			and previously have a degree in Media and Communication with a lot of design experience.
+			Hi, I’m a 22-year-old computer science student from Norway. I’m currently in my third year and
+			previously have a degree in Media and Communication with a lot of design experience.
 		</p>
 		<div class="text--separator" />
 		<p class="about__text">

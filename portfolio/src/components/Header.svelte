@@ -74,6 +74,12 @@
 			color: var(--clr-neutral-100);
 		}
 
+		& .btn:hover,
+		& .btn:focus {
+			background-color: var(--clr-neutral-100);
+			color: var(--clr-neutral-800);
+		}
+
 		&__cube {
 			position: absolute;
 			border-radius: 10px;

@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { loop_guard } from 'svelte/internal';
+
 	let isOpen = false;
 	let nav: HTMLElement;
 
@@ -31,7 +33,7 @@
 			>
 			<ul class="nav__list--sub">
 				<li class="nav__list__item">
-					<a on:click={hideNav} href="/#me" class="nav__list__link me">Me, myself and I</a>
+					<a on:click={hideNav} href="/#about" class="nav__list__link me">Me, myself and I</a>
 				</li>
 				<li class="nav__list__item">
 					<a on:click={hideNav} href="/#languages" class="nav__list__link">Languages</a>
