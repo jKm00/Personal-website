@@ -11,10 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Change directory
-        run: |
-          cd portfolio
       - name: Cypress run
+        run: cd portfolio
         uses: cypress-io/github-action@v4
         with:
           build: npm run build
