@@ -38,6 +38,7 @@
 	<Portfolio {projects} />
 	<Workflow />
 	<Languages />
+	<h2>Added a new title</h2>
 </main>
 
 <style scoped lang="scss">
