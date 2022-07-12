@@ -16,4 +16,5 @@ jobs:
         with:
           build: npm run build
           start: npm run preview
+          # Makes sure the scripts are executed in the right directory
           working-directory: ./portfolio
