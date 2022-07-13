@@ -1,42 +1,45 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Source+Code+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;800&family=Roboto+Mono&display=swap');
 
 :root {
-	--clr-neutral-100: #fff;
-	--clr-neutral-200: #efefef;
-	--clr-neutral-400: #97ada7;
-	--clr-neutral-800: #121212;
-	--clr-neutral-900: #000;
+	--clr-neutral-000: #f8f9fa;
+	--clr-neutral-100: #f1f3f5;
+	--clr-neutral-200: #e9ecef;
+	--clr-neutral-300: #dee2e6;
+	--clr-neutral-400: #ced4da;
+	--clr-neutral-500: #adb5bd;
+	--clr-neutral-600: #868e96;
+	--clr-neutral-700: #495057;
+	--clr-neutral-800: #343a40;
+	--clr-neutral-900: #212529;
 
-	--clr-main-400: #00ffb2;
+	--clr-accent-200: #ffa94d;
+	--clr-accent-300: #ff922b;
+	--clr-accent-400: #fd7e14;
+	--clr-accent-500: #f76707;
+	--clr-accent-600: #e8590c;
+	--clr-accent-700: #d9480f;
 
-	--clr-accent-400: #8321ff;
-
-	--ff-primary: 'Source Code Pro', monospace;
-	--ff-secondary: 'Libre Baskerville', serif;
-	--ff-special: Arial, Helvetica, sans-serif;
+	--ff-primary: 'Raleway', sans-serif;
+	--ff-secondary: 'Roboto Mono', monospace;
 
 	--ff-body: var(--ff-primary);
-	--ff-heading: var(--ff-secondary);
-	--ff-btn: var(--ff-special);
+	--ff-heading: var(--ff-primary);
 
-	--fw-bold: 700;
+	--fw-bold: 800;
 
 	--fs-200: 0.5rem;
 	--fs-250: 0.625rem;
 	--fs-300: 0.75rem;
 	--fs-350: 0.875rem;
 	--fs-400: 1rem;
-	--fs-500: 1.25rem;
-	--fs-550: 1.5rem;
-	--fs-600: 2rem;
-	--fs-700: 2.5rem;
-	--fs-900: 4rem;
+	--fs-500: 1.3rem;
+	--fs-600: 1.8rem;
+	--fs-700: 2.4rem;
+	--fs-800: 3.2rem
+	--fs-900: 4.2rem;
 
 	--fs-body: var(--fs-400);
-	--fs-primary-heading: var(--fs-600);
-	--fs-seconday-heading: var(--fs-600);
-	--fs-nav: var(--fs-300);
-	--fs-btn: var(--fs-400);
+	--fs-header: var(--fs-800)
 }
 
 @media only screen and (min-width: 50rem) {
@@ -118,6 +121,10 @@ picture {
 	overflow-x: hidden;
 	background-color: var(--clr-neutral-200);
 }
+
+/* ===============
+	Util classes
+	================ */
 
 .shadow {
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
