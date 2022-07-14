@@ -3,7 +3,7 @@ describe('UI tests', () => {
 		cy.visit('http://localhost:3000');
 	});
 
-	it('Test nav buttons', () => {
+	it('Test mobile nav', () => {
 		cy.viewport(414, 896);
 
 		/* Without this, a race condition happens where the click
@@ -15,6 +15,20 @@ describe('UI tests', () => {
 		cy.get('.nav').should('have.class', 'nav--open');
 		cy.contains('Work').click();
 		cy.url().should('include', '#work');
+	});
+
+	it('Test desktop nav', () => {
+		cy.get('.nav').contains('Experience').click();
+		cy.url().should('include', '#experience');
+	});
+
+	it('Test nav while rescaling', () => {
+		cy.get('[aria-label="hamburger"]').should('not.be.visible');
+		cy.viewport(414, 896);
+		cy.wait(100);
+		cy.get('[aria-label="hamburger"]').should('be.visible').click();
+		cy.viewport(1000, 900);
+		cy.get('.nav__socials').should('not.be.visible');
 	});
 });
 
