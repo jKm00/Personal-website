@@ -4,10 +4,12 @@ describe('UI tests', () => {
 	});
 
 	it('Test nav buttons', () => {
-		cy.contains('Home').click();
-		cy.url().should('not.include', '#');
-		cy.contains('Portfolio').click();
-		cy.url().should('include', '/portfolio');
+		cy.viewport(414, 896);
+
+		cy.get('[aria-label="hamburger"]').click();
+		cy.get('.nav').should('have.class', 'nav--open');
+		cy.get('Work').click();
+		cy.url().should('include', '#work');
 	});
 });
 

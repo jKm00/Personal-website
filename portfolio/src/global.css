@@ -171,12 +171,11 @@ picture {
 	font-size: var(--fs-400);
 	text-decoration: none;
 	color: var(--clr-neutral-000);
-	border-bottom: var(--border-size) solid transparent;
 }
 
 .link:hover,
 .link:focus {
-	border-bottom: var(--border-size) solid var(--clr-neutral-000)
+	text-decoration: underline;
 }
 
 /* Other */
