@@ -76,9 +76,14 @@ html {
 }
 
 /* Set core body defaults */
-body,
 .body {
+	display: grid;
+	grid-template-columns: 1em 1fr 1em;
+	align-items: start;
 	min-height: 100vh;
+	overflow-x: hidden;
+	background-color: var(--clr-neutral-900);
+
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 }
@@ -109,17 +114,6 @@ picture {
 		transition-duration: 0.01ms !important;
 		scroll-behavior: auto !important;
 	}
-}
-
-/* ===============
-	Global styles
-	================ */
-
-.body {
-	display: grid;
-	grid-template-columns: 1em 1fr 1em;
-	overflow-x: hidden;
-	background-color: var(--clr-neutral-900);
 }
 
 /* ===============
