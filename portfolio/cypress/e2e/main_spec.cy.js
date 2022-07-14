@@ -6,9 +6,14 @@ describe('UI tests', () => {
 	it('Test nav buttons', () => {
 		cy.viewport(414, 896);
 
+		/* Without this, a race condition happens where the click
+		is triggered before the event listener is applied to the
+		element, resulting in the test clicking the element
+		but nothing happens because there are no events listening */
+		cy.wait(100);
 		cy.get('[aria-label="hamburger"]').click();
 		cy.get('.nav').should('have.class', 'nav--open');
-		cy.get('Work').click();
+		cy.contains('Work').click();
 		cy.url().should('include', '#work');
 	});
 });
