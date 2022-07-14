@@ -23,11 +23,14 @@
 
 <script lang="ts">
 	import type { Project } from '../app/types/Project';
+	import HeroSection from '../components/HeroSection.svelte';
 
 	export let projects: Project[];
 </script>
 
-<main />
+<main>
+	<HeroSection />
+</main>
 
 <style scoped lang="scss">
 	main {
