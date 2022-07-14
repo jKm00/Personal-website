@@ -17,7 +17,7 @@
 			class="hamburger"
 			class:hamburger--open={isOpen}
 			on:click={() => (isOpen = !isOpen)}
-			aria-label="hamburger"
+			aria-label="Open the menu"
 		>
 			<span class="upper line" />
 			<span class="middle line" />
@@ -96,7 +96,7 @@
 
 <style scoped lang="scss">
 	.header {
-		--duration: 150ms;
+		--duration: 300ms;
 
 		grid-column: 2/ 3;
 		display: grid;
