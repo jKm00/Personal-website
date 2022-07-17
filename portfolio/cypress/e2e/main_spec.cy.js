@@ -13,8 +13,8 @@ describe('UI tests', () => {
 		cy.wait(100);
 		cy.get('[aria-label="hamburger"]').click();
 		cy.get('.nav').should('have.class', 'nav--open');
-		cy.contains('Work').click();
-		cy.url().should('include', '#work');
+		cy.contains('About').click();
+		cy.url().should('include', '#about');
 	});
 
 	it('Test desktop nav', () => {
@@ -37,7 +37,7 @@ describe('API test', () => {
 		cy.request('/projects').as('projectsRequest');
 		cy.get('@projectsRequest').then((response) => {
 			expect(response.status).to.equal(200);
-			expect(response.body.projects.length).to.equal(6);
+			expect(response.body.projects.length).to.equal(3);
 		});
 	});
 

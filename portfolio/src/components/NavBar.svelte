@@ -17,7 +17,7 @@
 			class="hamburger"
 			class:hamburger--open={isOpen}
 			on:click={() => (isOpen = !isOpen)}
-			aria-label="Open the menu"
+			aria-label="hamburger"
 		>
 			<span class="upper line" />
 			<span class="middle line" />
