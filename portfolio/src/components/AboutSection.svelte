@@ -11,8 +11,8 @@
 			value: 'Norwegian'
 		},
 		{
-			label: 'Height',
-			value: '1.89m'
+			label: 'Favorite movie',
+			value: 'Star wars: Revenge of the Sith'
 		}
 	];
 </script>

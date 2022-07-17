@@ -30,5 +30,9 @@
 			cursor: default;
 			color: var(--clr-neutral-500);
 		}
+
+		&__label {
+			color: var(--clr-accent-200);
+		}
 	}
 </style>
