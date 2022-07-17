@@ -23,7 +23,7 @@
 			<p class="text">
 				Computer engineer student at NTNU Ålesund. Soon to be professional full stack developer
 			</p>
-			<a href="/#about" class="link start-align">Take contact</a>
+			<a href="mailto: joakimedvardsen2000@gmail.com" class="link start-align">Take contact</a>
 		</div>
 		<img src={'/img/memojis/memoji-computer.png'} alt="Joakim Edvardsen emoji" />
 	</div>
