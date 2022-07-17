@@ -13,9 +13,6 @@
 		{
 			label: 'Height',
 			value: '1.89m'
-		},
-		{
-			value: 'test'
 		}
 	];
 </script>
