@@ -26,7 +26,7 @@ export const projects: Project[] = [
 		status: 'On-going',
 		stack: ['React', 'Spring-Boot', 'Docker', 'MySQL', 'Apache Kafka', 'Nginx'],
 		features: [],
-		desc: "A small hobby project with some students and teachers from my batchelor degree. The idea is to create a crypto bot, selling and purchasing crypto from the market together with a power full UI so the end user can have full control over what's going on.",
+		desc: "A small hobby project with some students and teachers from my batchelor degree. The idea is to create a crypto bot, selling and purchasing crypto from the market together with a powerfull UI so the end user can have full control over what's going on.",
 		text: [],
 		thumbnail: {
 			path: '/img/projects/cryptoyard-thumbnail-cropeed.png',
