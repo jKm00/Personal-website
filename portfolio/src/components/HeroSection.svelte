@@ -11,7 +11,7 @@
 			</h1>
 			<h2 class="title title--small highlighted">Full stack software engineer</h2>
 			<p class="text">
-				Computer engineer student at NTNU Ålesund, soon to be professional full stack developer
+				Computer engineer student at NTNU Ålesund. Soon to be professional full stack developer
 			</p>
 			<a href="/#about" class="link start-align">Take contact</a>
 		</div>
