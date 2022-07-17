@@ -31,7 +31,7 @@
 				<p class="text">
 					Started fiddeling with programming when I was 16 and have loved it every since. Besides
 					developing, I enjoy some computer games and going to the gym to hang out with friends and
-					work out.
+					to work out.
 				</p>
 				<p class="text">
 					More and more I find my self learning about knew technologies and the ability to solve
