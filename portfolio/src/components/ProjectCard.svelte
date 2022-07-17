@@ -7,9 +7,11 @@
 </script>
 
 <div class="project" class:align-right={alignRight}>
-	<div class="project__img--wrapper">
-		<img class="project__img" src={project.thumbnail.path} alt={project.thumbnail.alt} />
-	</div>
+	<a href={'/portfolio/' + project.id}>
+		<div class="project__img--wrapper">
+			<img class="project__img" src={project.thumbnail.path} alt={project.thumbnail.alt} />
+		</div>
+	</a>
 	<div class="project__content">
 		<p
 			class="project__content__status text"
@@ -21,6 +23,7 @@
 		<h3 class="project__content__title title">{project.title}</h3>
 		<div class="card card--light">
 			<p class="card__text text">{project.desc}</p>
+			<a href={'/portfolio/' + project.id} class="card__link link">Read more</a>
 		</div>
 		<Stats stats={project.stack} {alignRight} />
 	</div>
@@ -64,7 +67,18 @@
 			}
 
 			& .card {
+				display: flex;
+				flex-direction: column;
+				align-items: start;
 				margin-bottom: 0.5em;
+
+				&__text {
+					margin-bottom: 1rem;
+				}
+
+				&__link {
+					font-size: var(--fs-300);
+				}
 			}
 		}
 	}
@@ -110,6 +124,10 @@
 				&__title {
 					text-align: right;
 				}
+			}
+
+			& .card__link {
+				align-self: end;
 			}
 		}
 	}
