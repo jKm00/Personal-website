@@ -1,10 +1,20 @@
-<script lang="ts"></script>
+<script lang="ts">
+	// TODO: randomly select memoji on load
+	const IMAGES = [
+		'memoji-brofist.png',
+		'memoji-computer.png',
+		'memoji-greeting.png',
+		'memoji-greeting-two.png',
+		'memoji-star.png',
+		'memoji-thinking.png'
+	];
+</script>
 
 <!-- TODO: Come up with something clever for the texts -->
 <section id="hero" class="section hero">
 	<div class="content two-column">
 		<div class="content__text">
-			<h1 class="title title--extra">
+			<h1 class="title title--primary title--extra">
 				<span>Hi 👋, I'm</span><br />
 				Joakim<br />
 				Edvardsen
@@ -15,7 +25,7 @@
 			</p>
 			<a href="/#about" class="link start-align">Take contact</a>
 		</div>
-		<img src="/img/memoji-computer.png" alt="Joakim Edvardsen emoji" />
+		<img src={'/img/memojis/memoji-computer.png'} alt="Joakim Edvardsen emoji" />
 	</div>
 </section>
 
@@ -58,18 +68,6 @@
 				width: auto;
 				margin: 0;
 			}
-		}
-	}
-
-	@keyframes background-animation {
-		0% {
-			background-position: 0% 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0% 50%;
 		}
 	}
 </style>

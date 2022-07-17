@@ -38,7 +38,8 @@
 	--fs-800: 3.2rem;
 	--fs-900: 4.2rem;
 
-	--fs-heading: var(--fs-800);
+	--fs-primary-heading: var(--fs-800);
+	--fs-secondary-heading: var(--fs-600);
 	--fs-small-heading: var(--fs-400);
 	--fs-body: var(--fs-400);
 
@@ -139,10 +140,17 @@ picture {
 
 .title {
 	font-family: var(--ff-heading);
-	font-size: var(--fs-heading);
 	font-weight: var(--fw-bold);
 	text-transform: uppercase;
 	line-height: 1em;
+}
+
+.title--primary {
+	font-size: var(--fs-primary-heading);
+}
+
+.title--secondary {
+	font-size: var(--fs-secondary-heading);
 }
 
 .title--small {
@@ -163,6 +171,7 @@ picture {
 .text {
 	font-family: var(--ff-body);
 	font-size: var(--fs-body);
+	line-height: 2em;
 }
 
 .highlighted {
@@ -245,12 +254,12 @@ picture {
 @media screen and (min-width: 45rem) {
 	.two-column {
 		display: flex;
-		gap: 1rem;
+		gap: 2rem;
 	}
 }
 
 .card {
-	padding: 3rem 2rem;
+	padding: 2rem;
 	border-radius: var(--rounding);
 	box-shadow: var(--shadow);
 	background-color: var(--clr-neutral-800);
