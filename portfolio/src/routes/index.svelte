@@ -25,6 +25,7 @@
 	import type { Project } from '../app/types/Project';
 	import HeroSection from '../components/HeroSection.svelte';
 	import AboutSection from '../components/AboutSection.svelte';
+	import ProjectsSection from '../components/ProjectsSection.svelte';
 
 	export let projects: Project[];
 </script>
@@ -32,6 +33,7 @@
 <main>
 	<HeroSection />
 	<AboutSection />
+	<ProjectsSection {projects} />
 </main>
 
 <style scoped lang="scss">

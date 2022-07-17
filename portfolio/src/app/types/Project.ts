@@ -6,6 +6,9 @@ type Image = {
 export type Project = {
 	id: number;
 	title: string;
+	status: string;
+	stack: string[];
+	features: string[];
 	desc: string;
 	text: string[];
 	thumbnail: Image;

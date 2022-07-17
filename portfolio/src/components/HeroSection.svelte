@@ -11,7 +11,7 @@
 </script>
 
 <!-- TODO: Come up with something clever for the texts -->
-<section id="hero" class="section hero">
+<section id="hero" class="section section--no-spacing hero">
 	<div class="content two-column">
 		<div class="content__text">
 			<h1 class="title title--primary title--extra">

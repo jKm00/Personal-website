@@ -38,14 +38,14 @@
 					problems in an afficient and elegant way.
 				</p>
 			</div>
-			<Stats {stats} />
+			<Stats {stats} alignRight={false} />
 		</div>
 	</div>
 </section>
 
 <style lang="scss">
 	.about {
-		padding: 5rem 0;
+		margin: 5rem 0 8rem 0;
 
 		&__img {
 			width: 100%;

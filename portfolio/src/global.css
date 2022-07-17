@@ -81,7 +81,7 @@ html {
 	grid-template-columns: 1em 1fr 1em;
 	align-content: start;
 	min-height: 100vh;
-	overflow-x: hidden;
+	overflow: hidden;
 	background-color: var(--clr-neutral-900);
 	color: var(--clr-neutral-000);
 
@@ -263,6 +263,10 @@ picture {
 	border-radius: var(--rounding);
 	box-shadow: var(--shadow);
 	background-color: var(--clr-neutral-800);
+}
+
+.card--light {
+	background-color: var(--clr-neutral-700);
 }
 
 @media only screen and (min-width: 1250px) {
