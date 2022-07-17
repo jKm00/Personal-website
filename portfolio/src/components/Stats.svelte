@@ -23,6 +23,7 @@
 <style lang="scss">
 	.stats {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1rem;
 
 		&__item {

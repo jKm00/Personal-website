@@ -57,7 +57,7 @@
 		}
 
 		& img {
-			width: 15rem;
+			width: 25vh;
 			margin: 2rem auto 0 auto;
 		}
 	}

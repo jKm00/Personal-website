@@ -38,14 +38,25 @@
 	--fs-800: 3.2rem;
 	--fs-900: 4.2rem;
 
-	--fs-primary-heading: var(--fs-800);
-	--fs-secondary-heading: var(--fs-600);
+	--fs-primary-heading: var(--fs-700);
+	--fs-secondary-heading: var(--fs-500);
+	--fs-third-heading: var(--fs-400);
 	--fs-small-heading: var(--fs-400);
 	--fs-body: var(--fs-400);
 
 	--rounding: 2px;
 
 	--shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+@media screen and (min-width: 30rem) {
+	:root {
+		--fs-primary-heading: var(--fs-800);
+		--fs-secondary-heading: var(--fs-600);
+		--fs-third-heading: var(--fs-500);
+		--fs-small-heading: var(--fs-400);
+		--fs-body: var(--fs-400);
+	}
 }
 
 /* https://piccalil.li/blog/a-modern-css-reset */
@@ -151,6 +162,10 @@ picture {
 
 .title--secondary {
 	font-size: var(--fs-secondary-heading);
+}
+
+.title--third {
+	font-size: var(--fs-third-heading);
 }
 
 .title--small {
