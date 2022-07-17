@@ -115,7 +115,7 @@
 	}
 
 	.hamburger {
-		position: fixed;
+		position: absolute;
 		top: 1rem;
 		right: 1rem;
 		z-index: 100;
@@ -139,6 +139,8 @@
 	}
 
 	.hamburger--open {
+		position: fixed;
+
 		& .upper {
 			transform: rotate(45deg) translate(0.5rem, 0.5rem);
 		}
@@ -243,11 +245,6 @@
 					right: -1rem;
 					transform: translateY(-50%);
 					background-color: var(--clr-accent-400);
-				}
-
-				&__link:hover,
-				&__link:focus {
-					--color: var(--clr-neutral-800);
 				}
 			}
 

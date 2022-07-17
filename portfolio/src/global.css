@@ -38,24 +38,13 @@
 	--fs-800: 3.2rem;
 	--fs-900: 4.2rem;
 
-	--fs-heading: var(--fs-600);
+	--fs-heading: var(--fs-800);
+	--fs-small-heading: var(--fs-400);
 	--fs-body: var(--fs-400);
 
 	--rounding: 2px;
 
 	--shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-}
-
-@media only screen and (min-width: 35rem) {
-	:root {
-		--fs-heading: var(--fs-700);
-	}
-}
-
-@media only screen and (min-width: 45rem) {
-	:root {
-		--fs-heading: var(--fs-800);
-	}
 }
 
 /* https://piccalil.li/blog/a-modern-css-reset */
@@ -90,7 +79,7 @@ html {
 	display: grid;
 	grid-template-columns: 1em 1fr 1em;
 	align-content: start;
-	min-height: 200vh;
+	min-height: 100vh;
 	overflow-x: hidden;
 	background-color: var(--clr-neutral-900);
 	color: var(--clr-neutral-000);
@@ -156,6 +145,21 @@ picture {
 	line-height: 1em;
 }
 
+.title--small {
+	font-size: var(--fs-small-heading);
+}
+
+.title--extra {
+	line-height: 1.2em;
+}
+
+.title--extra > span {
+	display: inline-block;
+	font-size: var(--fs-400);
+	font-weight: normal;
+	margin-bottom: -1rem;
+}
+
 .text {
 	font-family: var(--ff-body);
 	font-size: var(--fs-body);
@@ -210,11 +214,6 @@ picture {
 	--color: var(--clr-accent-300);
 }
 
-.link--dark-hover:hover,
-.link--dark-hover:focus {
-	--color: var(--clr-neutral-800);
-}
-
 /* Other */
 
 .shadow {
@@ -241,6 +240,13 @@ picture {
 
 .content {
 	grid-column: 2 / 3;
+}
+
+@media screen and (min-width: 45rem) {
+	.two-column {
+		display: flex;
+		gap: 1rem;
+	}
 }
 
 .card {
