@@ -20,6 +20,7 @@
 	.projects {
 		padding: 5rem 0 8rem 0;
 		background-color: var(--clr-neutral-800);
+    background: linear-gradient(var(--clr-neutral-900), var(--clr-neutral-800));
 	}
 
 	.projects__title {
