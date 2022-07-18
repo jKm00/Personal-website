@@ -59,6 +59,23 @@
 	}
 }
 
+@media (prefers-color-scheme: dark) {
+	:root {
+		--clr-neutral-900: #f8f9fa;
+		--clr-neutral-800: #f1f3f5;
+		--clr-neutral-700: #e9ecef;
+		--clr-neutral-600: #dee2e6;
+		--clr-neutral-500: #ced4da;
+		--clr-neutral-400: #adb5bd;
+		--clr-neutral-300: #353131;
+		--clr-neutral-200: #272525;
+		--clr-neutral-100: #1a1919;
+		--clr-neutral-000: #0f0e0e;
+
+		--shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	}
+}
+
 /* https://piccalil.li/blog/a-modern-css-reset */
 
 /* Box sizing rules */
