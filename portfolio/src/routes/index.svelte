@@ -25,6 +25,7 @@
 	import type { Project } from '../app/types/Project';
 	import HeroSection from '../components/HeroSection.svelte';
 	import AboutSection from '../components/AboutSection.svelte';
+	import PreferredStack from '../components/PreferredStack.svelte';
 	import ProjectsSection from '../components/ProjectsSection.svelte';
 
 	export let projects: Project[];
@@ -33,6 +34,7 @@
 <main>
 	<HeroSection />
 	<AboutSection />
+	<PreferredStack />
 	<ProjectsSection {projects} />
 </main>
 

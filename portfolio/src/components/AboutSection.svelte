@@ -44,8 +44,15 @@
 </section>
 
 <style lang="scss">
+	.two-column--big {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
 	.about {
-		margin: 5rem 0 8rem 0;
+		padding: 3rem 0;
+		margin: 2rem 0 5rem 0;
 
 		&__img {
 			width: 100%;
@@ -55,7 +62,7 @@
 		}
 
 		&__title {
-			margin: 1em 0;
+			margin-bottom: 1em;
 		}
 
 		&__card {
@@ -69,9 +76,8 @@
 
 	@media screen and (min-width: 60rem) {
 		.two-column--big {
-			display: flex;
+			flex-direction: row;
 			align-items: center;
-			gap: 2rem;
 		}
 	}
 </style>

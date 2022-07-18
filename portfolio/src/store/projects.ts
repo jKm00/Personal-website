@@ -37,7 +37,7 @@ export const projects: Project[] = [
 	{
 		id: 3,
 		title: 'Portfolio',
-		status: 'Finished',
+		status: 'On-going',
 		stack: ['SvelteKit', 'Cypress', 'TypeScript', 'Sass'],
 		features: [],
 		desc: 'This is the project you are currently visiting. Wanted to try out and learn some new technologies as well as I needed a portfolio to get my name out there. Since this was a solo project I could select the exact technologies I was most interrested in and learned a lot along the way. Such as end-to-end testing, github actions and server-side vs client-side rendering. Had a tun of fun with this project.',
