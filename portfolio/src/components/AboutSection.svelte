@@ -51,7 +51,8 @@
 	}
 
 	.about {
-		margin: 5rem 0 8rem 0;
+		padding: 3rem 0;
+		margin: 2rem 0 5rem 0;
 
 		&__img {
 			width: 100%;

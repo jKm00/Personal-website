@@ -99,6 +99,10 @@
 				margin-left: 50%;
 			}
 
+			&__img {
+				box-shadow: var(--shadow);
+			}
+
 			&__content {
 				position: absolute;
 				top: 50%;
