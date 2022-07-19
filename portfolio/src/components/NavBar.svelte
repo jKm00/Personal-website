@@ -11,7 +11,7 @@
 
 <header class="header">
 	<div class="content">
-		<a href="/" class="logo rounded">jKm</a>
+		<a sveltekit:prefetch href="/" class="logo rounded">jKm</a>
 		<!-- Hamburger -->
 		<div
 			class="hamburger"
@@ -27,7 +27,7 @@
 		<nav class="nav" class:nav--open={isOpen}>
 			<ol class="nav__list">
 				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/">Home</a>
+					<a sveltekit:prefetch on:click={hideNav} class="nav__list__link link" href="/">Home</a>
 				</li>
 				<li class="nav__list__item">
 					<a on:click={hideNav} class="nav__list__link link" href="/#about">About</a>
@@ -36,7 +36,9 @@
 					<a on:click={hideNav} class="nav__list__link link" href="/#projects">Projects</a>
 				</li>
 				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/resume">Resume</a>
+					<a sveltekit:prefetch on:click={hideNav} class="nav__list__link link" href="/resume"
+						>Resume</a
+					>
 				</li>
 			</ol>
 			<!-- Nav footer. Only visible on mobile version -->
