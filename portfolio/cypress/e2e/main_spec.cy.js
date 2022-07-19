@@ -18,8 +18,8 @@ describe('UI tests', () => {
 	});
 
 	it('Test desktop nav', () => {
-		cy.get('.nav').contains('Experience').click();
-		cy.url().should('include', '#experience');
+		cy.get('.nav').contains('About').click();
+		cy.url().should('include', '#about');
 	});
 
 	it('Test nav while rescaling', () => {
@@ -29,6 +29,11 @@ describe('UI tests', () => {
 		cy.get('[aria-label="hamburger"]').should('be.visible').click();
 		cy.viewport(1000, 900);
 		cy.get('.nav__socials').should('not.be.visible');
+	});
+
+	it('Test navigation between pages', () => {
+		cy.get('.nav').contains('Resume').click();
+		cy.url().should('include', '/resume');
 	});
 });
 
