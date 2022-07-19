@@ -36,9 +36,6 @@
 					<a on:click={hideNav} class="nav__list__link link" href="/#projects">Projects</a>
 				</li>
 				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/#experience">Experience</a>
-				</li>
-				<li class="nav__list__item">
 					<a on:click={hideNav} class="nav__list__link link" href="/resume">Resume</a>
 				</li>
 			</ol>
