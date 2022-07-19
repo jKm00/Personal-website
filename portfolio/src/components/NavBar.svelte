@@ -11,7 +11,7 @@
 
 <header class="header">
 	<div class="content">
-		<a href="/" class="logo rounded" on:click={() => (isOpen = !isOpen)}>jKm</a>
+		<a href="/" class="logo rounded">jKm</a>
 		<!-- Hamburger -->
 		<div
 			class="hamburger"
