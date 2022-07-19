@@ -9,7 +9,12 @@
 <div class="project" class:align-right={alignRight}>
 	<a href={'/portfolio/' + project.id}>
 		<div class="project__img--wrapper">
-			<img class="project__img" src={project.thumbnail.path} alt={project.thumbnail.alt} />
+			<img
+				class="project__img"
+				src={project.thumbnail.path}
+				alt={project.thumbnail.alt}
+				loading="lazy"
+			/>
 		</div>
 	</a>
 	<div class="project__content">

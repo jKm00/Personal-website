@@ -19,7 +19,12 @@
 
 <section id="about" class="section about">
 	<div class="content two-column--big">
-		<img class="about__img rounded" src="/img/me/me-hiking-compressed.jpg" alt="Joakim Edvardsen" />
+		<img
+			class="about__img rounded"
+			src="/img/me/me-hiking-compressed.jpg"
+			alt="Joakim Edvardsen"
+			loading="lazy"
+		/>
 		<div class="section__text">
 			<h2 class="title title--secondary about__title">About</h2>
 			<div class="card about__card">

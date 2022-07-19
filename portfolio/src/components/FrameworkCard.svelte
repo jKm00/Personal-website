@@ -15,7 +15,12 @@
 </script>
 
 <a class="card" href={framework.link} target="_blank">
-	<img class="card__img" src={'/icons/' + framework.svg.file} alt={framework.svg.alt} />
+	<img
+		class="card__img"
+		src={'/icons/' + framework.svg.file}
+		alt={framework.svg.alt}
+		loading="lazy"
+	/>
 	<h3 class="card__title title">{framework.title}</h3>
 	<p class="card__desc">{framework.desc}</p>
 </a>
