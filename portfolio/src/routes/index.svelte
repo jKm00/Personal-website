@@ -25,8 +25,8 @@
 	import type { Project } from '../app/types/Project';
 	import HeroSection from '../components/HeroSection.svelte';
 	import AboutSection from '../components/AboutSection.svelte';
-	import PreferredStack from '../components/PreferredStack.svelte';
-	import ProjectsSection from '../components/ProjectsSection.svelte';
+	import TechnologyStack from '../components/technologyComponents/TechnologyStack.svelte';
+	import ProjectsSection from '../components/projectComponents/ProjectsSection.svelte';
 
 	export let projects: Project[];
 </script>
@@ -34,7 +34,7 @@
 <main>
 	<HeroSection />
 	<AboutSection />
-	<PreferredStack />
+	<TechnologyStack />
 	<ProjectsSection {projects} />
 </main>
 

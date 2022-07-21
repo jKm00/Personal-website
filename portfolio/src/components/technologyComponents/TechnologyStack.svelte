@@ -1,7 +1,7 @@
 <script lang="ts">
-	import FrameworkCard from './FrameworkCard.svelte';
+	import TechnologyCard from './TechnologyCard.svelte';
 
-	const frameworks = [
+	const technologies = [
 		{
 			svg: {
 				file: 'svelte-original.svg',
@@ -45,8 +45,8 @@
 	<div class="content">
 		<h2 class="stack__title title title--third">My most loved technologies</h2>
 		<div class="stack__body">
-			{#each frameworks as framework}
-				<FrameworkCard {framework} />
+			{#each technologies as technology}
+				<TechnologyCard {technology} />
 			{/each}
 		</div>
 	</div>
