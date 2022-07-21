@@ -11,6 +11,7 @@
 	--clr-neutral-700: #272525;
 	--clr-neutral-800: #1a1919;
 	--clr-neutral-900: #0f0e0e;
+	--clr-neutral-1000: #000;
 
 	--clr-accent-200: #63e6be;
 	--clr-accent-300: #38d9a9;
@@ -92,7 +93,9 @@ html {
 	grid-template-columns: 1em 1fr 1em;
 	align-content: start;
 	min-height: 100vh;
-	overflow: hidden;
+	margin-bottom: 100vh;
+	box-shadow: var(--shadow);
+	/* overflow: hidden; */
 	background-color: var(--clr-neutral-900);
 	color: var(--clr-neutral-000);
 
@@ -196,7 +199,8 @@ picture {
 /* Buttons */
 
 .cta {
-	padding: 0.75em 1em;
+	padding: 0.5em 1em;
+	border-radius: var(--rounding);
 	color: var(--clr-neutral-000);
 	background-color: var(--clr-accent-400);
 
@@ -211,6 +215,11 @@ picture {
 .cta:hover,
 .cta:focus {
 	background: var(--clr-neutral-000);
+	color: var(--clr-neutral-900);
+}
+
+.cta--dark {
+	background-color: var(--clr-neutral-900);
 }
 
 .link {
