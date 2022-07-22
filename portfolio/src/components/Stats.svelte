@@ -24,7 +24,7 @@
 	.stats {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem;
+		column-gap: 1rem;
 
 		&__item {
 			cursor: default;
