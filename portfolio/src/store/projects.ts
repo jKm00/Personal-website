@@ -30,7 +30,7 @@ export const projects: Project[] = [
 				alt: 'Product page'
 			},
 			{
-				path: '/img/projects/xxs/shopping-page.PNG',
+				path: '/img/projects/xxs/shopping-cart.PNG',
 				alt: 'Shopping cart'
 			},
 			{
