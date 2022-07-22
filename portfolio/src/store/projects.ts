@@ -5,13 +5,41 @@ export const projects: Project[] = [
 		id: 1,
 		title: 'XXS - Hiking Equipments',
 		thumbnail: {
-			path: '/img/projects/xxs-thumbnail.png',
+			path: '/img/projects/xxs/xxs-thumbnail.png',
 			alt: 'XXS front page'
 		},
 		images: [
 			{
-				path: '/img/projects/xxs-frontpage.png',
-				alt: 'XXS front page'
+				path: '/img/projects/xxs/home-page-hero.png',
+				alt: 'XXS landing page'
+			},
+			{
+				path: '/img/projects/xxs/home-page-about.PNG',
+				alt: 'About xxs'
+			},
+			{
+				path: '/img/projects/xxs/home-page-reviews.PNG',
+				alt: 'Reviews'
+			},
+			{
+				path: '/img/projects/xxs/shop-page.PNG',
+				alt: 'Shop page'
+			},
+			{
+				path: '/img/projects/xxs/product-page.PNG',
+				alt: 'Product page'
+			},
+			{
+				path: '/img/projects/xxs/shopping-page.PNG',
+				alt: 'Shopping cart'
+			},
+			{
+				path: '/img/projects/xxs/profile-page.PNG',
+				alt: 'Profile page'
+			},
+			{
+				path: '/img/projects/xxs/footer.PNG',
+				alt: 'XXS footer'
 			}
 		],
 		status: 'Finished',
