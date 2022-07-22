@@ -41,7 +41,7 @@
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
 			{#each project.images as image}
-				<img src={image.path} alt={image.alt} />
+				<img src={image.path} alt={image.alt} loading="lazy" />
 			{/each}
 			<Stats stats={project.stack} alignRight={false} />
 			<div class="title--wrapper">
