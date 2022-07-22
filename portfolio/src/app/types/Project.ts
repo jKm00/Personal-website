@@ -3,14 +3,21 @@ type Image = {
 	alt: string;
 };
 
+type Contributor = {
+	name: string;
+	githubLink: string;
+};
+
 export type Project = {
 	id: number;
 	title: string;
-	status: string;
-	stack: string[];
-	features: string[];
-	desc: string;
-	text: string[];
 	thumbnail: Image;
 	images: Image[];
+	status: string;
+	stack: string[];
+	contributers: Contributor[];
+	features: string[];
+	githubLink: string;
+	desc: string;
+	text: string[];
 };
