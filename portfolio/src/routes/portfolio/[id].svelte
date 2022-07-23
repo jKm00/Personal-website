@@ -24,6 +24,7 @@
 <script lang="ts">
 	import type { Project } from '../../app/types/Project';
 	import Stats from '../../components/Stats.svelte';
+	import Carousel from '../../components/Carousel.svelte';
 
 	export let status: number | undefined = undefined;
 	export let error: string | undefined = undefined;
@@ -39,10 +40,15 @@
 	{:else}
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
-			<img src={project.images[0].path} alt={project.images[0].alt} />
+			<Carousel images={project.images} />
 			<Stats stats={project.stack} alignRight={false} />
 			<div class="title--wrapper">
-				<p class="text">Status: <span class="highlighted">{project.status}</span></p>
+				<p class="text">
+					Status: <span
+						class:completed={project.status === 'Finished'}
+						class:in-progress={project.status === 'On-going'}>{project.status}</span
+					>
+				</p>
 				<h1 class="title">{project.title}</h1>
 				<div class="contributers">
 					<ul class="horizontal-list">
@@ -158,6 +164,14 @@
 
 		& .github-link {
 			color: var(--clr-accent-400);
+		}
+
+		.completed {
+			color: var(--clr-accent-400);
+		}
+
+		.in-progress {
+			color: orange;
 		}
 	}
 </style>

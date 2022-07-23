@@ -1,7 +1,4 @@
-type Image = {
-	path: string;
-	alt: string;
-};
+import type { Image } from './Image';
 
 type Contributor = {
 	name: string;
