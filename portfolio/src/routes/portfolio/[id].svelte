@@ -40,7 +40,7 @@
 	{:else}
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
-			<Carousel images={project.images} />
+			<Carousel images={project.images} spacingBottom={0.5} />
 			<Stats stats={project.stack} alignRight={false} />
 			<div class="title--wrapper">
 				<p class="text">
