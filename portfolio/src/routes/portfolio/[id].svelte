@@ -24,8 +24,6 @@
 <script lang="ts">
 	import type { Project } from '../../app/types/Project';
 	import Stats from '../../components/Stats.svelte';
-	import Swiper from '../../components/swiper/Swiper.svelte';
-	import SwiperItem from '../../components/swiper/SwiperItem.svelte';
 
 	export let status: number | undefined = undefined;
 	export let error: string | undefined = undefined;
@@ -41,13 +39,7 @@
 	{:else}
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
-			<Swiper maxHeight={'500px'} colorTheme={'#20c997'}>
-				{#each project.images as image}
-					<SwiperItem>
-						<img src={image.path} alt={image.alt} loading="lazy" />
-					</SwiperItem>
-				{/each}
-			</Swiper>
+			<img src={project.images[0].path} alt={project.images[0].alt} loading="lazy" />
 			<Stats stats={project.stack} alignRight={false} />
 			<div class="title--wrapper">
 				<p class="text">Status: <span class="highlighted">{project.status}</span></p>
