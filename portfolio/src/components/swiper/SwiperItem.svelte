@@ -1,7 +1,4 @@
 <script lang="ts">
-	export let translateAmount: number;
-
-	$: console.log('From swiper item: ' + translateAmount);
 </script>
 
 <div class="swiper-item">

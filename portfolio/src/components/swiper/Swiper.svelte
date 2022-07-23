@@ -21,27 +21,37 @@
 		.join(';');
 
 	/* Swiper logic */
+	let swiper: HTMLElement;
 	let swiperWidth: number;
 	let currentSlide = 0;
-	let translateAmount: number;
+	let numberOfItems: number;
 
 	onMount(() => {
-		translateAmount = swiperWidth * currentSlide;
+		numberOfItems = swiper.childElementCount;
 	});
 
-	$: console.log(currentSlide);
-
-	$: console.log(swiperWidth);
+	$: translateAmount = swiperWidth * currentSlide;
 
 	const next = () => {
-		currentSlide++;
+		currentSlide = (currentSlide + 1) % numberOfItems;
 	};
+
+	const prev = () => {
+		currentSlide--;
+		if (currentSlide < 0) {
+			currentSlide = numberOfItems - 1;
+		}
+	};
+
+	$: console.log(translateAmount);
 </script>
 
 <section bind:clientWidth={swiperWidth} class="swiper" style={cssStyles}>
-	<slot />
+	<div bind:this={swiper} class="swiper-carousel">
+		<slot />
+	</div>
 	{#if navigation}
-		<button class="navigation-button" data-prev
+		<button on:click={prev} class="navigation-button" data-prev
 			><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"
 				><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
 					d="M192 448c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l137.4 137.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448z"
@@ -60,11 +70,19 @@
 
 <style lang="scss">
 	.swiper {
-		display: flex;
-		max-height: var(--maxHeight);
-		max-width: var(--maxWidth);
-		overflow: hidden;
-		position: relative;
+		.swiper-carousel {
+			display: flex;
+			max-height: var(--maxHeight);
+			max-width: var(--maxWidth);
+			overflow: hidden;
+			position: relative;
+		}
+
+		:global(.swiper-carousel > *) {
+			flex-grow: 1;
+			flex-shrink: 0;
+			flex-basis: 100%;
+		}
 
 		& .navigation-button {
 			display: grid;
@@ -98,11 +116,5 @@
 		& .navigation-button:focus-visible {
 			background-color: rgba(0, 0, 0, 0.7);
 		}
-	}
-
-	:global(.swiper > *) {
-		flex-grow: 1;
-		flex-shrink: 0;
-		flex-basis: 100%;
 	}
 </style>
