@@ -24,10 +24,11 @@
 <script lang="ts">
 	import type { Project } from '../../app/types/Project';
 	import Stats from '../../components/Stats.svelte';
-	import { onMount } from 'svelte';
+	import Swiper from '../../components/swiper/Swiper.svelte';
+	import SwiperItem from '../../components/swiper/SwiperItem.svelte';
 
-	export let status: number;
-	export let error: string;
+	export let status: number | undefined = undefined;
+	export let error: string | undefined = undefined;
 	export let project: Project;
 </script>
 
@@ -40,9 +41,13 @@
 	{:else}
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
-			{#each project.images as image}
-				<img src={image.path} alt={image.alt} loading="lazy" />
-			{/each}
+			<Swiper maxHeight={'500px'} colorTheme={'#20c997'}>
+				{#each project.images as image}
+					<SwiperItem>
+						<img src={image.path} alt={image.alt} loading="lazy" />
+					</SwiperItem>
+				{/each}
+			</Swiper>
 			<Stats stats={project.stack} alignRight={false} />
 			<div class="title--wrapper">
 				<p class="text">Status: <span class="highlighted">{project.status}</span></p>
@@ -81,15 +86,6 @@
 </div>
 
 <style lang="scss">
-	// Tmp
-	img {
-		max-height: 30rem;
-		width: 100%;
-		object-fit: cover;
-		margin: 1rem 0;
-		box-shadow: var(--shadow);
-	}
-
 	.section {
 		background-color: var(--clr-neutral-800);
 	}
