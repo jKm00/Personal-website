@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ResumeCard from '../components/ResumeCard.svelte';
+	import ResumeCard from '../components/pages/resumePage/ResumeCard.svelte';
 
 	const experiences = [
 		{

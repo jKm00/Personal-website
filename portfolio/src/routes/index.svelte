@@ -23,8 +23,8 @@
 
 <script lang="ts">
 	import type { Project } from '../app/types/Project';
-	import HeroSection from '../components/HeroSection.svelte';
-	import AboutSection from '../components/AboutSection.svelte';
+	import HeroSection from '../components/pages/homePage/HeroSection.svelte';
+	import AboutSection from '../components/pages/homePage/AboutSection.svelte';
 	import TechnologyStack from '../components/technologyComponents/TechnologyStack.svelte';
 	import ProjectsSection from '../components/projectComponents/ProjectsSection.svelte';
 

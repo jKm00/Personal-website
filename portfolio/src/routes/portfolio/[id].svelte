@@ -24,10 +24,10 @@
 <script lang="ts">
 	import type { Project } from '../../app/types/Project';
 	import Stats from '../../components/Stats.svelte';
-	import { onMount } from 'svelte';
+	import Carousel from '../../components/Carousel.svelte';
 
-	export let status: number;
-	export let error: string;
+	export let status: number | undefined = undefined;
+	export let error: string | undefined = undefined;
 	export let project: Project;
 </script>
 
@@ -40,12 +40,15 @@
 	{:else}
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
-			{#each project.images as image}
-				<img src={image.path} alt={image.alt} loading="lazy" />
-			{/each}
+			<Carousel images={project.images} />
 			<Stats stats={project.stack} alignRight={false} />
 			<div class="title--wrapper">
-				<p class="text">Status: <span class="highlighted">{project.status}</span></p>
+				<p class="text">
+					Status: <span
+						class:completed={project.status === 'Finished'}
+						class:in-progress={project.status === 'On-going'}>{project.status}</span
+					>
+				</p>
 				<h1 class="title">{project.title}</h1>
 				<div class="contributers">
 					<ul class="horizontal-list">
@@ -81,15 +84,6 @@
 </div>
 
 <style lang="scss">
-	// Tmp
-	img {
-		max-height: 30rem;
-		width: 100%;
-		object-fit: cover;
-		margin: 1rem 0;
-		box-shadow: var(--shadow);
-	}
-
 	.section {
 		background-color: var(--clr-neutral-800);
 	}
@@ -170,6 +164,14 @@
 
 		& .github-link {
 			color: var(--clr-accent-400);
+		}
+
+		.completed {
+			color: var(--clr-accent-400);
+		}
+
+		.in-progress {
+			color: orange;
 		}
 	}
 </style>
