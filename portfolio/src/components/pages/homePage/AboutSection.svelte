@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Stats from './Stats.svelte';
+	import Stats from '../../Stats.svelte';
 
 	const stats = [
 		{

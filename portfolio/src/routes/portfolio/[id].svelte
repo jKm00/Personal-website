@@ -39,7 +39,7 @@
 	{:else}
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
-			<img src={project.images[0].path} alt={project.images[0].alt} loading="lazy" />
+			<img src={project.images[0].path} alt={project.images[0].alt} />
 			<Stats stats={project.stack} alignRight={false} />
 			<div class="title--wrapper">
 				<p class="text">Status: <span class="highlighted">{project.status}</span></p>
