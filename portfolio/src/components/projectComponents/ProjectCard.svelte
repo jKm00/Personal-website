@@ -7,7 +7,7 @@
 </script>
 
 <div class="project" class:align-right={alignRight}>
-	<a href={'/portfolio/' + project.id}>
+	<a sveltekit:prefetch href={'/portfolio/' + project.id}>
 		<div class="project__img--wrapper">
 			<img
 				class="project__img"
@@ -28,7 +28,7 @@
 		<h3 class="project__content__title title title--third">{project.title}</h3>
 		<div class="card card--light">
 			<p class="card__text text">{project.desc}</p>
-			<a href={'/portfolio/' + project.id} class="card__link link">Read more</a>
+			<a sveltekit:prefetch href={'/portfolio/' + project.id} class="card__link link">Read more</a>
 		</div>
 		<Stats stats={project.stack} {alignRight} />
 	</div>
