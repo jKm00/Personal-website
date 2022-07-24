@@ -1,10 +1,10 @@
 import type { RequestEvent, RequestHandler } from '@sveltejs/kit';
-import { projects } from '../../../store/projects';
+import { experiences } from '../../../store/resume';
 
 export const get: RequestHandler = (request: RequestEvent) => {
 	return {
 		body: {
-			projects: projects
+			experiences: experiences
 		}
 	};
 };
