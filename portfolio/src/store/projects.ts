@@ -5,40 +5,40 @@ export const projects: Project[] = [
 		id: 1,
 		title: 'XXS - Hiking Equipments',
 		thumbnail: {
-			path: '/img/projects/xxs/xxs-thumbnail.png',
+			path: '/img/projects/xxs/xxs-thumbnail-compressed.jpg',
 			alt: 'XXS front page'
 		},
 		images: [
 			{
-				path: '/img/projects/xxs/home-page-hero.png',
+				path: '/img/projects/xxs/home-page-hero-compressed.jpg',
 				alt: 'XXS landing page'
 			},
 			{
-				path: '/img/projects/xxs/home-page-about.PNG',
+				path: '/img/projects/xxs/home-page-about-compressed.jpg',
 				alt: 'About xxs'
 			},
 			{
-				path: '/img/projects/xxs/home-page-reviews.PNG',
+				path: '/img/projects/xxs/home-page-reviews-compressed.jpg',
 				alt: 'Reviews'
 			},
 			{
-				path: '/img/projects/xxs/shop-page.PNG',
+				path: '/img/projects/xxs/shop-page-compressed.jpg',
 				alt: 'Shop page'
 			},
 			{
-				path: '/img/projects/xxs/product-page.PNG',
+				path: '/img/projects/xxs/product-page-compressed.jpg',
 				alt: 'Product page'
 			},
 			{
-				path: '/img/projects/xxs/shopping-cart.PNG',
+				path: '/img/projects/xxs/shopping-cart-compressed.jpg',
 				alt: 'Shopping cart'
 			},
 			{
-				path: '/img/projects/xxs/profile-page.PNG',
+				path: '/img/projects/xxs/profile-page-compressed.jpg',
 				alt: 'Profile page'
 			},
 			{
-				path: '/img/projects/xxs/footer.PNG',
+				path: '/img/projects/xxs/footer-compressed.jpg',
 				alt: 'XXS footer'
 			}
 		],
@@ -84,10 +84,27 @@ export const projects: Project[] = [
 		id: 2,
 		title: 'CryptoYard',
 		thumbnail: {
-			path: '/img/projects/cryptoyard-thumbnail-cropeed.png',
+			path: '/img/projects/cryptoyard/cryptoyard-thumbnail-cropped.png',
 			alt: 'Cryptoyard dashboard'
 		},
-		images: [],
+		images: [
+			{
+				path: '/img/projects/cryptoyard/cryptoyard-dashbord-compressed.jpg',
+				alt: 'Cryptoyard dashboard'
+			},
+			{
+				path: '/img/projects/cryptoyard/signin-page-compressed.jpg',
+				alt: 'Signin page'
+			},
+			{
+				path: '/img/projects/cryptoyard/signup-page-compressed.jpg',
+				alt: 'Signup page'
+			},
+			{
+				path: '/img/projects/cryptoyard/market-compressed.jpg',
+				alt: 'Market place'
+			}
+		],
 		status: 'On-going',
 		stack: ['React', 'Spring-Boot', 'Docker', 'MySQL', 'Apache Kafka', 'Nginx'],
 		contributers: [
@@ -132,16 +149,54 @@ export const projects: Project[] = [
 		],
 		githubLink: 'https://github.com/The-Compilers/CryptoYard',
 		desc: "A small hobby project with some students and teachers from my batchelor degree. The idea is to create a crypto bot, selling and purchasing crypto from the market together with a powerfull UI so the end user can have full control over what's going on.",
-		text: []
+		text: [
+			"To start a little developer community in our class some students together with a teacher started a project, creating a crypto bot. The main purpose is to learn technologies relevant in real-life projects, build a developer's portfolio and have fun socialising with people of same interrested.",
+			'We started with a meating discussing what technologies we where to use for the project and ended up with spring-boot for our backend API, react for our frontend, MySQL for database, apache kafka for message sharing and ngnix as a server proxy.',
+			"So far we have implemented a dashboard where the user should be able to see their watched coins with relevant information. Such as how much they have invested in each coin, the current price etc. We've also implemented login and signup pages for the frontend, but the authentication logic is still to be implemented.",
+			'Come back for more updates 😉'
+		]
 	},
 	{
 		id: 3,
 		title: 'Portfolio',
 		thumbnail: {
-			path: '/img/projects/portfolio-thumbnail-cropped.png',
+			path: '/img/projects/portfolio/portfolio-thumbnail-cropped-compressed.jpg',
 			alt: 'Portfolio front page'
 		},
-		images: [],
+		images: [
+			{
+				path: '/img/projects/portfolio/landing-page-compressed.jpg',
+				alt: 'Portfolio landing page'
+			},
+			{
+				path: '/img/projects/portfolio/about-compressed.jpg',
+				alt: 'About section'
+			},
+			{
+				path: '/img/projects/portfolio/technologies-compressed.jpg',
+				alt: 'Technology cards'
+			},
+			{
+				path: '/img/projects/portfolio/projects-compressed.jpg',
+				alt: 'Projects list'
+			},
+			{
+				path: '/img/projects/portfolio/project-top-compressed.jpg',
+				alt: 'Specific project landing page'
+			},
+			{
+				path: '/img/projects/portfolio/project-body-compressed.jpg',
+				alt: 'Content of specific project'
+			},
+			{
+				path: '/img/projects/portfolio/resume-compressed.jpg',
+				alt: 'Resume'
+			},
+			{
+				path: '/img/projects/portfolio/footer-compressed.jpg',
+				alt: 'Portfolio footer'
+			}
+		],
 		status: 'On-going',
 		stack: ['SvelteKit', 'Cypress', 'TypeScript', 'Sass'],
 		contributers: [
@@ -153,6 +208,13 @@ export const projects: Project[] = [
 		features: ['Server-side rendering', 'On load and scroll animations', 'Data prefecting'],
 		githubLink: 'https://github.com/jKm00/Personal-website',
 		desc: 'This is the project you are currently visiting. Wanted to try out and learn some new technologies as well as I needed a portfolio to get my name out there. Since this was a solo project I could select the exact technologies I was most interrested in and learned a lot along the way. Such as end-to-end testing, github actions and server-side vs client-side rendering. Had a tun of fun with this project.',
-		text: []
+		text: [
+			'My portfolio was a small personal project I started, that only I have worked on. The result is the website you are currently visiting.',
+			'Because I was the only person involved in this project, I had the full freedom to choose wathever technologies I wanted. When deciding, I recently had some experience with both React and Vue. But I had also recently heard a lot about Svelte and SvelteKit. For me it seemed so simple and elegant and I wanted to try it out for myself. Thats the main reason why this website is build using SvelteKit.',
+			"I also wanted to learn more about testing, continuous integration and continuous delivery. Cypress was a tool I had just heard about and started looking more into. I decided to use it for testing in this project, and have not regretted it. Together with cypress I also looked into and added piplines/actions to my GitHub. So whenever I pushed some new code to the repository, it automatically get's build, tested and then published if every test are passed.",
+			'The hardest task for this project was probably to come up with a design I was happy with. I wanted something that I was genuenlly happy with and something that fit me as well as it was easy to understand and use. My first version looked OK+, but it had some flaws. Specially for readability. Some of the fonts were very thin and the contrasts between the background and forground made it a little to hard to read.',
+			'I completely redesigned the whole page for version 2.0. This is the current design used today. Although I was happy with the first outcome, there was a lot of tweeking throughout the process.',
+			"I'm really happy with the result of the current version. But I also think this is a project I will continue developing as I get new ideas for things I want to add."
+		]
 	}
 ];
