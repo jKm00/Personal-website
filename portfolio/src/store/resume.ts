@@ -11,7 +11,7 @@ export const experiences = [
 		start: '10. Mai 2018',
 		end: '1. August 2019',
 		place: 'Vestby',
-		desc: 'Fisrt started as a summer aid and received training in May. Then continued as extra help in the evenings and on weekends. I gained a lot of experience in the work environment, but also learned a lot about how to treat customers and how a store / kiosk is run. At the station there was a lot of varied work, which meant that new problems constantly arose that had to be solved.'
+		desc: 'First started as a summer aid and received training in May. Then continued as extra help in the evenings and on weekends. I gained a lot of experience in the work environment, but also learned a lot about how to treat customers and how a store / kiosk is run. There was a lot varied work at the station, which meant that new problems constantly arose that had to be solved.'
 	},
 	{
 		title: 'Supervisor at ASP (SFO)',
