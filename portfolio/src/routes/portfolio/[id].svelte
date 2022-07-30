@@ -23,6 +23,7 @@
 
 <script lang="ts">
 	import type { Project } from '../../app/types/Project';
+	import { Status } from '../../app/types/Status';
 	import Stats from '../../components/Stats.svelte';
 	import Carousel from '../../components/Carousel.svelte';
 
@@ -45,8 +46,8 @@
 			<div class="title--wrapper">
 				<p class="text">
 					Status: <span
-						class:completed={project.status === 'Finished'}
-						class:in-progress={project.status === 'On-going'}>{project.status}</span
+						class:completed={project.status === Status.FINISHED}
+						class:in-progress={project.status === Status.IN_PROGRESS}>{project.status}</span
 					>
 				</p>
 				<h1 class="title">{project.title}</h1>

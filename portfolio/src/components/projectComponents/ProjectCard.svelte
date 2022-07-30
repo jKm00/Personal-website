@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Stats from '../Stats.svelte';
 	import type { Project } from '../../app/types/Project';
+	import { Status } from '../../app/types/Status';
 
 	export let project: Project;
 	export let alignRight: boolean;
@@ -20,8 +21,8 @@
 	<div class="project__content">
 		<p
 			class="project__content__status text"
-			class:completed={project.status === 'Finished'}
-			class:in-progress={project.status === 'On-going'}
+			class:completed={project.status === Status.FINISHED}
+			class:in-progress={project.status === Status.IN_PROGRESS}
 		>
 			<span class="project__content__status--bold">Status: </span>{project.status}
 		</p>

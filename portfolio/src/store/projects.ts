@@ -1,4 +1,5 @@
 import type { Project } from '../app/types/Project';
+import { Status } from '../app/types/Status';
 
 export const projects: Project[] = [
 	{
@@ -42,7 +43,7 @@ export const projects: Project[] = [
 				alt: 'XXS footer'
 			}
 		],
-		status: 'Finished',
+		status: Status.FINISHED,
 		stack: ['React', 'Spring-Boot', 'Docker', 'PostgreSql', 'Nginx'],
 		contributers: [
 			{
@@ -73,9 +74,9 @@ export const projects: Project[] = [
 		desc: 'As part of my batchelor degree, I together with three other student was given a fictional company selling premium hiking equipment. Together we planned out and developed a webshop selling their products as well as their values. Everything from design to user authentication.',
 		text: [
 			'In my fourth semester of my batchelor I had two courses, web technologies and application development. Throughout the semester, next to the lectures, we had an on going project combining what we learned in both the subjects to create a website.',
-			'As this was quite a large project, we had to work in group. Both to distribute the work load, but also to more experience working with a team as this is normally how developers work.',
-			'The beginning was a lot of planning. Creating wireframes, sketching the design of the database, creating a design guideline etc. We had many team meatings a this point to share and discuss different opinions and options until we were satisfied.',
-			'Spring boot was taught in the application coures, so this was the framework we desided to use for our API. As for the frontend, HTML, CSS and JavaScript was taught in the web technologies course, but our group desided to use React as our frontend framework as some members already had some experience with it. For our database we used PostgreSQL as again, member of the group had experience with it. At the very end of the project we also desided that we were to dockerize our app, to make it easier for production.',
+			'As this was quite a large project, we had to work in group. Both to distribute the work load, but also to get experience working with a team as this is normally how developers work.',
+			'The beginning was a lot of planning. Creating wireframes, sketching the design of the database, creating a design guideline etc. We had many team meatings a this point to share and discuss different options and opinions until we were satisfied.',
+			'Spring boot was taught in the application coures, so this was the framework we desided to use for our API. As for the frontend, HTML, CSS and JavaScript was taught in the web technologies course, but our group desided to use React as our frontend framework as some members already had some experience with it. For our database we used PostgreSQL, as again, member of the group had experience with it. At the very end of the project we also desided that we were to dockerize our app, to make it easier for production.',
 			"Throughout the development github was actively used. Every meating, we discussed things that needed to be implemented and/or changed and filed it as github issues. With this, it was easy for a single member to pick an issue from the issue list, work with it on a new branch, and then merge it back into the main branch with a simple pull request. This also made it possible to add code review to our workflow. Both to make sure the implemented was ok, but also so members that didn't implement sertain features could understand it by looking through it when it was finished and approve it.",
 			'This project was a great success. We reached all our goals and learned a lot along the process.'
 		]
@@ -105,7 +106,7 @@ export const projects: Project[] = [
 				alt: 'Market place'
 			}
 		],
-		status: 'On-going',
+		status: Status.IN_PROGRESS,
 		stack: ['React', 'Spring-Boot', 'Docker', 'MySQL', 'Apache Kafka', 'Nginx'],
 		contributers: [
 			{
@@ -197,7 +198,7 @@ export const projects: Project[] = [
 				alt: 'Portfolio footer'
 			}
 		],
-		status: 'On-going',
+		status: Status.FINISHED,
 		stack: ['SvelteKit', 'Cypress', 'TypeScript', 'Sass'],
 		contributers: [
 			{

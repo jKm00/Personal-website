@@ -1,4 +1,5 @@
 import type { Image } from './Image';
+import type { Status } from './Status';
 
 type Contributor = {
 	name: string;
@@ -10,7 +11,7 @@ export type Project = {
 	title: string;
 	thumbnail: Image;
 	images: Image[];
-	status: string;
+	status: Status;
 	stack: string[];
 	contributers: Contributor[];
 	features: string[];
