@@ -71,13 +71,13 @@ export const projects: Project[] = [
 			'Admin page for product/user updates'
 		],
 		githubLink: 'https://github.com/jKm00/hiking-equipment',
-		desc: 'As part of my batchelor degree, I together with three other student was given a fictional company selling premium hiking equipment. Together we planned out and developed a webshop selling their products as well as their values. Everything from design to user authentication.',
+		desc: 'As part of my bachelor degree, I together with three other students was given a fictional company selling premium hiking equipment. Together we planned out and developed a webshop selling their products as well as their values. Everything from design to user authentication.',
 		text: [
-			'In my fourth semester of my batchelor I had two courses, web technologies and application development. Throughout the semester, next to the lectures, we had an on going project combining what we learned in both the subjects to create a website.',
+			'In my fourth semester of my bachelor I had two courses, web technologies and application development. Throughout the semester, next to the lectures, we had an ongoing project combining what we learned in both the subjects to create a website.',
 			'As this was quite a large project, we had to work in group. Both to distribute the work load, but also to get experience working with a team as this is normally how developers work.',
-			'The beginning was a lot of planning. Creating wireframes, sketching the design of the database, creating a design guideline etc. We had many team meatings a this point to share and discuss different options and opinions until we were satisfied.',
+			'The beginning was a lot of planning. Creating wireframes, sketching the design of the database, creating a design guideline etc. We had many team meetings a this point to share and discuss different options and opinions until we were satisfied.',
 			'Spring boot was taught in the application coures, so this was the framework we desided to use for our API. As for the frontend, HTML, CSS and JavaScript was taught in the web technologies course, but our group desided to use React as our frontend framework as some members already had some experience with it. For our database we used PostgreSQL, as again, member of the group had experience with it. At the very end of the project we also desided that we were to dockerize our app, to make it easier for production.',
-			"Throughout the development github was actively used. Every meating, we discussed things that needed to be implemented and/or changed and filed it as github issues. With this, it was easy for a single member to pick an issue from the issue list, work with it on a new branch, and then merge it back into the main branch with a simple pull request. This also made it possible to add code review to our workflow. Both to make sure the implemented was ok, but also so members that didn't implement sertain features could understand it by looking through it when it was finished and approve it.",
+			"Throughout the development github was actively used. Every meeting, we discussed things that needed to be implemented and/or changed and filed it as github issues. With this, it was easy for a single member to pick an issue from the issue list, work with it on a new branch, and then merge it back into the main branch with a simple pull request. This also made it possible to add code review to our workflow. Both to make sure the implemented was ok, but also so members that didn't implement sertain features could understand it by looking through it when it was finished and approve it.",
 			'This project was a great success. We reached all our goals and learned a lot along the process.'
 		]
 	},
@@ -208,7 +208,7 @@ export const projects: Project[] = [
 		],
 		features: ['Server-side rendering', 'On load and scroll animations', 'Data prefecting'],
 		githubLink: 'https://github.com/jKm00/Personal-website',
-		desc: 'This is the project you are currently visiting. Wanted to try out and learn some new technologies as well as I needed a portfolio to get my name out there. Since this was a solo project I could select the exact technologies I was most interrested in and learned a lot along the way. Such as end-to-end testing, github actions and server-side vs client-side rendering. Had a tun of fun with this project.',
+		desc: 'This is the project you are currently visiting. Wanted to try out and learn some new technologies as well as I needed a portfolio to get my name out there. Since this was a solo project I could select the exact technologies I was most interrested in and learned a lot along the way. Such as end-to-end testing, github actions and server-side vs client-side rendering. Had a ton of fun with this project.',
 		text: [
 			'My portfolio was a small personal project I started, that only I have worked on. The result is the website you are currently visiting.',
 			'Because I was the only person involved in this project, I had the full freedom to choose wathever technologies I wanted. When deciding, I recently had some experience with both React and Vue. But I had also recently heard a lot about Svelte and SvelteKit. For me it seemed so simple and elegant and I wanted to try it out for myself. Thats the main reason why this website is build using SvelteKit.',

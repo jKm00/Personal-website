@@ -30,7 +30,7 @@
 			<div class="card about__card">
 				<p class="text">
 					I'm a full stack developer from Norway. I'm currently in my third and final year of my
-					batchelor degree in computer science and are thinking of appling for a master in computer
+					bachelor degree in computer science and are thinking of appling for a master in computer
 					technology.
 				</p>
 				<p class="text">
@@ -40,7 +40,7 @@
 				</p>
 				<p class="text">
 					More and more I find my self learning about knew technologies and the ability to solve
-					problems in an afficient and elegant way.
+					problems in an efficient and elegant way.
 				</p>
 			</div>
 			<Stats {stats} alignRight={false} />

@@ -7,7 +7,7 @@
 
 <section id="projects" class="section projects">
 	<div class="content">
-		<h2 class="title title--secondary projects__title">Projects I've work on</h2>
+		<h2 class="title title--secondary projects__title">Projects I've worked on</h2>
 		<div class="projects--wrapper">
 			{#each projects as project (project.id)}
 				<ProjectCard {project} alignRight={project.id % 2 != 0} />
