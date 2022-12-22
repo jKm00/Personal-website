@@ -1,4 +1,8 @@
 <script lang="ts">
+	import CircularLoadingIndicator from '../../feedback/CircularLoadingIndicator.svelte';
+	import { onMount } from 'svelte';
+	import { fly, fade } from 'svelte/transition';
+
 	// TODO: randomly select memoji on load
 	const IMAGES = [
 		'memoji-brofist.png',
@@ -8,26 +12,40 @@
 		'memoji-star.png',
 		'memoji-thinking.png'
 	];
+
+	// Animation settings
+	let duration = 1000;
+	let yValue = 40;
+
+	let loaded = false;
+
+	onMount(() => {
+		loaded = true;
+	})
 </script>
 
-<!-- TODO: Come up with something clever for the texts -->
+{#if loaded}
 <section id="hero" class="section section--no-spacing hero">
 	<div class="content two-column">
 		<div class="content__text">
 			<h1 class="title title--primary title--extra">
-				<span>Hi 👋, I'm</span><br />
-				Joakim<br />
-				Edvardsen
+				<span in:fly="{{y: yValue, duration: duration}}">Hi 👋, I'm</span><br />
+				<div in:fly="{{y: yValue, duration: duration, delay: 100}}">Joakim<br />
+				Edvardsen</div>
 			</h1>
-			<h2 class="title title--small highlighted">Full stack software engineer</h2>
-			<p class="text">
+			<h2 in:fly="{{y: yValue, duration: duration, delay: 200}}" class="title title--small highlighted">Full stack software engineer</h2>
+			<p in:fly="{{y: yValue, duration: duration, delay: 300}}" class="text">
 				Computer engineer student at NTNU Ålesund. Soon to be professional full stack developer
 			</p>
-			<a href="mailto: joakimedvardsen2000@gmail.com" class="link start-align">Take contact</a>
+			<a in:fade="{{duration: duration, delay: 450}}" href="mailto: joakimedvardsen2000@gmail.com" class="link start-align">Take contact</a>
 		</div>
-		<img src={'/img/memojis/memoji-computer.png'} alt="Joakim Edvardsen emoji" />
+		<img in:fly="{{y: yValue, duration: duration * 1.5}}" src={'/img/memojis/memoji-computer.png'} alt="Joakim Edvardsen emoji" />
 	</div>
 </section>
+{:else}
+	<section id="hero" class="section loading-wrapper">
+	</section>
+{/if}
 
 <style lang="scss">
 	.section {
@@ -37,6 +55,12 @@
 		background-size: 300% 300%;
 		// background-image: linear-gradient(315deg, #20bf55 0%, #01baef 74%);
 		animation: background-animation 10s ease infinite;
+	}
+
+	.loading-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.hero {
