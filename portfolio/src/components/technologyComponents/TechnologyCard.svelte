@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
+
 	interface Svg {
 		file: string;
 		alt: string;
@@ -12,18 +14,28 @@
 	}
 
 	export let technology: Technology;
+	export let delayIndex: number;
+
+	let yScroll: number;
+	let showTechnologyStack: boolean;
+
+	$: if (yScroll > 1000) showTechnologyStack = true;
 </script>
 
-<a class="card" href={technology.link} target="_blank">
-	<img
-		class="card__img"
-		src={'/icons/' + technology.svg.file}
-		alt={technology.svg.alt}
-		loading="lazy"
-	/>
-	<h3 class="card__title title">{technology.title}</h3>
-	<p class="card__desc">{technology.desc}</p>
-</a>
+<svelte:window bind:scrollY={yScroll} />
+
+{#if showTechnologyStack}
+	<a in:fly="{{y: 50, duration: 1000, delay: delayIndex * 100}}" class="card" href={technology.link} target="_blank">
+		<img
+			class="card__img"
+			src={'/icons/' + technology.svg.file}
+			alt={technology.svg.alt}
+			loading="lazy"
+		/>
+		<h3 class="card__title title">{technology.title}</h3>
+		<p class="card__desc">{technology.desc}</p>
+	</a>
+{/if}
 
 <style lang="scss">
 	.card {

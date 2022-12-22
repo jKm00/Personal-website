@@ -3,6 +3,11 @@
 	import type { Technology } from '../../app/types/Technology';
 
 	export let technologies: Technology[];
+
+	let cardIndex = 0;
+	const getCardIndex = () => {
+		return cardIndex++;
+	}
 </script>
 
 <section id="stack" class="section stack">
@@ -10,7 +15,7 @@
 		<h2 class="stack__title title title--third">My most loved technologies</h2>
 		<div class="stack__body">
 			{#each technologies as technology}
-				<TechnologyCard {technology} />
+				<TechnologyCard  {technology} delayIndex={getCardIndex()} />
 			{/each}
 		</div>
 	</div>
