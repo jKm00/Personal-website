@@ -11,23 +11,23 @@
 
 <header class="header">
 	<div class="content">
-		<a data-sveltekit-preload-data="hover" href="/" class="logo rounded">jKm</a>
+		<a sveltekit:prefetch href="/" class="logo rounded">jKm</a>
 		<!-- Hamburger -->
 		<div
 			class="hamburger"
 			class:hamburger--open={isOpen}
 			on:click={() => (isOpen = !isOpen)}
-			aria-controls="main-menu"
+			aria-controls="nav"
 		>
 			<span class="upper line" />
 			<span class="middle line" />
 			<span class="lower line" />
 		</div>
 		<!-- Nav -->
-		<nav class="nav" class:nav--open={isOpen}>
+		<nav id="nav" class="nav" class:nav--open={isOpen}>
 			<ol class="nav__list">
 				<li class="nav__list__item">
-					<a data-sveltekit-preload-data="hover" on:click={hideNav} class="nav__list__link link" href="/">Home</a>
+					<a sveltekit:prefetch on:click={hideNav} class="nav__list__link link" href="/">Home</a>
 				</li>
 				<li class="nav__list__item">
 					<a on:click={hideNav} class="nav__list__link link" href="/#about">About</a>
@@ -36,7 +36,7 @@
 					<a on:click={hideNav} class="nav__list__link link" href="/#projects">Projects</a>
 				</li>
 				<li class="nav__list__item">
-					<a data-sveltekit-preload-data="hover" on:click={hideNav} class="nav__list__link link" href="/resume"
+					<a sveltekit:prefetch on:click={hideNav} class="nav__list__link link" href="/resume"
 						>Resume</a
 					>
 				</li>
