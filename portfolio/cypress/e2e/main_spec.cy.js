@@ -11,7 +11,7 @@ describe('UI tests', () => {
 		element, resulting in the test clicking the element
 		but nothing happens because there are no events listening */
 		cy.wait(100);
-		cy.get('[aria-label="hamburger"]').click();
+		cy.get('[aria-controls="nav"]').click();
 		cy.get('.nav').should('have.class', 'nav--open');
 		cy.contains('About').click();
 		cy.url().should('include', '#about');
@@ -23,10 +23,10 @@ describe('UI tests', () => {
 	});
 
 	it('Test nav while rescaling', () => {
-		cy.get('[aria-label="hamburger"]').should('not.be.visible');
+		cy.get('[aria-controls="nav"]').should('not.be.visible');
 		cy.viewport(414, 896);
 		cy.wait(100);
-		cy.get('[aria-label="hamburger"]').should('be.visible').click();
+		cy.get('[aria-controls="nav"]').should('be.visible').click();
 		cy.viewport(1000, 900);
 		cy.get('.nav__socials').should('not.be.visible');
 	});

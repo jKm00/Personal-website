@@ -30,11 +30,11 @@
 <main>
 	<h1 class="title">Portfolio</h1>
 	{#each projects as project}
-		<a sveltekit:prefetch href={'/portfolio/' + project.id}>
+		<a data-sveltekit-preload-data="hover" href={'/portfolio/' + project.id}>
 			<h2 class="title">{project.title}</h2>
 		</a>
 	{/each}
-	<a sveltekit:prefetch href={'/portfolio/100'}>
+	<a href={'/portfolio/100'}>
 		<h2 class="title">100</h2>
 	</a>
 </main>

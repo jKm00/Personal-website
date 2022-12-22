@@ -17,14 +17,14 @@
 			class="hamburger"
 			class:hamburger--open={isOpen}
 			on:click={() => (isOpen = !isOpen)}
-			aria-label="hamburger"
+			aria-controls="nav"
 		>
 			<span class="upper line" />
 			<span class="middle line" />
 			<span class="lower line" />
 		</div>
 		<!-- Nav -->
-		<nav class="nav" class:nav--open={isOpen}>
+		<nav id="nav" class="nav" class:nav--open={isOpen}>
 			<ol class="nav__list">
 				<li class="nav__list__item">
 					<a sveltekit:prefetch on:click={hideNav} class="nav__list__link link" href="/">Home</a>
