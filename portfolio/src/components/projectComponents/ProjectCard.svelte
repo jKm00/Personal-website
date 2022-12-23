@@ -46,7 +46,7 @@
 			display: block;
 			position: absolute;
 			inset: 0;
-			background-color: var(--clr-neutral-900);
+			background-color: #272525;
 			opacity: 0.5;
 			transition: opacity 150ms ease-in-out;
 		}

@@ -157,7 +157,7 @@
 
 			& svg {
 				width: 0.6rem;
-				fill: #000;
+				fill: var(--clr-neutral-1000);
 			}
 
 			&--prev {

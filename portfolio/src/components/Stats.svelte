@@ -28,7 +28,7 @@
 
 		&__item {
 			cursor: default;
-			color: var(--clr-neutral-500);
+			color: var(--clr-neutral-400);
 		}
 
 		&__label {

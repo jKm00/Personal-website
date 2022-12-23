@@ -40,7 +40,7 @@
 			display: flex;
 			justify-content: space-between;
 			align-items: end;
-			color: var(--clr-neutral-500);
+			color: var(--clr-neutral-400);
 		}
 
 		&--small {
