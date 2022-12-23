@@ -26,18 +26,15 @@
 	import { Status } from '../../app/types/Status';
 	import Stats from '../../components/Stats.svelte';
 	import Carousel from '../../components/Carousel.svelte';
+	import ErrorPage from '@/components/feedback/ErrorPage.svelte';
 
-	export let status: number | undefined = undefined;
 	export let error: string | undefined = undefined;
 	export let project: Project;
 </script>
 
 <div class="section">
 	{#if error}
-		<div class="error--wrapper content">
-			<h1 class="title">{status}: {error}</h1>
-			<a sveltekit:prefetch href="/" class="link">Back to home page</a>
-		</div>
+		<ErrorPage />
 	{:else}
 		<article class="project content" id="project">
 			<!-- TODO: Change to swiper -->
@@ -87,17 +84,6 @@
 <style lang="scss">
 	.section {
 		background-color: var(--clr-neutral-800);
-	}
-
-	.error--wrapper {
-		display: grid;
-		justify-items: center;
-		align-content: center;
-		height: 100vh;
-
-		& h1 {
-			margin-bottom: 1em;
-		}
 	}
 
 	.project {
