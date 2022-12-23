@@ -13,13 +13,15 @@
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 
     & .large {
-      font-size: clamp(10rem, 20vw, 20rem);
+      font-size: clamp(5rem, 20vw, 20rem);
       color: var(--clr-accent-400)
     }
 
     & .small {
+      text-align: center;
       font-size: clamp(0.75rem, 1.5vw, 2rem);
       margin-bottom: 3rem;
     }
