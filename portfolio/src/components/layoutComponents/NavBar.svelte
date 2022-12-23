@@ -1,4 +1,6 @@
 <script lang="ts">
+	import ThemeToggle from "@/components/ThemeToggle.svelte";
+
 	let isOpen = false;
 
 	/**
@@ -39,6 +41,9 @@
 					<a sveltekit:prefetch on:click={hideNav} class="nav__list__link link" href="/resume"
 						>Resume</a
 					>
+				</li>
+				<li>
+					<ThemeToggle />
 				</li>
 			</ol>
 			<!-- Nav footer. Only visible on mobile version -->
@@ -121,6 +126,10 @@
 			justify-content: space-between;
 			align-items: center;
 		}
+	}
+
+	.theme-toggler-wrapper {
+
 	}
 
 	.hamburger {

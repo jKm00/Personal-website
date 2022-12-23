@@ -19,7 +19,7 @@
 	let yScroll: number;
 	let showTechnologyStack: boolean;
 
-	$: if (yScroll > 1000) showTechnologyStack = true;
+	$: if (yScroll > 1100) showTechnologyStack = true;
 </script>
 
 <svelte:window bind:scrollY={yScroll} />
@@ -35,6 +35,17 @@
 		<h3 class="card__title title">{technology.title}</h3>
 		<p class="card__desc">{technology.desc}</p>
 	</a>
+{:else}
+	<div in:fly="{{y: 50, duration: 1000, delay: delayIndex * 100}}" class="card placeholder" href={technology.link} target="_blank">
+		<img
+			class="card__img"
+			src={'/icons/' + technology.svg.file}
+			alt={technology.svg.alt}
+			loading="lazy"
+		/>
+		<h3 class="card__title title">{technology.title}</h3>
+		<p class="card__desc">{technology.desc}</p>
+	</div>
 {/if}
 
 <style lang="scss">
@@ -54,6 +65,10 @@
 			font-family: var(--ff-primary);
 			font-size: var(--fs-300);
 		}
+	}
+
+	.placeholder {
+		visibility: hidden;
 	}
 
 	@media only screen and (min-width: 45rem) {

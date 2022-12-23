@@ -216,7 +216,7 @@
 
 		&__legal {
 			background-color: var(--clr-neutral-1000);
-			color: var(--clr-neutral-500);
+			color: var(--clr-neutral-400);
 			font-size: var(--fs-300);
 			padding: 1rem 0;
 		}
