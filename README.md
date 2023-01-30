@@ -4,7 +4,7 @@
 
 # Personal Portfolio
 
-<a href="edvardsen.dev">
+<a href="https://edvardsen.dev/">
   <img alt="portfolio home page" src="/documentation//readme-addons//portfolio-thumbnail.PNG" />
 </a>
 
@@ -14,7 +14,7 @@
 
 This is just a fun little side project I've been working on. Wanted to try out some different technologies and play around.
 
-<a href="edvardsen.dev">Go check it out!</a>
+<a href="https://edvardsen.dev/">Go check it out!</a>
 
 <div align="right">
 
