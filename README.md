@@ -4,13 +4,17 @@
 
 # Personal Portfolio
 
+<a href="edvardsen.dev">
 ![Portfolio home page](/documentation//readme-addons//portfolio-thumbnail.PNG)
+</a>
 
 </div>
 
 ## A Personal Portfolio About Me, My Achievements & Goals
 
 This is just a fun little side project I've been working on. Wanted to try out some different technologies and play around.
+
+<a href="edvardsen.dev">Go check it out!</a>
 
 <div align="right">
 
