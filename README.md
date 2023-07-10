@@ -5,7 +5,7 @@
 # Personal Portfolio
 
 <a href="https://edvardsen.dev/">
-  <img alt="portfolio home page" src="/documentation//readme-addons//portfolio-thumbnail.PNG" />
+  <img alt="portfolio home page" src="./docs/assets/img/readme/portfolio-thumbnail.PNG" />
 </a>
 
 </div>
