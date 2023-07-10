@@ -3,7 +3,88 @@ import { Status } from "$lib/types/status";
 
 export const projects: Project[] = [
 	{
-		id: 1,
+		id: 2,
+		title: 'Trace Voice Pick',
+		thumbnail: {
+			path: '/assets/img/projects/voice-pick/figma-sketches.PNG',
+			alt: 'Figma sketches of the iOS application',
+		},
+		images: [
+			{
+				path: '/assets/img/projects/voice-pick/figma-sketches.PNG',
+				alt: 'Figma sketches of the iOS application'
+			},
+			{
+				path: '/assets/img/projects/voice-pick/managment-pages.PNG',
+				alt: 'Warehouse management pages'
+			},
+			{
+				path: '/assets/img/projects/voice-pick/profile-pages.PNG',
+				alt: 'Profile pages'
+			},
+			{
+				path: '/assets/img/projects/voice-pick/mati-trucking.jpeg',
+				alt: 'Mateusz driving a truck'
+			},
+			{
+				path: '/assets/img/projects/voice-pick/swift-page-diagram.png',
+				alt: 'iOS application flow chart'
+			},
+		],
+		status: Status.FINISHED,
+		stack: ['SwiftUI', 'Spring-boot', 'PostgreSQL', 'Docker', 'Keycloak'],
+		contributers: [
+			{
+				name: 'Joakim Edvardsen',
+				githubLink: 'https://github.com/jKm00'
+			},
+			{
+				name: 'Petter Molnes',
+				githubLink: 'https://github.com/PMolnes'
+			},
+			{
+				name: 'Mateusz Picheta',
+				githubLink: 'https://github.com/tama3ti'
+			},
+			{
+				name: 'Håkon Sætre',
+				githubLink: 'https://github.com/Haukaun'
+			},
+		],
+		features: [
+			'User authentication',
+			'Speech recognition',
+			'Text to speech',
+			'Touch and voice interface',
+			'Warehouse management',
+		],
+		repos: [
+			{
+				label: 'Swift Frontend',
+				link: 'https://gitlab.com/IDATA-2900-Group-1/voice-pick-frontend'
+			},
+			{
+				label: 'Spring Boot API',
+				link: 'https://gitlab.com/IDATA-2900-Group-1/voice-pick-backend'
+			}
+		],
+		resources: [
+			{
+				label: 'Read our thesis at:',
+				link: 'https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/3076971'
+			}
+		],
+		desc: 'My bachelor thesis project involved the development of a comprehensive iOS application using SwiftUI for efficient product plucking in a warehouse setting. The application incorporated a unique concept where employees could simultaneously utilize voice and touch interfaces for seamless plucking operations. Additionally, we designed and implemented a robust Spring Boot API to support a fully functional warehouse management system.',
+		text: [
+			'In my bachelor thesis, our team focused on developing a comprehensive solution to enhance the productivity of employees in warehouses. These employees are responsible for plucking products from shelves and loading them onto pallets before shipping them to local grocery stores. Currently, they rely solely on a voice-based system, where they communicate through voice commands. However, we aimed to revolutionize this process by creating a mobile application that combines both voice and touch interfaces. This empowers employees to choose the interface that best suits their needs, ensuring a more efficient workflow. While the voice interface offers hands-free operation for driving trucks and plucking products, the touch interface accelerates more complex actions.',
+			'Our final product was an iOS application that can be easily downloaded by anyone. The application provides users with the ability to create their own accounts and configure their warehouses with specific locations, products, and employees. Furthermore, we implemented an invitations feature, enabling warehouse leaders to invite other users to join their warehouses. This functionality fosters collaboration and streamlines communication within and across warehouses. Overall, the project was a resounding success, meeting and exceeding the requirements and requests of our employees.',
+			'Throughout the development process, our team gained valuable insights and knowledge. We encountered various challenges and learned to navigate them effectively. By working on this project, we honed our skills in iOS application development using SwiftUI, as well as in designing and implementing a robust Spring Boot API to support the warehouse management system. Additionally, we gained a deeper understanding of the user experience and the importance of providing flexible interface options to cater to diverse user preferences and workflows.',
+			'The bachelor thesis project not only allowed us to showcase our technical capabilities but also highlighted our ability to understand and address the needs of end-users. By actively involving employees and incorporating their feedback, we ensured that the final product aligned with their requirements and expectations. This experience further solidified our passion for software development and reinforced the value of creating user-centered solutions.',
+			'Overall, our bachelor thesis project was a significant achievement, both in terms of technical implementation and fulfilling the needs of warehouse employees. We are proud of the final product we delivered and the knowledge we acquired throughout the process, paving the way for future opportunities in the field of software development.'
+		]
+	},
+	{
+		id: 3,
 		title: 'XXS - Hiking Equipments',
 		thumbnail: {
 			path: '/assets/img/projects/xxs/xxs-thumbnail-compressed.jpg',
@@ -47,19 +128,19 @@ export const projects: Project[] = [
 		stack: ['React', 'Spring-Boot', 'Docker', 'PostgreSql', 'Nginx'],
 		contributers: [
 			{
-				name: 'falniir',
+				name: 'Eduard Christea',
 				githubLink: 'https://github.com/falniir'
 			},
 			{
-				name: 'jKm00',
+				name: 'Joakim Edvardsen',
 				githubLink: 'https://github.com/jKm00'
 			},
 			{
-				name: 'Richileu-A-Bailey',
+				name: 'Richileu Bailey',
 				githubLink: 'https://github.com/Richileu-A-Bailey'
 			},
 			{
-				name: 'TorsteinEide',
+				name: 'Torstein Eide',
 				githubLink: 'https://github.com/TorsteinEide'
 			}
 		],
@@ -70,7 +151,12 @@ export const projects: Project[] = [
 			'Image showcase with carousels',
 			'Admin page for product/user updates'
 		],
-		githubLink: 'https://github.com/jKm00/hiking-equipment',
+		repos: [
+			{
+				label: 'XXS repository',
+				link: 'https://github.com/jKm00/hiking-equipment', 
+			}
+		],
 		desc: 'As part of my bachelor degree, I together with three other students was given a fictional company selling premium hiking equipment. Together we planned out and developed a webshop selling their products as well as their values. Everything from design to user authentication.',
 		text: [
 			'In my fourth semester of my bachelor I had two courses, web technologies and application development. Throughout the semester, next to the lectures, we had an ongoing project combining what we learned in both the subjects to create a website.',
@@ -81,84 +167,84 @@ export const projects: Project[] = [
 			'This project was a great success. We reached all our goals and learned a lot along the process.'
 		]
 	},
+	// {
+	// 	id: 2,
+	// 	title: 'CryptoYard',
+	// 	thumbnail: {
+	// 		path: '/assets/img/projects/cryptoyard/cryptoyard-thumbnail-cropped.png',
+	// 		alt: 'Cryptoyard dashboard'
+	// 	},
+	// 	images: [
+	// 		{
+	// 			path: '/assets/img/projects/cryptoyard/cryptoyard-dashbord-compressed.jpg',
+	// 			alt: 'Cryptoyard dashboard'
+	// 		},
+	// 		{
+	// 			path: '/assets/img/projects/cryptoyard/signin-page-compressed.jpg',
+	// 			alt: 'Signin page'
+	// 		},
+	// 		{
+	// 			path: '/assets/img/projects/cryptoyard/signup-page-compressed.jpg',
+	// 			alt: 'Signup page'
+	// 		},
+	// 		{
+	// 			path: '/assets/img/projects/cryptoyard/market-compressed.jpg',
+	// 			alt: 'Market place'
+	// 		}
+	// 	],
+	// 	status: Status.IN_PROGRESS,
+	// 	stack: ['React', 'Spring-Boot', 'Docker', 'MySQL', 'Apache Kafka', 'Nginx'],
+	// 	contributers: [
+	// 		{
+	// 			name: 'falniir',
+	// 			githubLink: 'https://github.com/falniir'
+	// 		},
+	// 		{
+	// 			name: 'Haukaun',
+	// 			githubLink: 'https://github.com/Haukaun'
+	// 		},
+	// 		{
+	// 			name: 'hazer98',
+	// 			githubLink: 'https://github.com/hazer98'
+	// 		},
+	// 		{
+	// 			name: 'jKm00',
+	// 			githubLink: 'https://github.com/jKm00'
+	// 		},
+	// 		{
+	// 			name: 'PMolnes',
+	// 			githubLink: 'https://github.com/PMolnes'
+	// 		},
+	// 		{
+	// 			name: 'pr0xity',
+	// 			githubLink: 'https://github.com/pr0xity'
+	// 		},
+	// 		{
+	// 			name: 'strazdinsg',
+	// 			githubLink: 'https://github.com/strazdinsg'
+	// 		},
+	// 		{
+	// 			name: 'TorsteinEide',
+	// 			githubLink: 'https://github.com/TorsteinEide'
+	// 		}
+	// 	],
+	// 	features: [
+	// 		'User dashboard',
+	// 		'Login / Signup page',
+	// 		'Market place to select coins which appears in a users watchlist',
+	// 		'Web socket connection to Binance'
+	// 	],
+	// 	githubLink: 'https://github.com/The-Compilers/CryptoYard',
+	// 	desc: "A small hobby project with some students and teachers from my batchelor degree. The idea is to create a crypto bot, selling and purchasing crypto from the market together with a powerfull UI so the end user can have full control over what's going on.",
+	// 	text: [
+	// 		"To start a little developer community in our class some students together with a teacher started a project, creating a crypto bot. The main purpose is to learn technologies relevant in real-life projects, build a developer's portfolio and have fun socialising with people of same interrested.",
+	// 		'We started with a meating discussing what technologies we where to use for the project and ended up with spring-boot for our backend API, react for our frontend, MySQL for database, apache kafka for message sharing and ngnix as a server proxy.',
+	// 		"So far we have implemented a dashboard where the user should be able to see their watched coins with relevant information. Such as how much they have invested in each coin, the current price etc. We've also implemented login and signup pages for the frontend, but the authentication logic is still to be implemented.",
+	// 		'Come back for more updates 😉'
+	// 	]
+	// },
 	{
-		id: 2,
-		title: 'CryptoYard',
-		thumbnail: {
-			path: '/assets/img/projects/cryptoyard/cryptoyard-thumbnail-cropped.png',
-			alt: 'Cryptoyard dashboard'
-		},
-		images: [
-			{
-				path: '/assets/img/projects/cryptoyard/cryptoyard-dashbord-compressed.jpg',
-				alt: 'Cryptoyard dashboard'
-			},
-			{
-				path: '/assets/img/projects/cryptoyard/signin-page-compressed.jpg',
-				alt: 'Signin page'
-			},
-			{
-				path: '/assets/img/projects/cryptoyard/signup-page-compressed.jpg',
-				alt: 'Signup page'
-			},
-			{
-				path: '/assets/img/projects/cryptoyard/market-compressed.jpg',
-				alt: 'Market place'
-			}
-		],
-		status: Status.IN_PROGRESS,
-		stack: ['React', 'Spring-Boot', 'Docker', 'MySQL', 'Apache Kafka', 'Nginx'],
-		contributers: [
-			{
-				name: 'falniir',
-				githubLink: 'https://github.com/falniir'
-			},
-			{
-				name: 'Haukaun',
-				githubLink: 'https://github.com/Haukaun'
-			},
-			{
-				name: 'hazer98',
-				githubLink: 'https://github.com/hazer98'
-			},
-			{
-				name: 'jKm00',
-				githubLink: 'https://github.com/jKm00'
-			},
-			{
-				name: 'PMolnes',
-				githubLink: 'https://github.com/PMolnes'
-			},
-			{
-				name: 'pr0xity',
-				githubLink: 'https://github.com/pr0xity'
-			},
-			{
-				name: 'strazdinsg',
-				githubLink: 'https://github.com/strazdinsg'
-			},
-			{
-				name: 'TorsteinEide',
-				githubLink: 'https://github.com/TorsteinEide'
-			}
-		],
-		features: [
-			'User dashboard',
-			'Login / Signup page',
-			'Market place to select coins which appears in a users watchlist',
-			'Web socket connection to Binance'
-		],
-		githubLink: 'https://github.com/The-Compilers/CryptoYard',
-		desc: "A small hobby project with some students and teachers from my batchelor degree. The idea is to create a crypto bot, selling and purchasing crypto from the market together with a powerfull UI so the end user can have full control over what's going on.",
-		text: [
-			"To start a little developer community in our class some students together with a teacher started a project, creating a crypto bot. The main purpose is to learn technologies relevant in real-life projects, build a developer's portfolio and have fun socialising with people of same interrested.",
-			'We started with a meating discussing what technologies we where to use for the project and ended up with spring-boot for our backend API, react for our frontend, MySQL for database, apache kafka for message sharing and ngnix as a server proxy.',
-			"So far we have implemented a dashboard where the user should be able to see their watched coins with relevant information. Such as how much they have invested in each coin, the current price etc. We've also implemented login and signup pages for the frontend, but the authentication logic is still to be implemented.",
-			'Come back for more updates 😉'
-		]
-	},
-	{
-		id: 3,
+		id: 4,
 		title: 'Portfolio',
 		thumbnail: {
 			path: '/assets/img/projects/portfolio/portfolio-thumbnail-cropped-compressed.jpg',
@@ -207,7 +293,12 @@ export const projects: Project[] = [
 			}
 		],
 		features: ['Server-side rendering', 'On load and scroll animations', 'Data prefecting'],
-		githubLink: 'https://github.com/jKm00/Personal-website',
+		repos: [
+			{
+				label: 'Portfolio repository',
+				link: 'https://github.com/jKm00/Personal-website'
+			}
+		],
 		desc: 'This is the project you are currently visiting. Wanted to try out and learn some new technologies as well as I needed a portfolio to get my name out there. Since this was a solo project I could select the exact technologies I was most interrested in and learned a lot along the way. Such as end-to-end testing, github actions and server-side vs client-side rendering. Had a ton of fun with this project.',
 		text: [
 			'My portfolio was a small personal project I started, that only I have worked on. The result is the website you are currently visiting.',

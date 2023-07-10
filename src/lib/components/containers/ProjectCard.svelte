@@ -29,7 +29,7 @@
 		<h3 class="project__content__title title title--third">{project.title}</h3>
 		<div class="card card--light">
 			<p class="card__text text">{project.desc}</p>
-			<a href={'/portfolio/' + project.id} class="card__link link">View more details</a>
+			<a href={'/projects/' + project.id} class="card__link link">View more details</a>
 		</div>
 		<Stats stats={project.stack} {alignRight} />
 	</div>

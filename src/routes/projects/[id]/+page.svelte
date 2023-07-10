@@ -51,9 +51,31 @@
 					<p class="paragraph">{paragraph}</p>
 				{/each}
 			</section>
-			<a class="github-link" href={project.githubLink} target="_blank"
-				>Go check out the repo for yourself!</a
-			>
+			{#if project.resources}
+				<section class="resources">
+					<h3 class="resource-header title">Resources:</h3>
+					<ul class="vertical-list">
+						{#each project.resources as resource}
+							<li class="vertical-list__item">
+								{resource.label}
+								<a class="repo-link" href={resource.link} target="_blank">{resource.link}</a>
+							</li>
+						{/each}
+					</ul>
+				</section>
+			{/if}
+			<section class="repo">
+				<h3 class="repo-header title">Repositories:</h3>
+				<ul class="vertical-list">
+					{#each project.repos as repo}
+						<li class="vertical-list__item">
+							<a class="repo-link" href={repo.link} target="_blank"
+								>{repo.label ? repo.label : 'Link to repository'}</a
+							>
+						</li>
+					{/each}
+				</ul>
+			</section>
 		</article>
 	{/if}
 </div>
@@ -126,7 +148,19 @@
 			}
 		}
 
-		& .github-link {
+		& .resources {
+			margin-bottom: 2rem;
+		}
+
+		& .resource-header {
+			margin-bottom: 0.5rem;
+		}
+
+		& .repo-header {
+			margin-bottom: 0.5rem;
+		}
+
+		& .repo-link {
 			color: var(--clr-accent-400);
 		}
 

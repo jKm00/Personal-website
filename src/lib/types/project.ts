@@ -15,7 +15,8 @@ export type Project = {
 	stack: string[];
 	contributers: Contributor[];
 	features: string[];
-	githubLink: string;
+	repos: { label?: string, link: string }[];
+	resources?: { label: string, link: string }[]
 	desc: string;
 	text: string[];
 };

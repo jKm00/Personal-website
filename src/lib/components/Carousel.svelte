@@ -120,6 +120,7 @@
 		aspect-ratio: 16 / 8;
 		overflow: hidden;
 		position: relative;
+		background-color: var(--card-bg-light);
 
 		& .error-msg {
 			position: absolute;
@@ -132,7 +133,7 @@
 			flex-grow: 1;
 			flex-shrink: 0;
 			flex-basis: 100%;
-			object-fit: cover;
+			object-fit: contain;
 
 			pointer-events: none;
 
