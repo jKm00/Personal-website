@@ -147,6 +147,10 @@ export const projects: Project[] = [
 			{
 				label: 'Spring-boot API repository:',
 				link: 'https://gitlab.com/IDATA-2900-Group-1/voice-pick-backend'
+			},
+			{
+				label: 'YouTube video showing application in action:',
+				link: 'https://youtu.be/ldt2QxZ4jbU'
 			}
 		],
 		desc: 'My bachelor thesis project involved the development of a comprehensive iOS application using SwiftUI for efficient product plucking in a warehouse setting. The application incorporated a unique concept where employees could simultaneously utilize voice and touch interfaces for seamless plucking operations. Additionally, we designed and implemented a robust Spring Boot API to support a fully functional warehouse management system.',
@@ -232,7 +236,7 @@ export const projects: Project[] = [
 				link: 'https://github.com/jKm00/hiking-equipment'
 			}
 		],
-		desc: 'As part of my bachelor degree, I together with three other students was given a fictional company selling premium hiking equipment. Together we planned out and developed a webshop selling their products as well as their values. Everything from design to user authentication.',
+		desc: 'As part of my bachelor degree, I together with three other students was given a fictional company selling premium hiking equipment. Together we planned out and developed a webshop selling their products as well as their values. Everything from design to implementation.',
 		text: [
 			'In my fourth semester of my bachelor I had two courses, web technologies and application development. Throughout the semester, next to the lectures, we had an ongoing project combining what we learned in both the subjects to create a website.',
 			'As this was quite a large project, we had to work in group. Both to distribute the work load, but also to get experience working with a team as this is normally how developers work.',

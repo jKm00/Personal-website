@@ -26,7 +26,7 @@
 				</p>
 				<h1 class="title">{project.title}</h1>
 				<div class="contributers">
-					<ul class="horizontal-list">
+					<ul class="horizontal-list authors">
 						<li class="horizontal-list__item">Authors:</li>
 						{#each project.contributers as contributer}
 							<li class="horizontal-list__item">
@@ -119,12 +119,12 @@
 			gap: 1rem;
 
 			&__item {
-				color: var(--clr-neutral-500);
+				color: var(--clr-neutral-400);
 				font-size: var(--fs-350);
 			}
 
 			&__link {
-				color: var(--clr-neutral-500);
+				color: var(--clr-neutral-400);
 				font-size: var(--fs-350);
 				text-decoration: none;
 			}
