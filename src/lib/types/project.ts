@@ -1,5 +1,5 @@
-import type { Status } from "./status";
-import type { Image } from "./image";
+import type { Status } from './status';
+import type { Image } from './image';
 
 type Contributor = {
 	name: string;
@@ -15,8 +15,7 @@ export type Project = {
 	stack: string[];
 	contributers: Contributor[];
 	features: string[];
-	repos: { label?: string, link: string }[];
-	resources?: { label: string, link: string }[]
+	resources: { label: string; link: string }[];
 	desc: string;
 	text: string[];
 };

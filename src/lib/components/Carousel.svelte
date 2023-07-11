@@ -76,7 +76,9 @@
 				on:dragstart|preventDefault={() => {
 					return false;
 				}}
-				style={`transform: translateX(${-transformAmount}px)`}
+				style="transform: translateX({-transformAmount}px); {image.fit
+					? `--objectFit:${image.fit}`
+					: ''}"
 				class="carousel__item unselectable"
 				src={image.path}
 				alt={image.alt}
@@ -130,10 +132,11 @@
 		}
 
 		&__item {
+			--objectFit: cover;
 			flex-grow: 1;
 			flex-shrink: 0;
 			flex-basis: 100%;
-			object-fit: contain;
+			object-fit: var(--objectFit);
 
 			pointer-events: none;
 

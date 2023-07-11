@@ -79,6 +79,7 @@
 	.hero {
 		& .content {
 			justify-content: space-between;
+			align-items: center;
 		}
 
 		& h1 {
@@ -99,7 +100,7 @@
 		}
 	}
 
-	@media screen and (min-width: 45rem) {
+	@media screen and (min-width: 50rem) {
 		.hero {
 			& img {
 				width: auto;

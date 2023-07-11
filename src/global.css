@@ -317,7 +317,7 @@ picture {
 	grid-column: 2 / 3;
 }
 
-@media screen and (min-width: 45rem) {
+@media screen and (min-width: 50rem) {
 	.two-column {
 		display: flex;
 		gap: 2rem;
