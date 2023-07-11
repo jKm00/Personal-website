@@ -10,12 +10,12 @@ export const technologies = [
 	},
 	{
 		svg: {
-			file: 'react-original.svg',
-			alt: 'React logo'
+			file: 'tailwindcss-icon.svg',
+			alt: 'Tailwind logo'
 		},
-		title: 'React',
-		desc: 'The first JavaScript framework I tested out',
-		link: 'https://reactjs.org/'
+		title: 'Tailwind',
+		desc: 'Create visually pleasing designs quickly',
+		link: 'https://tailwindcss.com/'
 	},
 	{
 		svg: {
