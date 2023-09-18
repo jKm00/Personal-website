@@ -1,7 +1,7 @@
 export const experiences = [
-  {
+	{
 		title: 'Internship',
-    company: 'Solwr',
+		company: 'Solwr',
 		start: '20. May 2022',
 		end: '',
 		place: 'Ålesund',
@@ -9,7 +9,7 @@ export const experiences = [
 	},
 	{
 		title: 'Goods Flow Co-worker',
-    company: 'Ikea',
+		company: 'Ikea',
 		start: '21. Oktober 2019',
 		end: '31. Juli 2020',
 		place: 'Trondheim',
@@ -17,7 +17,7 @@ export const experiences = [
 	},
 	{
 		title: 'Part-time Salesman',
-    company: 'YX / 7-eleven',
+		company: 'YX / 7-eleven',
 		start: '10. Mai 2018',
 		end: '1. August 2019',
 		place: 'Vestby',
@@ -25,7 +25,7 @@ export const experiences = [
 	},
 	{
 		title: 'Supervisor at ASP (SFO)',
-    company: 'Vestby Ungdomsskole',
+		company: 'Vestby Ungdomsskole',
 		start: '30. Mars 2016',
 		end: '3. Mai 2016',
 		place: 'Vestby',
@@ -33,7 +33,7 @@ export const experiences = [
 	},
 	{
 		title: 'Working week at the Norwegian Military Media Center',
-    company: 'Norwegian Armed Forces',
+		company: 'Norwegian Armed Forces',
 		start: '23. Februar 2015',
 		end: '28. Februar 2015',
 		place: 'Oslo',
@@ -42,6 +42,13 @@ export const experiences = [
 ];
 
 export const educations = [
+	{
+		title: 'Datateknologi',
+		start: '21. August 2023',
+		end: '',
+		place: 'NTNU, Trondheim',
+		desc: "Master's degree in data technology with focus on software systems"
+	},
 	{
 		title: 'Computer science',
 		start: '17. August 2020',
