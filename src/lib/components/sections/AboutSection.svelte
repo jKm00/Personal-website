@@ -29,9 +29,8 @@
 			<h2 class="title title--secondary about__title">About</h2>
 			<div class="card about__card">
 				<p class="text">
-					I'm a full stack developer from Norway. I'm currently in my third and final year of my
-					bachelor degree in computer science and are thinking of appling for a master in computer
-					technology.
+					I'm a full stack developer from Norway. I'm currently in my fourth year towards a master
+					degree in computer science.
 				</p>
 				<p class="text">
 					Started fiddeling with programming when I was 16 and have loved it every since. Besides
