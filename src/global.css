@@ -53,6 +53,11 @@
 	--rounding: 2px;
 
 	--shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+	
+	--foreground: var(--clr-neutral-100);
+	--background: var(--clr-neutral-900);
+	--primary: var(--clr-accent-400);
+	--primary-foreground: var(--clr-neutral-100);
 }
 
 /* Light color theme */
@@ -79,6 +84,10 @@ body[data-theme='light'] {
 
 	--card-bg: #fff;
 	--card-bg-light: #fff;
+
+	--foreground: var(--clr-neutral-100);
+	--background: var(--clr-neutral-900);
+	--primary: var(--clr-accent-200);
 }
 
 @media screen and (min-width: 30rem) {
@@ -241,27 +250,59 @@ picture {
 /* Buttons */
 
 .cta {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+
 	padding: 0.5em 1em;
 	border-radius: var(--rounding);
-	color: var(--clr-neutral-000);
-	background-color: var(--clr-accent-400);
+	border: 1px solid var(--primary);
+	color: var(--primary-foreground);
+	background-color: var(--primary);
 
 	font-family: var(--ff-primary);
 	font-size: var(--fs-400);
 	text-decoration: none;
 	text-align: center;
 
-	transition: background 150ms ease-in-out, color 150ms ease-in-out;
+	transition: background 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out, fill 150ms ease-in-out;
+}
+
+.cta svg {
+	fill: var(--primary-foreground);
 }
 
 .cta:hover,
 .cta:focus {
+	border: 1px solid var(--clr-neutral-000);
 	background: var(--clr-neutral-000);
 	color: var(--clr-neutral-900);
 }
 
+.cta:hover svg,
+.cta:focus svg {
+	fill: var(--clr-neutral-900);
+}
+
 .cta--dark {
-	background-color: var(--clr-neutral-900);
+	background-color: #0f0e0e;
+}
+
+.cta--dark:hover,
+.cta--dar:focus {
+	background-color: #f1f3f5;
+	color: #0f0e0e;
+	border: 1px solid #f1f3f5;
+}
+
+.cta--secondary {
+	border: 1px solid var(--clr-neutral-100);
+	background-color: transparent;
+	color: var(--foreground);
+}
+
+.cta--secondary svg {
+	fill: var(--foreground);
 }
 
 .link {
