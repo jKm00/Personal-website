@@ -25,6 +25,11 @@
 	--card-bg: var(--clr-neutral-800);
 	--card-bg-light: var(--clr-neutral-700);
 
+	--foreground: var(--clr-neutral-100);
+	--background: var(--clr-neutral-900);
+	--primary: var(--clr-accent-400);
+	--primary-foreground: var(--clr-neutral-900);
+
 	--ff-primary: 'Raleway', sans-serif;
 	--ff-secondary: 'Roboto Mono', monospace;
 
@@ -53,11 +58,6 @@
 	--rounding: 2px;
 
 	--shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-	
-	--foreground: var(--clr-neutral-100);
-	--background: var(--clr-neutral-900);
-	--primary: var(--clr-accent-400);
-	--primary-foreground: var(--clr-neutral-100);
 }
 
 /* Light color theme */
@@ -142,7 +142,7 @@ html {
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 
-	transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+	transition: background-color 200ms ease-in-out, color 200ms ease-in-out, fill 200ms ease-in-out;
 }
 
 /* A elements that don't have a class get default styles */
@@ -250,13 +250,14 @@ picture {
 /* Buttons */
 
 .cta {
+	--border-size: 2px;
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
 
 	padding: 0.5em 1em;
 	border-radius: var(--rounding);
-	border: 1px solid var(--primary);
+	border: var(--border-size) solid var(--primary);
 	color: var(--primary-foreground);
 	background-color: var(--primary);
 
@@ -274,7 +275,7 @@ picture {
 
 .cta:hover,
 .cta:focus {
-	border: 1px solid var(--clr-neutral-000);
+	border: var(--border-size) solid var(--clr-neutral-000);
 	background: var(--clr-neutral-000);
 	color: var(--clr-neutral-900);
 }
@@ -286,17 +287,18 @@ picture {
 
 .cta--dark {
 	background-color: #0f0e0e;
+	color: #f1f3f5;
 }
 
 .cta--dark:hover,
 .cta--dar:focus {
 	background-color: #f1f3f5;
 	color: #0f0e0e;
-	border: 1px solid #f1f3f5;
+	border: var(--border-size) solid #f1f3f5;
 }
 
 .cta--secondary {
-	border: 1px solid var(--clr-neutral-100);
+	border: var(--border-size) solid var(--clr-neutral-100);
 	background-color: transparent;
 	color: var(--foreground);
 }
