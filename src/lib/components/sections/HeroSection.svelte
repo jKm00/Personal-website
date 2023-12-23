@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
+	import Cube from '../containers/Cube.svelte';
 
 	// TODO: randomly select memoji on load
 	const IMAGES = [
@@ -65,6 +66,7 @@
 					>Check out GitHub</a
 				>
 			</div>
+			<!-- <Cube /> -->
 			<img
 				in:fly={{ y: yValue, duration: duration * 1.5 }}
 				src={'/assets/img/memojis/memoji-computer.png'}

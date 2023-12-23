@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { Technology } from '$lib/types/technology';
-	import Cube from '../containers/Cube.svelte';
 	import TechnologyCard from '../containers/TechnologyCard.svelte';
 
 	export let technologies: Technology[];
@@ -19,7 +18,6 @@
 				<TechnologyCard {technology} delayIndex={getCardIndex()} />
 			{/each}
 		</div>
-		<Cube />
 	</div>
 </section>
 
