@@ -266,7 +266,8 @@ picture {
 	text-decoration: none;
 	text-align: center;
 
-	transition: background 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out, fill 150ms ease-in-out;
+	transition: background 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out,
+		fill 150ms ease-in-out;
 }
 
 .cta svg {
