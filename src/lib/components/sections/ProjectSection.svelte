@@ -3,14 +3,16 @@
 	import ProjectCard from '../containers/ProjectCard.svelte';
 
 	export let projects: Project[];
+
+	$: reversedProjects = [...projects].reverse();
 </script>
 
 <section id="projects" class="section projects">
 	<div class="content">
 		<h2 class="title title--secondary projects__title">Projects I've worked on</h2>
 		<div class="projects--wrapper">
-			{#each projects as project (project.id)}
-				<ProjectCard {project} alignRight={project.id % 2 != 0} />
+			{#each reversedProjects as project, index (project.id)}
+				<ProjectCard {project} alignRight={index % 2 == 0} />
 			{/each}
 		</div>
 	</div>
