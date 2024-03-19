@@ -364,10 +364,10 @@ export const projects: Project[] = [
 		],
 		desc: 'Sphere is an application that helps you keep track of your subscriptions. With a dashboard that shows you the total cost of all your subscriptions, as well as a list of all your subscriptions and the ability to add new ones.',
 		text: [
-			'Sphere is a small web application that helps you keep track of your subscriptions. The main idea was to give a quick overview of all your subscriptions expenses.',
-			'The application provides a dashboard that displays the total cost of all your subscriptions, how many subscriptions you have, and which of your subscriptions are the most expensive. In addition, the dashboard provides a table that shows more detail information about each individual subscription with quick access to actions.',
-			'From the dashboard, a user can easily add new subscriptions, update existing ones, or delete subscriptions they no longer need. Additionally, users can chose there preffered currency and period (like monthly, yearly etc...). The application uses this information and calculates the values to the users desire based on the current exchange rates.',
-			'The application is build with SvelteKit and uses Prisma as an ORM to interact with the Postgres database. For authentication, the application implements Lucia which is an auth library that abstracts away the complexity of handling sessions. The application also implementes PWA with service workers allowing users to download it website as an application on their mobile device. Additionally, playwright has been used to great extent for testing the server side logic.'
+			'Sphere is a small web application that helps you keep track of your subscriptions. The main idea is to give a quick overview of all your subscription expenses.',
+			'The application provides a dashboard that displays the total cost of all your subscriptions, how many subscriptions you have, and which of your subscriptions are the most expensive. In addition, the dashboard provides a table that shows more detailed information about each individual subscription with quick access to actions.',
+			"From the dashboard, a user can easily add new subscriptions, update existing ones, or delete subscriptions they no longer need. Additionally, users can choose their preffered currency and period (like monthly, yearly etc.). The application uses this information and calculates the values to the user's desire based on the current exchange rates.",
+			'The application is built with SvelteKit and uses Prisma as an ORM to interact with the Postgres database. The UI is built using Shadcn and Tailwind. For authentication, the application implements Lucia which is an auth library that abstracts away the complexity of handling sessions. The application implements PWA with service workers allowing users to download the website as an application on their mobile device. Because of this, the website was developed with a mobile first approach ensuring that it looks great on all screen sizes. Additionally, playwright has been used extensively for testing the server side logic.'
 		]
 	},
 	{
@@ -424,7 +424,12 @@ export const projects: Project[] = [
 				link: 'https://github.com/jKm00/tf2dle'
 			}
 		],
-		desc: 'TF2DLE is a wordle like game for the online game TF2. With daily challenges that reset every day, the players are tasked to find the correct answer for the different game modes in as few guesses as possible.',
-		text: []
+		desc: 'TF2DLE is a Wordle like game for the online game TF2. With daily challenges that reset every day, the players are tasked to find the correct answer for the different game modes in as few guesses as possible.',
+		text: [
+			'Wordle is a game that has been around for quite some time and different variations of the game have been made like Loldle. TF2DLE is heavily inspired by these games with different game modes and challenges that reset every day.',
+			'TF2DLE currently has three different game modes; weapon, map, and cosmetic. In each category the player has to guess todays selected item in as few guesses as possible. The different game modes provide different hints to help the player guess the correct answer. The weapon game mode is more like the traditional Wordle game with color-coded hints. Because of the color hints, a color blind mode is available to help people with impeared vision. The map game mode provides a zoomed in image of the map that zooms out a small amount for each guess. The cosmetic game mode provides three levels of hints (rotation, color, and class) each unlocking after a certain number of guesses.',
+			'TF2DLE is meant to be a fun little game that you can use to take a break from your daily tasks. Additionally, you can show your knowledge of the game, bragging to Twitter when you make a good run by utilizing the social media sharing feature.',
+			'The application is built with Sveltekit and uses Prisma as an ORM to interact with the Postgres database. The UI is built with Shadcn and Tailwind. Finally it all comes together by being hosted on Vercel for a fast and reliable development experience with CI/CD pipelines.'
+		]
 	}
 ];
