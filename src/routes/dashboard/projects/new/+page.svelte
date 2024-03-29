@@ -1,22 +1,23 @@
 <script lang="ts">
 	import { SquarePlus, CircleX } from 'lucide-svelte';
 
+	let title = '';
+	let lead = '';
+	let text = '';
+	let status: string;
 	let technologies = [
 		{
 			name: '',
 			link: ''
 		}
 	];
-
 	let authors = [
 		{
 			name: '',
 			link: ''
 		}
 	];
-
 	let features = [''];
-
 	let resources = [
 		{
 			label: '',
@@ -61,12 +62,24 @@
 	<!-- Title -->
 	<div>
 		<label for="title" class="label">Title</label>
-		<input id="title" class="input" type="text" placeholder="Csgo strats..." />
+		<input id="title" class="input" bind:value={title} type="text" placeholder="Csgo strats..." />
 	</div>
 	<!-- Lead -->
 	<div>
 		<label for="lead" class="label">Lead</label>
-		<textarea id="lead" class="input" placeholder="Catchy lead..." rows="3" />
+		<textarea id="lead" class="input" bind:value={lead} placeholder="Catchy lead..." rows="3" />
+	</div>
+	<!-- Lead -->
+	<div>
+		<label for="lead" class="label">Project body</label>
+		<textarea id="lead" class="input" bind:value={text} placeholder="Full text..." rows="10" />
+	</div>
+	<div>
+		<label for="status" class="label">Status</label>
+		<select id="status" class="input" bind:value={status}>
+			<option value="on-going">On-going</option>
+			<option value="finished">Finished</option>
+		</select>
 	</div>
 	<!-- Technologies -->
 	<div>
@@ -168,14 +181,7 @@
 <!-- 
 	- thumbnail
 	- images
-	- title
-	- lead
 	- status
-	- technologies
-	- authors
-	- features
-	- text
-	- resources
  -->
 
 <style scoped>

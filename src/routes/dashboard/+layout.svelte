@@ -11,11 +11,11 @@
 		{ name: 'Technologies', url: '/dashboard/technologies', icon: Cpu }
 	];
 
-	$: active = $page.url.pathname.split('/').pop();
+	$: active = $page.url.pathname.split('/')[2];
 </script>
 
 <div class="body">
-	<aside>
+	<nav>
 		<div>
 			<h1 class="title"><a href="/dashboard">Dashboard</a></h1>
 			<ul class="list">
@@ -33,7 +33,7 @@
 			</ul>
 		</div>
 		<a class="item" href="/dashboard/logout"><LogOut class="icon" />Logout</a>
-	</aside>
+	</nav>
 	<main class="main">
 		<slot />
 	</main>
@@ -45,11 +45,16 @@
 		grid-template-columns: 15rem 1fr;
 	}
 
-	aside {
+	nav {
+		position: sticky;
+		top: 0;
+		bottom: 0;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		background-color: var(--card-bg);
+		height: 100dvh;
+		padding-bottom: 1rem;
 	}
 
 	.title {
