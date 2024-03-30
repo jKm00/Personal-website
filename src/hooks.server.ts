@@ -8,8 +8,6 @@ export async function handle({ event, resolve }) {
 
 	const authCookie = event.cookies.get('auth');
 
-	console.log('authCookie', authCookie);
-
 	if (!authCookie || authCookie !== ADMIN_TOKEN) {
 		return new Response('Redirect', { status: 303, headers: { location: '/auth/login' } });
 	}

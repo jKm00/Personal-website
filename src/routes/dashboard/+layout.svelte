@@ -32,7 +32,7 @@
 				{/each}
 			</ul>
 		</div>
-		<a class="item" href="/dashboard/logout"><LogOut class="icon" />Logout</a>
+		<a class="item" href="/auth/logout"><LogOut class="icon" />Logout</a>
 	</nav>
 	<main class="main">
 		<slot />
