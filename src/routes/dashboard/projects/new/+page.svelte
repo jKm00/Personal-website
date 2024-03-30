@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { SquarePlus, CircleX, Loader2 } from 'lucide-svelte';
 
 	let isLoading = false;
+	let error: string | null = null;
 
 	let title = '';
 	let titleError: string | null = null;
@@ -74,50 +76,80 @@
 		resources = resources.filter((_, i) => i !== index);
 	}
 
-	function handleSubmit() {
+	async function handleSubmit() {
 		resetErrors();
 		isLoading = true;
-		let error = false;
 
 		if (title === '') {
 			titleError = 'Title is required';
-			error = true;
+			error = 'Make ';
 		}
 		if (lead === '') {
 			leadError = 'Lead is required';
-			error = true;
+			error = 'Make sure all fields are filled in correctly';
 		}
 		if (text === '') {
 			textError = 'Text is required';
-			error = true;
+			error = 'Make sure all fields are filled in correctly';
 		}
 		if (status === '') {
 			statusError = 'Status is required';
-			error = true;
+			error = 'Make sure all fields are filled in correctly';
 		}
 		if (technologies.some((t) => t.name === '' || t.link === '')) {
 			technologyError = 'All technologies must have a name and a link';
-			error = true;
+			error = 'Make sure all fields are filled in correctly';
 		}
 		if (authors.some((a) => a.name === '' || a.link === '')) {
 			authorError = 'All authors must have a name and a link';
-			error = true;
+			error = 'Make sure all fields are filled in correctly';
 		}
 		if (features.some((f) => f === '')) {
 			featureError = 'All features must have a value';
-			error = true;
+			error = 'Make sure all fields are filled in correctly';
 		}
 		if (resources.some((r) => r.label === '' || r.link === '')) {
 			resourceError = 'All resources must have a label and a link';
-			error = true;
+			error = 'Make sure all fields are filled in correctly';
 		}
-		if (error) {
+		if (error !== null) {
 			isLoading = false;
 			return;
 		}
+
+		// Send data to the server
+		const form = new FormData();
+		form.append('title', title);
+		form.append('lead', lead);
+		form.append('text', text);
+		form.append('status', status);
+		form.append('technologies', JSON.stringify(technologies));
+		form.append('authors', JSON.stringify(authors));
+		form.append('features', JSON.stringify(features));
+		form.append('resources', JSON.stringify(resources));
+
+		try {
+			const res = await fetch('/api/v1/projects', {
+				method: 'POST',
+				body: form
+			});
+
+			if (!res.ok) {
+				error = 'Something went wrong, please try again later.';
+				isLoading = false;
+				return;
+			}
+		} catch (error) {
+			error = 'Something went wrong, please try again later.';
+		} finally {
+			isLoading = false;
+		}
+
+		goto('/dashboard/projects');
 	}
 
 	function resetErrors() {
+		error = null;
 		titleError = null;
 		leadError = null;
 		textError = null;
@@ -158,7 +190,7 @@
 			<p class="error">{leadError}</p>
 		{/if}
 	</div>
-	<!-- Lead -->
+	<!-- Text -->
 	<div>
 		<label for="text" class="label">Project body</label>
 		<textarea
@@ -317,6 +349,9 @@
 			Save draft
 		{/if}
 	</button>
+	{#if error}
+		<p class="error">{error}</p>
+	{/if}
 </form>
 
 <!-- 
