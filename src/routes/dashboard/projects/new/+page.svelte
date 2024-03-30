@@ -1,29 +1,46 @@
 <script lang="ts">
-	import { SquarePlus, CircleX } from 'lucide-svelte';
+	import { SquarePlus, CircleX, Loader2 } from 'lucide-svelte';
+
+	let isLoading = false;
 
 	let title = '';
+	let titleError: string | null = null;
+
 	let lead = '';
+	let leadError: string | null = null;
+
 	let text = '';
+	let textError: string | null = null;
+
 	let status: string;
+	let statusError: string | null = null;
+
 	let technologies = [
 		{
 			name: '',
 			link: ''
 		}
 	];
+	let technologyError: string | null = null;
+
 	let authors = [
 		{
 			name: '',
 			link: ''
 		}
 	];
+	let authorError: string | null = null;
+
 	let features = [''];
+	let featureError: string | null = null;
+
 	let resources = [
 		{
 			label: '',
 			link: ''
 		}
 	];
+	let resourceError: string | null = null;
 
 	function addTechnology() {
 		technologies = [...technologies, { name: '', link: '' }];
@@ -56,31 +73,116 @@
 	function removeResource(index: number) {
 		resources = resources.filter((_, i) => i !== index);
 	}
+
+	function handleSubmit() {
+		resetErrors();
+		isLoading = true;
+		let error = false;
+
+		if (title === '') {
+			titleError = 'Title is required';
+			error = true;
+		}
+		if (lead === '') {
+			leadError = 'Lead is required';
+			error = true;
+		}
+		if (text === '') {
+			textError = 'Text is required';
+			error = true;
+		}
+		if (status === '') {
+			statusError = 'Status is required';
+			error = true;
+		}
+		if (technologies.some((t) => t.name === '' || t.link === '')) {
+			technologyError = 'All technologies must have a name and a link';
+			error = true;
+		}
+		if (authors.some((a) => a.name === '' || a.link === '')) {
+			authorError = 'All authors must have a name and a link';
+			error = true;
+		}
+		if (features.some((f) => f === '')) {
+			featureError = 'All features must have a value';
+			error = true;
+		}
+		if (resources.some((r) => r.label === '' || r.link === '')) {
+			resourceError = 'All resources must have a label and a link';
+			error = true;
+		}
+		if (error) {
+			isLoading = false;
+			return;
+		}
+	}
+
+	function resetErrors() {
+		titleError = null;
+		leadError = null;
+		textError = null;
+		statusError = null;
+		technologyError = null;
+		authorError = null;
+		featureError = null;
+		resourceError = null;
+	}
 </script>
 
-<form>
+<form on:submit|preventDefault={handleSubmit}>
 	<!-- Title -->
 	<div>
 		<label for="title" class="label">Title</label>
-		<input id="title" class="input" bind:value={title} type="text" placeholder="Csgo strats..." />
+		<input
+			id="title"
+			class="input {titleError && 'error'}"
+			bind:value={title}
+			type="text"
+			placeholder="Csgo strats..."
+		/>
+		{#if titleError}
+			<p class="error">{titleError}</p>
+		{/if}
 	</div>
 	<!-- Lead -->
 	<div>
 		<label for="lead" class="label">Lead</label>
-		<textarea id="lead" class="input" bind:value={lead} placeholder="Catchy lead..." rows="3" />
+		<textarea
+			id="lead"
+			class="input {leadError && 'error'}"
+			bind:value={lead}
+			placeholder="Catchy lead..."
+			rows="3"
+		/>
+		{#if leadError}
+			<p class="error">{leadError}</p>
+		{/if}
 	</div>
 	<!-- Lead -->
 	<div>
-		<label for="lead" class="label">Project body</label>
-		<textarea id="lead" class="input" bind:value={text} placeholder="Full text..." rows="10" />
+		<label for="text" class="label">Project body</label>
+		<textarea
+			id="text"
+			class="input {textError && 'error'}"
+			bind:value={text}
+			placeholder="Full text..."
+			rows="10"
+		/>
+		{#if textError}
+			<p class="error">{textError}</p>
+		{/if}
 	</div>
 	<!-- Status --->
 	<div>
 		<label for="status" class="label">Status</label>
-		<select id="status" class="input" bind:value={status}>
+		<select id="status" class="input {statusError && 'error'}" bind:value={status}>
+			<option value="">Select status</option>
 			<option value="on-going">On-going</option>
 			<option value="finished">Finished</option>
 		</select>
+		{#if statusError}
+			<p class="error">{statusError}</p>
+		{/if}
 	</div>
 	<!-- Technologies -->
 	<div>
@@ -91,13 +193,13 @@
 					<input
 						bind:value={technology.name}
 						type="text"
-						class="input"
+						class="input {technologyError && 'error'}"
 						placeholder="Technology name"
 					/>
 					<input
 						bind:value={technology.link}
 						type="url"
-						class="input"
+						class="input {technologyError && 'error'}"
 						placeholder="Technology link"
 					/>
 					<button
@@ -108,6 +210,9 @@
 				</div>
 			{/each}
 		</div>
+		{#if technologyError}
+			<p class="error">{technologyError}</p>
+		{/if}
 		<button class="button self-start" on:click|preventDefault={addTechnology}
 			><SquarePlus class="icon" />Add</button
 		>
@@ -118,8 +223,18 @@
 		<div class="two-column">
 			{#each authors as author, index}
 				<div class="two-column-items">
-					<input bind:value={author.name} type="text" class="input" placeholder="Author name" />
-					<input bind:value={author.link} type="url" class="input" placeholder="Author link" />
+					<input
+						bind:value={author.name}
+						type="text"
+						class="input {authorError && 'error'}"
+						placeholder="Author name"
+					/>
+					<input
+						bind:value={author.link}
+						type="url"
+						class="input {authorError && 'error'}"
+						placeholder="Author link"
+					/>
 					<button
 						on:click|preventDefault={() => removeAuthor(index)}
 						disabled={authors.length === 1}
@@ -128,6 +243,9 @@
 				</div>
 			{/each}
 		</div>
+		{#if authorError}
+			<p class="error">{authorError}</p>
+		{/if}
 		<button class="button self-start" on:click|preventDefault={addAuthor}
 			><SquarePlus class="icon" />Add</button
 		>
@@ -138,7 +256,12 @@
 		<div class="one-column">
 			{#each features as feature, index}
 				<div class="one-column-items">
-					<input bind:value={feature} type="text" class="input" placeholder="Feature" />
+					<input
+						bind:value={feature}
+						type="text"
+						class="input {featureError && 'error'}"
+						placeholder="Feature"
+					/>
 					<button
 						on:click|preventDefault={() => removeFeature(index)}
 						disabled={features.length === 1}
@@ -147,6 +270,9 @@
 				</div>
 			{/each}
 		</div>
+		{#if featureError}
+			<p class="error">{featureError}</p>
+		{/if}
 		<button class="button self-start" on:click|preventDefault={addFeature}
 			><SquarePlus class="icon" />Add</button
 		>
@@ -160,10 +286,15 @@
 					<input
 						bind:value={resource.label}
 						type="text"
-						class="input"
+						class="input {resourceError && 'error'}"
 						placeholder="Resource label"
 					/>
-					<input bind:value={resource.link} type="url" class="input" placeholder="Resource link" />
+					<input
+						bind:value={resource.link}
+						type="url"
+						class="input {resourceError && 'error'}"
+						placeholder="Resource link"
+					/>
 					<button
 						on:click|preventDefault={() => removeResource(index)}
 						disabled={resources.length === 1}
@@ -172,11 +303,20 @@
 				</div>
 			{/each}
 		</div>
+		{#if resourceError}
+			<p class="error">{resourceError}</p>
+		{/if}
 		<button class="button self-start" on:click|preventDefault={addResource}
 			><SquarePlus class="icon" />Add</button
 		>
 	</div>
-	<button class="button">Save draft</button>
+	<button disabled={isLoading} class="button" type="submit">
+		{#if isLoading}
+			<Loader2 class="icon spin" />
+		{:else}
+			Save draft
+		{/if}
+	</button>
 </form>
 
 <!-- 
@@ -217,6 +357,10 @@
 		font-size: var(--fs-350);
 	}
 
+	.input.error {
+		outline: 1px solid var(--error);
+	}
+
 	.button {
 		border: none;
 		background-color: var(--primary);
@@ -228,6 +372,15 @@
 		padding: 0.5rem 2rem;
 		margin-top: 0.5rem;
 		border-radius: var(--rounding);
+	}
+
+	.button:hover,
+	.button:focus {
+		background-color: var(--clr-accent-500);
+	}
+
+	.button:active {
+		background-color: var(--clr-accent-600);
 	}
 
 	.self-start {
