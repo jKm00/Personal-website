@@ -29,6 +29,8 @@
 	--primary: var(--clr-accent-400);
 	--primary-foreground: var(--clr-neutral-900);
 
+	--error: #ff8080;
+
 	--ff-primary: 'Raleway', sans-serif;
 	--ff-secondary: 'Roboto Mono', monospace;
 

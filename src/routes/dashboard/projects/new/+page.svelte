@@ -74,6 +74,7 @@
 		<label for="lead" class="label">Project body</label>
 		<textarea id="lead" class="input" bind:value={text} placeholder="Full text..." rows="10" />
 	</div>
+	<!-- Status --->
 	<div>
 		<label for="status" class="label">Status</label>
 		<select id="status" class="input" bind:value={status}>
