@@ -24,11 +24,25 @@ export async function POST({ request }) {
 	const contributors = data.get('contributors') as string;
 	const features = data.get('features') as string;
 	const resources = data.get('resources') as string;
-	const thumbnail = data.get('thumbnail') as File;
-	const images = data.getAll('images') as File[];
 
 	if (!title || !desc || !text || !status || !stack || !contributors || !features || !resources) {
 		fail(400, { message: 'Missing required fields' });
+	}
+
+	const thumbnail = data.get('thumbnail') as File;
+	const images = data.getAll('images') as File[];
+
+	const allowedFilesTypes = ['image/jpeg', 'image/png', 'image/webp'];
+	if (
+		!allowedFilesTypes.includes(thumbnail.type) ||
+		images.some((image) => !allowedFilesTypes.includes(image.type))
+	) {
+		fail(400, { message: 'Invalid file type' });
+	}
+
+	const fileMaxSize = 1024 * 1024 * 5;
+	if (thumbnail.size > fileMaxSize || images.some((image) => image.size > fileMaxSize)) {
+		fail(400, { message: 'File size too large' });
 	}
 
 	const id = Date.now();
