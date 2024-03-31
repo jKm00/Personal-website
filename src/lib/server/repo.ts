@@ -1,24 +1,42 @@
 import { ProjectTmp } from '$lib/types/project';
-import { writeFileSync, readdirSync, readFileSync } from 'fs';
+import { writeFileSync, readdirSync, readFileSync, existsSync, mkdirSync } from 'fs';
 import path from 'path';
 
 class Repository<T> {
-	private path: string;
+	private repoUrl: string;
+	private imgUrl: string;
 
-	constructor(path: string) {
-		this.path = path;
+	constructor(name: string) {
+		this.repoUrl = `src/lib/server/db/${name}/`;
+		this.imgUrl = `static/assets/img/${name}/`;
 	}
 
-	save(name: string, data: T) {
-		writeFileSync(`${this.path}${name}.json`, JSON.stringify(data));
+	save(id: string, data: T) {
+		writeFileSync(`${this.repoUrl}${id}.json`, JSON.stringify(data));
+	}
+
+	async uploadImages(path: string, images: File[]) {
+		const urls = [] as string[];
+
+		if (!existsSync(`${this.imgUrl}${path}`)) {
+			mkdirSync(`${this.imgUrl}${path}`, { recursive: true });
+		}
+
+		for (const image of images) {
+			const url = `${this.imgUrl}${path}/${image.name}`;
+			writeFileSync(url, Buffer.from(await image.arrayBuffer()));
+			urls.push(url);
+		}
+
+		return urls;
 	}
 
 	getAll() {
-		const files = readdirSync(this.path);
+		const files = readdirSync(this.repoUrl);
 
 		let projects = [];
 		for (const file of files) {
-			const fullPath = path.join(this.path, file);
+			const fullPath = path.join(this.repoUrl, file);
 			projects.push(JSON.parse(readFileSync(fullPath, 'utf-8')));
 		}
 
@@ -26,4 +44,4 @@ class Repository<T> {
 	}
 }
 
-export const ProjectsRepo = new Repository<ProjectTmp>('src/lib/server/db/projects/');
+export const ProjectsRepo = new Repository<ProjectTmp>('projects');

@@ -39,6 +39,12 @@
 	];
 	let resourceError: string | null = null;
 
+	let thumbnail: FileList | null = null;
+	let thumbnailError: string | null = null;
+
+	let images: FileList | null = null;
+	let imagesError: string | null = null;
+
 	function addTechnology() {
 		stack = [...stack, ''];
 	}
@@ -107,6 +113,14 @@
 			resourceError = 'All resources must have a label and a link';
 			error = 'Make sure all fields are filled in correctly';
 		}
+		if (thumbnail === null) {
+			thumbnailError = 'Thumbnail is required';
+			error = 'Make sure all fields are filled in correctly';
+		}
+		if (images === null) {
+			imagesError = 'At least one image is required';
+			error = 'Make sure all fields are filled in correctly';
+		}
 		if (error !== null) {
 			isLoading = false;
 			return;
@@ -122,6 +136,11 @@
 		form.append('contributors', JSON.stringify(contributors));
 		form.append('features', JSON.stringify(features));
 		form.append('resources', JSON.stringify(resources));
+		form.append('thumbnail', thumbnail![0]);
+
+		for (let i = 0; i < images!.length; i++) {
+			form.append('images', images![i]);
+		}
 
 		try {
 			const res = await fetch('/api/v1/projects', {
@@ -153,6 +172,8 @@
 		contributorsError = null;
 		featureError = null;
 		resourceError = null;
+		thumbnailError = null;
+		imagesError = null;
 	}
 </script>
 
@@ -330,6 +351,22 @@
 		<button class="button self-start" on:click|preventDefault={addResource}
 			><SquarePlus class="icon" />Add</button
 		>
+	</div>
+	<!-- Thumbnail -->
+	<div>
+		<label for="thumbnail" class="label">Thumbnail</label>
+		<input id="thumbnail" type="file" accept="image/*" bind:files={thumbnail} />
+		{#if thumbnailError}
+			<p class="error">{thumbnailError}</p>
+		{/if}
+	</div>
+	<!-- Images -->
+	<div>
+		<label for="images" class="label">Images</label>
+		<input id="images" type="file" accept="image/*" multiple bind:files={images} />
+		{#if imagesError}
+			<p class="error">{imagesError}</p>
+		{/if}
 	</div>
 	<button disabled={isLoading} class="button" type="submit">
 		{#if isLoading}

@@ -1,0 +1,30 @@
+{
+	"id": 1711920793315,
+	"title": "k",
+	"thumbnail": {
+		"path": "static/assets/img/projects/1711920793315/thumbnail/Screenshot 2024-03-07 at 11.50.40.png",
+		"alt": "k thumbnail"
+	},
+	"images": [
+		{
+			"path": "static/assets/img/projects/1711920793315/images/Screenshot 2024-02-22 at 12.50.40.png",
+			"alt": "k image 0"
+		},
+		{
+			"path": "static/assets/img/projects/1711920793315/images/Screenshot 2024-02-26 at 13.31.37.png",
+			"alt": "k image 1"
+		},
+		{
+			"path": "static/assets/img/projects/1711920793315/images/Screenshot 2024-02-26 at 14.16.03.png",
+			"alt": "k image 2"
+		}
+	],
+	"status": "In-progress",
+	"stack": ["k"],
+	"contributers": [{ "name": "k", "link": "https://a.ao" }],
+	"features": ["k"],
+	"resources": [{ "label": "k", "link": "https://a.ao" }],
+	"desc": "k",
+	"text": "k",
+	"published": false
+}

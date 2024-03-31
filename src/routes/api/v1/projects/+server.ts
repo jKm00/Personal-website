@@ -24,6 +24,8 @@ export async function POST({ request }) {
 	const contributors = data.get('contributors') as string;
 	const features = data.get('features') as string;
 	const resources = data.get('resources') as string;
+	const thumbnail = data.get('thumbnail') as File;
+	const images = data.getAll('images') as File[];
 
 	if (!title || !desc || !text || !status || !stack || !contributors || !features || !resources) {
 		fail(400, { message: 'Missing required fields' });
@@ -31,11 +33,14 @@ export async function POST({ request }) {
 
 	const id = Date.now();
 
+	const thumbnailUrl = (await ProjectsRepo.uploadImages(`${id}/thumbnail`, [thumbnail]))[0];
+	const imageUrls = await ProjectsRepo.uploadImages(`${id}/images`, images);
+
 	ProjectsRepo.save(`${id}`, {
 		id,
 		title,
-		thumbnail: { path: '', alt: '' },
-		images: [],
+		thumbnail: { path: thumbnailUrl, alt: `${title} thumbnail` },
+		images: imageUrls.map((url, i) => ({ path: url, alt: `${title} image ${i}` })),
 		status: status === 'finished' ? Status.FINISHED : Status.IN_PROGRESS,
 		stack: JSON.parse(stack) as string[],
 		contributers: JSON.parse(contributors) as { name: string; link: string }[],
