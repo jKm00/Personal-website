@@ -32,4 +32,5 @@ export type ProjectTmp = {
 	resources: { label: string; link: string }[];
 	desc: string;
 	text: string;
+	published: boolean;
 };

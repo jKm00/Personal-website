@@ -1,5 +1,6 @@
 import { ProjectTmp } from '$lib/types/project';
-import { writeFileSync, existsSync, statSync } from 'fs';
+import { writeFileSync, readdirSync, readFileSync } from 'fs';
+import path from 'path';
 
 class Repository<T> {
 	private path: string;
@@ -10,6 +11,18 @@ class Repository<T> {
 
 	save(name: string, data: T) {
 		writeFileSync(`${this.path}${name}.json`, JSON.stringify(data), { flag: 'a' });
+	}
+
+	getAll() {
+		const files = readdirSync(this.path);
+
+		let projects = [];
+		for (const file of files) {
+			const fullPath = path.join(this.path, file);
+			projects.push(JSON.parse(readFileSync(fullPath, 'utf-8')));
+		}
+
+		return projects;
 	}
 }
 
