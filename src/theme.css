@@ -92,6 +92,10 @@ body[data-theme='light'] {
 	--primary: var(--clr-accent-200);
 }
 
+body {
+	background-color: var(--background);
+}
+
 .body {
 	font-family: var(--ff-body);
 	font-size: var(--fs-body);
