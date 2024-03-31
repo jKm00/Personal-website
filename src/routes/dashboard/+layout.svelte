@@ -4,6 +4,7 @@
 	import '../../theme.css';
 	import '../../utils.css';
 	import { page } from '$app/stores';
+	import ThemeToggler from '$lib/components/ThemeToggler.svelte';
 
 	const links = [
 		{ name: 'Projects', url: '/dashboard/projects', icon: Newspaper },
@@ -32,7 +33,16 @@
 				{/each}
 			</ul>
 		</div>
-		<a class="item" href="/auth/logout"><LogOut class="icon" />Logout</a>
+
+		<div>
+			<div class="separator" />
+			<div class="item theme-wrapper">
+				<span>Theme</span>
+				<ThemeToggler />
+			</div>
+			<div class="separator" />
+			<a class="item" href="/auth/logout"><LogOut class="icon" />Logout</a>
+		</div>
 	</nav>
 	<main class="main">
 		<slot />
@@ -85,6 +95,19 @@
 	.item.active {
 		background-color: var(--primary);
 		color: var(--primary-foreground);
+	}
+
+	.theme-wrapper {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.separator {
+		height: 1px;
+		background-color: var(--foreground);
+		opacity: 0.2;
+		margin-block: 0.5rem;
 	}
 
 	.main {
