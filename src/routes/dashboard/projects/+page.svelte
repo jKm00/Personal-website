@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import type { ProjectTmp } from '$lib/types/project.js';
-	import { Download, Upload } from 'lucide-svelte';
+	import { Download, Trash, Upload } from 'lucide-svelte';
 
 	export let data;
+
+	let deleteDialog: HTMLDialogElement;
+	let projectToDelete: ProjectTmp | null = null;
 
 	async function togglePublish(project: ProjectTmp) {
 		try {
@@ -31,13 +34,23 @@
 			console.error(err);
 		}
 	}
+
+	function openDeleteDialog(project: ProjectTmp) {
+		projectToDelete = project;
+		deleteDialog.showModal();
+	}
+
+	function closeDeleteDialog() {
+		projectToDelete = null;
+		deleteDialog.close();
+	}
 </script>
 
 <div class="table">
 	<div class="table-row">
 		<p class="table-header">ID</p>
 		<p class="table-header">Title</p>
-		<p class="table-header table-header--center">Action</p>
+		<p class="table-header table-header--center span-2">Action</p>
 	</div>
 	{#if data.projects.length === 0}
 		<p class="muted">No projects available...</p>
@@ -46,19 +59,30 @@
 			<div class="table-row">
 				<a href="/beta/projects/{project.id}" class="table-item table-link">{project.id}</a>
 				<p class="table-item">{project.title}</p>
-				<p class="table-item">
-					<button on:click={() => togglePublish(project)} class="button">
-						{#if project.published}
-							<Download class="icon" /> Unpublish
-						{:else}
-							<Upload class="icon" /> Publish
-						{/if}
-					</button>
-				</p>
+				<button on:click={() => togglePublish(project)} class="table-item button">
+					{#if project.published}
+						<Download class="icon" /> Unpublish
+					{:else}
+						<Upload class="icon" /> Publish
+					{/if}
+				</button>
+				<button class="table-item button button--delete" on:click={() => openDeleteDialog(project)}>
+					<Trash class="icon" /> Delete
+				</button>
 			</div>
 		{/each}
 	{/if}
 </div>
+
+<!-- Delete confirm dialog -->
+<dialog bind:this={deleteDialog} class="dialog" open>
+	<h2 class="dialog-title">Are you sure you want to delete this project?</h2>
+	<p class="dialog-content">This action cannot be undone.</p>
+	<div class="dialog-actions">
+		<button on:click={closeDeleteDialog} class="button button-secondary">Cancel</button>
+		<button class="button button--delete">Delete anyways</button>
+	</div>
+</dialog>
 
 <style scoped>
 	.table {
@@ -69,7 +93,7 @@
 
 	.table-row {
 		display: grid;
-		grid-template-columns: 15rem 1fr 8rem;
+		grid-template-columns: 15rem 1fr 8rem 7rem;
 		align-items: center;
 		gap: 0.5rem;
 	}
@@ -86,6 +110,10 @@
 	.table-link:hover,
 	.table-link:focus-visible {
 		text-decoration: underline;
+	}
+
+	.span-2 {
+		grid-column: span 2;
 	}
 
 	.button {
@@ -110,8 +138,61 @@
 		background-color: var(--clr-accent-500);
 	}
 
+	.button-secondary {
+		outline: 1px solid var(--foreground);
+		background-color: transparent;
+	}
+
+	.button-secondary:hover,
+	.button-secondary:focus-visible {
+		background-color: var(--foreground);
+		color: var(--background);
+	}
+
+	.button--delete {
+		outline: 1px solid var(--error);
+		background-color: transparent;
+	}
+
+	.button--delete:hover,
+	.button--delete:focus-visible {
+		background-color: var(--error);
+		color: var(--foreground);
+	}
+
 	.muted {
 		color: var(--foreground-muted);
 		font-size: var(--fs-350);
+	}
+
+	.dialog {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		padding: 1rem;
+		background-color: var(--card-bg);
+		color: var(--foreground);
+		border-radius: var(--rounding);
+		border: none;
+	}
+
+	.dialog::backdrop {
+		background-color: var(--background);
+		opacity: 0.8;
+	}
+
+	.dialog-title {
+		margin-bottom: 0.5rem;
+	}
+
+	.dialog-content {
+		color: var(--foreground-muted);
+		margin-bottom: 1.5rem;
+	}
+
+	.dialog-actions {
+		display: flex;
+		justify-content: flex-end;
+		gap: 0.5rem;
 	}
 </style>
