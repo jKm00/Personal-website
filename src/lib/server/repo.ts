@@ -10,7 +10,7 @@ class Repository<T> {
 	}
 
 	save(name: string, data: T) {
-		writeFileSync(`${this.path}${name}.json`, JSON.stringify(data), { flag: 'a' });
+		writeFileSync(`${this.path}${name}.json`, JSON.stringify(data));
 	}
 
 	getAll() {

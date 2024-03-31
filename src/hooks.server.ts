@@ -9,7 +9,11 @@ export async function handle({ event, resolve }) {
 	const authCookie = event.cookies.get('auth');
 
 	if (!authCookie || authCookie !== ADMIN_TOKEN) {
-		return new Response('Redirect', { status: 303, headers: { location: '/auth/login' } });
+		if (event.url.pathname.startsWith('/api')) {
+			return new Response('Unauthorized', { status: 401 });
+		} else {
+			return new Response('Redirect', { status: 303, headers: { location: '/auth/login' } });
+		}
 	}
 
 	return resolve(event);

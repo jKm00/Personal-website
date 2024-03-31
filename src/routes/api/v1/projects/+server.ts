@@ -3,12 +3,7 @@ import { ProjectsRepo } from '$lib/server/repo';
 import { Status } from '$lib/types/status';
 import { fail } from '@sveltejs/kit';
 
-export async function GET({ cookies }) {
-	const authCookie = cookies.get('auth');
-	if (!authCookie || authCookie !== ADMIN_TOKEN) {
-		return new Response('Unauthorized', { status: 401 });
-	}
-
+export async function GET() {
 	const projects = ProjectsRepo.getAll();
 
 	return new Response(JSON.stringify(projects), {
@@ -18,12 +13,7 @@ export async function GET({ cookies }) {
 	});
 }
 
-export async function POST({ request, cookies }) {
-	const authCookie = cookies.get('auth');
-	if (!authCookie || authCookie !== ADMIN_TOKEN) {
-		return new Response('Unauthorized', { status: 401 });
-	}
-
+export async function POST({ request }) {
 	const data = await request.formData();
 
 	const title = data.get('title') as string;
@@ -55,6 +45,18 @@ export async function POST({ request, cookies }) {
 		text,
 		published: false
 	});
+
+	return new Response('ok', { status: 200 });
+}
+
+export async function PATCH({ request }) {
+	const body = await request.json();
+
+	try {
+		ProjectsRepo.save(`${body.id}`, body);
+	} catch (err) {
+		return new Response('Something went wrong', { status: 500 });
+	}
 
 	return new Response('ok', { status: 200 });
 }

@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { enhance } from '$app/forms';
+</script>
+
 <div>
 	<h1 class="title">Not implemented. Comming soon!</h1>
 	<img src="/assets/img/baby-yoda.png" alt="Baby Yoda" />

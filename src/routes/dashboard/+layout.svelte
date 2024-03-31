@@ -43,6 +43,7 @@
 	.body {
 		display: grid;
 		grid-template-columns: 15rem 1fr;
+		margin-bottom: 0;
 	}
 
 	nav {

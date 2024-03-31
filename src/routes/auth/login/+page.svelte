@@ -32,6 +32,10 @@
 </form>
 
 <style scoped>
+	.title {
+		text-align: center;
+	}
+
 	form {
 		display: flex;
 		flex-direction: column;
