@@ -5,59 +5,54 @@
 	let isLoading = false;
 	let error: string | null = null;
 
-	let title = '';
+	let title = 'test';
 	let titleError: string | null = null;
 
-	let lead = '';
-	let leadError: string | null = null;
+	let desc = 'test';
+	let descError: string | null = null;
 
-	let text = '';
+	let text = 'test';
 	let textError: string | null = null;
 
 	let status: string;
 	let statusError: string | null = null;
 
-	let technologies = [
+	let stack = ['sveltekit'];
+	let stackError: string | null = null;
+
+	let contributors = [
 		{
-			name: '',
-			link: ''
+			name: 'joakim',
+			link: 'https://edvardsen.dev'
 		}
 	];
-	let technologyError: string | null = null;
+	let contributorsError: string | null = null;
 
-	let authors = [
-		{
-			name: '',
-			link: ''
-		}
-	];
-	let authorError: string | null = null;
-
-	let features = [''];
+	let features = ['auth'];
 	let featureError: string | null = null;
 
 	let resources = [
 		{
-			label: '',
-			link: ''
+			label: 'repo',
+			link: 'https://repo.github'
 		}
 	];
 	let resourceError: string | null = null;
 
 	function addTechnology() {
-		technologies = [...technologies, { name: '', link: '' }];
+		stack = [...stack, ''];
 	}
 
 	function removeTechnology(index: number) {
-		technologies = technologies.filter((_, i) => i !== index);
+		stack = stack.filter((_, i) => i !== index);
 	}
 
 	function addAuthor() {
-		authors = [...authors, { name: '', link: '' }];
+		contributors = [...contributors, { name: '', link: '' }];
 	}
 
 	function removeAuthor(index: number) {
-		authors = authors.filter((_, i) => i !== index);
+		contributors = contributors.filter((_, i) => i !== index);
 	}
 
 	function addFeature() {
@@ -84,8 +79,8 @@
 			titleError = 'Title is required';
 			error = 'Make ';
 		}
-		if (lead === '') {
-			leadError = 'Lead is required';
+		if (desc === '') {
+			descError = 'Lead is required';
 			error = 'Make sure all fields are filled in correctly';
 		}
 		if (text === '') {
@@ -96,12 +91,12 @@
 			statusError = 'Status is required';
 			error = 'Make sure all fields are filled in correctly';
 		}
-		if (technologies.some((t) => t.name === '' || t.link === '')) {
-			technologyError = 'All technologies must have a name and a link';
+		if (stack.some((t) => t === '')) {
+			stackError = 'All technologies must have a name and a link';
 			error = 'Make sure all fields are filled in correctly';
 		}
-		if (authors.some((a) => a.name === '' || a.link === '')) {
-			authorError = 'All authors must have a name and a link';
+		if (contributors.some((a) => a.name === '' || a.link === '')) {
+			contributorsError = 'All authors must have a name and a link';
 			error = 'Make sure all fields are filled in correctly';
 		}
 		if (features.some((f) => f === '')) {
@@ -120,11 +115,11 @@
 		// Send data to the server
 		const form = new FormData();
 		form.append('title', title);
-		form.append('lead', lead);
+		form.append('desc', desc);
 		form.append('text', text);
 		form.append('status', status);
-		form.append('technologies', JSON.stringify(technologies));
-		form.append('authors', JSON.stringify(authors));
+		form.append('stack', JSON.stringify(stack));
+		form.append('contributors', JSON.stringify(contributors));
 		form.append('features', JSON.stringify(features));
 		form.append('resources', JSON.stringify(resources));
 
@@ -151,11 +146,11 @@
 	function resetErrors() {
 		error = null;
 		titleError = null;
-		leadError = null;
+		descError = null;
 		textError = null;
 		statusError = null;
-		technologyError = null;
-		authorError = null;
+		stackError = null;
+		contributorsError = null;
 		featureError = null;
 		resourceError = null;
 	}
@@ -176,18 +171,18 @@
 			<p class="error">{titleError}</p>
 		{/if}
 	</div>
-	<!-- Lead -->
+	<!-- Desc -->
 	<div>
-		<label for="lead" class="label">Lead</label>
+		<label for="lead" class="label">Description</label>
 		<textarea
 			id="lead"
-			class="input {leadError && 'error'}"
-			bind:value={lead}
+			class="input {descError && 'error'}"
+			bind:value={desc}
 			placeholder="Catchy lead..."
 			rows="3"
 		/>
-		{#if leadError}
-			<p class="error">{leadError}</p>
+		{#if descError}
+			<p class="error">{descError}</p>
 		{/if}
 	</div>
 	<!-- Text -->
@@ -209,41 +204,35 @@
 		<label for="status" class="label">Status</label>
 		<select id="status" class="input {statusError && 'error'}" bind:value={status}>
 			<option value="">Select status</option>
-			<option value="on-going">On-going</option>
+			<option value="in-progress">In-progress</option>
 			<option value="finished">Finished</option>
 		</select>
 		{#if statusError}
 			<p class="error">{statusError}</p>
 		{/if}
 	</div>
-	<!-- Technologies -->
+	<!-- Stack -->
 	<div>
-		<p class="label">Technologies</p>
+		<p class="label">Stack</p>
 		<div class="two-column">
-			{#each technologies as technology, index}
+			{#each stack as item, index}
 				<div class="two-column-items">
 					<input
-						bind:value={technology.name}
+						bind:value={item}
 						type="text"
-						class="input {technologyError && 'error'}"
+						class="input {stackError && 'error'}"
 						placeholder="Technology name"
-					/>
-					<input
-						bind:value={technology.link}
-						type="url"
-						class="input {technologyError && 'error'}"
-						placeholder="Technology link"
 					/>
 					<button
 						on:click|preventDefault={() => removeTechnology(index)}
-						disabled={technologies.length === 1}
+						disabled={stack.length === 1}
 						class="delete-button"><CircleX class="icon" /></button
 					>
 				</div>
 			{/each}
 		</div>
-		{#if technologyError}
-			<p class="error">{technologyError}</p>
+		{#if stackError}
+			<p class="error">{stackError}</p>
 		{/if}
 		<button class="button self-start" on:click|preventDefault={addTechnology}
 			><SquarePlus class="icon" />Add</button
@@ -253,30 +242,30 @@
 	<div>
 		<p class="label">Authors</p>
 		<div class="two-column">
-			{#each authors as author, index}
+			{#each contributors as contributor, index}
 				<div class="two-column-items">
 					<input
-						bind:value={author.name}
+						bind:value={contributor.name}
 						type="text"
-						class="input {authorError && 'error'}"
+						class="input {contributorsError && 'error'}"
 						placeholder="Author name"
 					/>
 					<input
-						bind:value={author.link}
+						bind:value={contributor.link}
 						type="url"
-						class="input {authorError && 'error'}"
+						class="input {contributorsError && 'error'}"
 						placeholder="Author link"
 					/>
 					<button
 						on:click|preventDefault={() => removeAuthor(index)}
-						disabled={authors.length === 1}
+						disabled={contributors.length === 1}
 						class="delete-button"><CircleX class="icon" /></button
 					>
 				</div>
 			{/each}
 		</div>
-		{#if authorError}
-			<p class="error">{authorError}</p>
+		{#if contributorsError}
+			<p class="error">{contributorsError}</p>
 		{/if}
 		<button class="button self-start" on:click|preventDefault={addAuthor}
 			><SquarePlus class="icon" />Add</button

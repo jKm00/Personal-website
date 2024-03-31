@@ -30,7 +30,7 @@
 						<li class="horizontal-list__item">Authors:</li>
 						{#each project.contributers as contributer}
 							<li class="horizontal-list__item">
-								<a class="horizontal-list__link" href={contributer.githubLink} target="_blank"
+								<a class="horizontal-list__link" href={contributer.link} target="_blank"
 									>{contributer.name}</a
 								>
 							</li>
