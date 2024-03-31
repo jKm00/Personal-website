@@ -37,14 +37,14 @@
 	<div class="table-row">
 		<p class="table-header">ID</p>
 		<p class="table-header">Title</p>
-		<p class="table-header table-header--center">Status</p>
+		<p class="table-header table-header--center">Action</p>
 	</div>
 	{#if data.projects.length === 0}
 		<p class="muted">No projects available...</p>
 	{:else}
 		{#each data.projects as project}
 			<div class="table-row">
-				<a href="/projects/{project.id}" class="table-item table-link">{project.id}</a>
+				<a href="/beta/projects/{project.id}" class="table-item table-link">{project.id}</a>
 				<p class="table-item">{project.title}</p>
 				<p class="table-item">
 					<button on:click={() => togglePublish(project)} class="button">

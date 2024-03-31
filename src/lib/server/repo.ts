@@ -31,6 +31,11 @@ class Repository<T> {
 		return urls;
 	}
 
+	get(id: string) {
+		const fullPath = path.join(this.repoUrl, `${id}.json`);
+		return JSON.parse(readFileSync(fullPath, 'utf-8'));
+	}
+
 	getAll() {
 		const files = readdirSync(this.repoUrl);
 
