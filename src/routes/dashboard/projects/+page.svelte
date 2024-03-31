@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import type { ProjectTmp } from '$lib/types/project.js';
+	import { Download, Upload } from 'lucide-svelte';
 
 	export let data;
 
@@ -43,9 +44,13 @@
 			<a href="/projects/{project.id}" class="table-item table-link">{project.id}</a>
 			<p class="table-item">{project.title}</p>
 			<p class="table-item">
-				<button on:click={() => togglePublish(project)} class="button"
-					>{project.published ? 'Unpublish' : 'Publish'}</button
-				>
+				<button on:click={() => togglePublish(project)} class="button">
+					{#if project.published}
+						<Download class="icon" /> Unpublish
+					{:else}
+						<Upload class="icon" /> Publish
+					{/if}
+				</button>
 			</p>
 		</div>
 	{/each}
@@ -60,7 +65,7 @@
 
 	.table-row {
 		display: grid;
-		grid-template-columns: 15rem 1fr 10rem;
+		grid-template-columns: 15rem 1fr 8rem;
 		align-items: center;
 		gap: 0.5rem;
 	}
@@ -81,6 +86,9 @@
 
 	.button {
 		border: none;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
 		background-color: var(--card-bg);
 		color: var(--foreground);
 		padding: 0.5rem 1rem;
