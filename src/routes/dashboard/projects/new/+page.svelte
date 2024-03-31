@@ -5,36 +5,36 @@
 	let isLoading = false;
 	let error: string | null = null;
 
-	let title = 'test';
+	let title = '';
 	let titleError: string | null = null;
 
-	let desc = 'test';
+	let desc = '';
 	let descError: string | null = null;
 
-	let text = 'test';
+	let text = '';
 	let textError: string | null = null;
 
 	let status: string;
 	let statusError: string | null = null;
 
-	let stack = ['sveltekit'];
+	let stack = [''];
 	let stackError: string | null = null;
 
 	let contributors = [
 		{
-			name: 'joakim',
-			link: 'https://edvardsen.dev'
+			name: '',
+			link: ''
 		}
 	];
 	let contributorsError: string | null = null;
 
-	let features = ['auth'];
+	let features = [''];
 	let featureError: string | null = null;
 
 	let resources = [
 		{
-			label: 'repo',
-			link: 'https://repo.github'
+			label: '',
+			link: ''
 		}
 	];
 	let resourceError: string | null = null;
@@ -214,9 +214,9 @@
 	<!-- Stack -->
 	<div>
 		<p class="label">Stack</p>
-		<div class="two-column">
+		<div class="one-column">
 			{#each stack as item, index}
-				<div class="two-column-items">
+				<div class="one-column-items">
 					<input
 						bind:value={item}
 						type="text"
@@ -238,9 +238,9 @@
 			><SquarePlus class="icon" />Add</button
 		>
 	</div>
-	<!-- Authors -->
+	<!-- Contributors -->
 	<div>
-		<p class="label">Authors</p>
+		<p class="label">Contributors</p>
 		<div class="two-column">
 			{#each contributors as contributor, index}
 				<div class="two-column-items">
