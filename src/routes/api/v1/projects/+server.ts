@@ -79,3 +79,16 @@ export async function PATCH({ request }) {
 
 	return new Response('ok', { status: 200 });
 }
+
+export async function DELETE({ request }) {
+	const body = (await request.json()) as { id: string };
+
+	try {
+		ProjectsRepo.delete(body.id);
+	} catch (err) {
+		console.log(err);
+		return new Response('Something went wrong', { status: 500 });
+	}
+
+	return new Response('ok', { status: 200 });
+}

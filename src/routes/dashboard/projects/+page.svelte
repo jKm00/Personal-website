@@ -44,6 +44,37 @@
 		projectToDelete = null;
 		deleteDialog.close();
 	}
+
+	async function deleteProject() {
+		if (!projectToDelete) {
+			console.error('Project to delete not selected');
+			return;
+		}
+
+		try {
+			const res = await fetch('/api/v1/projects', {
+				method: 'DELETE',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: JSON.stringify({ id: projectToDelete.id })
+			});
+
+			if (!res.ok) {
+				// TODO: Add toast
+				console.error('Failed to delete project');
+			}
+
+			deleteDialog.close();
+			// TODO: Add toast
+			goto('/dashboard/projects', {
+				invalidateAll: true
+			});
+		} catch (err) {
+			// TODO: Add toast
+			console.error('Something went wrong while deleting project', err);
+		}
+	}
 </script>
 
 <div class="table">
@@ -75,12 +106,12 @@
 </div>
 
 <!-- Delete confirm dialog -->
-<dialog bind:this={deleteDialog} class="dialog" open>
+<dialog bind:this={deleteDialog} class="dialog">
 	<h2 class="dialog-title">Are you sure you want to delete this project?</h2>
 	<p class="dialog-content">This action cannot be undone.</p>
 	<div class="dialog-actions">
 		<button on:click={closeDeleteDialog} class="button button-secondary">Cancel</button>
-		<button class="button button--delete">Delete anyways</button>
+		<button on:click={deleteProject} class="button button--delete">Delete anyways</button>
 	</div>
 </dialog>
 

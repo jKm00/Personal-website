@@ -1,5 +1,13 @@
 import { ProjectTmp } from '$lib/types/project';
-import { writeFileSync, readdirSync, readFileSync, existsSync, mkdirSync } from 'fs';
+import {
+	writeFileSync,
+	readdirSync,
+	readFileSync,
+	existsSync,
+	mkdirSync,
+	unlinkSync,
+	rmSync
+} from 'fs';
 import path from 'path';
 
 class Repository<T> {
@@ -46,6 +54,11 @@ class Repository<T> {
 		}
 
 		return projects;
+	}
+
+	delete(id: string) {
+		rmSync(`${this.imgUrl}${id}`, { recursive: true });
+		unlinkSync(`${this.repoUrl}${id}.json`);
 	}
 }
 
