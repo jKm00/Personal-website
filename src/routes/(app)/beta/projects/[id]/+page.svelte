@@ -111,6 +111,10 @@
 			white-space: pre-wrap;
 		}
 
+		:global(.paragraph a) {
+			color: var(--foreground);
+		}
+
 		& .vertical-list {
 			list-style-type: disc;
 			margin-left: 1em;
