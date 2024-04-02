@@ -1,10 +1,11 @@
-import { ADMIN_TOKEN } from '$env/static/private';
-import { ProjectsRepo } from '$lib/server/repo';
+import { PROJECTS_IMG_PATH, PROJECTS_PATH, PROJECTS_THUMBNAIL_PATH } from '$lib/server/paths.js';
+import { deleteDir, deleteFile, getAllFiles, saveFile, uploadImages } from '$lib/server/utils.js';
+import { ProjectTmp } from '$lib/types/project.js';
 import { Status } from '$lib/types/status';
 import { fail } from '@sveltejs/kit';
 
 export async function GET() {
-	const projects = ProjectsRepo.getAll();
+	const projects = getAllFiles<ProjectTmp>(PROJECTS_PATH);
 
 	return new Response(JSON.stringify(projects), {
 		headers: {
@@ -47,10 +48,10 @@ export async function POST({ request }) {
 
 	const id = Date.now();
 
-	const thumbnailUrl = (await ProjectsRepo.uploadImages(`${id}/thumbnail`, [thumbnail]))[0];
-	const imageUrls = await ProjectsRepo.uploadImages(`${id}/images`, images);
+	const thumbnailUrl = (await uploadImages(PROJECTS_THUMBNAIL_PATH(id), [thumbnail]))[0];
+	const imageUrls = await uploadImages(PROJECTS_IMG_PATH(id), images);
 
-	ProjectsRepo.save(`${id}`, {
+	saveFile<ProjectTmp>(`${PROJECTS_PATH}/${id}.json`, {
 		id,
 		title,
 		thumbnail: { path: thumbnailUrl, alt: `${title} thumbnail` },
@@ -72,7 +73,7 @@ export async function PATCH({ request }) {
 	const body = await request.json();
 
 	try {
-		ProjectsRepo.save(`${body.id}`, body);
+		saveFile<ProjectTmp>(`${PROJECTS_PATH}/${body.id}.json`, body);
 	} catch (err) {
 		return new Response('Something went wrong', { status: 500 });
 	}
@@ -84,7 +85,11 @@ export async function DELETE({ request }) {
 	const body = (await request.json()) as { id: string };
 
 	try {
-		ProjectsRepo.delete(body.id);
+		// Delete images
+		deleteDir(PROJECTS_THUMBNAIL_PATH(body.id));
+		deleteDir(PROJECTS_IMG_PATH(body.id));
+		// Delete project info
+		deleteFile(`${PROJECTS_PATH}/${body.id}`);
 	} catch (err) {
 		console.log(err);
 		return new Response('Something went wrong', { status: 500 });
