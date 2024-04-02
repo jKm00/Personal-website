@@ -48,8 +48,9 @@ export async function POST({ request }) {
 
 	const id = Date.now();
 
-	const thumbnailUrl = (await uploadImages(PROJECTS_THUMBNAIL_PATH(id), [thumbnail]))[0];
-	const imageUrls = await uploadImages(PROJECTS_IMG_PATH(id), images);
+	// Slice the path to remove the 'static' prefix
+	const thumbnailUrl = (await uploadImages(PROJECTS_THUMBNAIL_PATH(id), [thumbnail]))[0].slice(6);
+	const imageUrls = (await uploadImages(PROJECTS_IMG_PATH(id), images)).map((url) => url.slice(6));
 
 	saveFile<Project>(`${PROJECTS_PATH}/${id}.json`, {
 		id,

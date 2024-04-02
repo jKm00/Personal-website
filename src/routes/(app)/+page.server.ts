@@ -4,9 +4,12 @@ import { Project } from '$lib/types/project.js';
 
 export const load = async ({}) => {
 	async function fetchAllProjects() {
-		const files = getAllFiles<Project>(PROJECTS_PATH);
-
-		return files.filter((file) => file.published);
+		try {
+			const files = getAllFiles<Project>(PROJECTS_PATH);
+			return files.filter((file) => file.published);
+		} catch (err) {
+			return [];
+		}
 	}
 
 	return {

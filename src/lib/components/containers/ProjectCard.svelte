@@ -12,7 +12,7 @@
 		<div class="project__img--wrapper">
 			<img
 				class="project__img"
-				src={project.thumbnail.path.slice(7)}
+				src={project.thumbnail.path}
 				alt={project.thumbnail.alt}
 				loading="lazy"
 			/>

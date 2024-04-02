@@ -16,7 +16,7 @@
 		<article class="project content" id="project">
 			<!-- Carousel -->
 			<Carousel
-				images={project.images.map((img) => ({ ...img, path: img.path.slice(6) }))}
+				images={project.images.map((img) => ({ ...img, path: img.path }))}
 				spacingBottom={0.5}
 			/>
 			<!-- Stack -->
