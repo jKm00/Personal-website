@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { Project } from '$lib/types/project';
+	import type { Project, ProjectTmp } from '$lib/types/project';
 	import ProjectCard from '../containers/ProjectCard.svelte';
 
-	export let projects: Project[];
+	export let projects: ProjectTmp[];
 
 	$: reversedProjects = [...projects].reverse();
 </script>

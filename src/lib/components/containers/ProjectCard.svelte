@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Project } from '$lib/types/project';
+	import type { Project, ProjectTmp } from '$lib/types/project';
 	import { Status } from '$lib/types/status';
 	import Stats from '../Stats.svelte';
 
-	export let project: Project;
+	export let project: ProjectTmp;
 	export let alignRight: boolean;
 </script>
 
@@ -12,7 +12,7 @@
 		<div class="project__img--wrapper">
 			<img
 				class="project__img"
-				src={project.thumbnail.path}
+				src={project.thumbnail.path.slice(7)}
 				alt={project.thumbnail.alt}
 				loading="lazy"
 			/>
