@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import type { ProjectTmp } from '$lib/types/project.js';
-	import { Download, Trash, Upload } from 'lucide-svelte';
+	import type { Project } from '$lib/types/project.js';
+	import { Download, ExternalLink, Trash, Upload } from 'lucide-svelte';
 
 	export let data;
 
 	let deleteDialog: HTMLDialogElement;
-	let projectToDelete: ProjectTmp | null = null;
+	let projectToDelete: Project | null = null;
 
-	async function togglePublish(project: ProjectTmp) {
+	async function togglePublish(project: Project) {
 		try {
 			const res = await fetch('/api/v1/projects', {
 				method: 'PATCH',
@@ -35,7 +35,7 @@
 		}
 	}
 
-	function openDeleteDialog(project: ProjectTmp) {
+	function openDeleteDialog(project: Project) {
 		projectToDelete = project;
 		deleteDialog.showModal();
 	}
@@ -88,7 +88,13 @@
 	{:else}
 		{#each data.projects as project}
 			<div class="table-row">
-				<a href="/beta/projects/{project.id}" class="table-item table-link">{project.id}</a>
+				{#if project.published}
+					<a href="/projects/{project.id}" class="table-item table-link"
+						>{project.id} <ExternalLink class="icon" /></a
+					>
+				{:else}
+					<p>{project.id}</p>
+				{/if}
 				<p class="table-item">{project.title}</p>
 				<button on:click={() => togglePublish(project)} class="table-item button">
 					{#if project.published}

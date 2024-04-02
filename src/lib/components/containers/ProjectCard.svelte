@@ -1,9 +1,9 @@
 <script lang="ts">
-	import type { Project, ProjectTmp } from '$lib/types/project';
+	import type { Project } from '$lib/types/project';
 	import { Status } from '$lib/types/status';
 	import Stats from '../Stats.svelte';
 
-	export let project: ProjectTmp;
+	export let project: Project;
 	export let alignRight: boolean;
 </script>
 

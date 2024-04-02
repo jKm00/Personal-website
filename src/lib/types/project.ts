@@ -17,20 +17,6 @@ export type Project = {
 	features: string[];
 	resources: { label: string; link: string }[];
 	desc: string;
-	text: string[];
-};
-
-export type ProjectTmp = {
-	id: number;
-	title: string;
-	thumbnail: Image;
-	images: Image[];
-	status: Status;
-	stack: string[];
-	contributers: Contributor[];
-	features: string[];
-	resources: { label: string; link: string }[];
-	desc: string;
 	text: string;
 	published: boolean;
 };

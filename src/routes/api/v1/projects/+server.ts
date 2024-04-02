@@ -1,11 +1,11 @@
 import { PROJECTS_IMG_PATH, PROJECTS_PATH, PROJECTS_THUMBNAIL_PATH } from '$lib/server/paths.js';
 import { deleteDir, deleteFile, getAllFiles, saveFile, uploadImages } from '$lib/server/utils.js';
-import { ProjectTmp } from '$lib/types/project.js';
+import { Project } from '$lib/types/project.js';
 import { Status } from '$lib/types/status';
 import { fail } from '@sveltejs/kit';
 
 export async function GET() {
-	const projects = getAllFiles<ProjectTmp>(PROJECTS_PATH);
+	const projects = getAllFiles<Project>(PROJECTS_PATH);
 
 	return new Response(JSON.stringify(projects), {
 		headers: {
@@ -51,7 +51,7 @@ export async function POST({ request }) {
 	const thumbnailUrl = (await uploadImages(PROJECTS_THUMBNAIL_PATH(id), [thumbnail]))[0];
 	const imageUrls = await uploadImages(PROJECTS_IMG_PATH(id), images);
 
-	saveFile<ProjectTmp>(`${PROJECTS_PATH}/${id}.json`, {
+	saveFile<Project>(`${PROJECTS_PATH}/${id}.json`, {
 		id,
 		title,
 		thumbnail: { path: thumbnailUrl, alt: `${title} thumbnail` },
@@ -73,7 +73,7 @@ export async function PATCH({ request }) {
 	const body = await request.json();
 
 	try {
-		saveFile<ProjectTmp>(`${PROJECTS_PATH}/${body.id}.json`, body);
+		saveFile<Project>(`${PROJECTS_PATH}/${body.id}.json`, body);
 	} catch (err) {
 		return new Response('Something went wrong', { status: 500 });
 	}
