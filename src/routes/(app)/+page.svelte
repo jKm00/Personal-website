@@ -4,14 +4,15 @@
 	import TechnologyStack from '$lib/components/sections/TechnologyStack.svelte';
 	import ProjectSection from '$lib/components/sections/ProjectSection.svelte';
 	import { technologies } from '$lib/data/technologies';
-	import { projects } from '$lib/data/projects';
+
+	export let data;
 </script>
 
 <main>
 	<HeroSection />
 	<AboutSection />
 	<TechnologyStack {technologies} />
-	<ProjectSection {projects} />
+	<ProjectSection projects={data.projects} />
 </main>
 
 <style scoped lang="scss">

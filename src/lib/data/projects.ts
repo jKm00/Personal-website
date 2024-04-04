@@ -1,7 +1,7 @@
-import type { Project } from '$lib/types/project';
+import type { ProjectDeprecated } from '$lib/types/project';
 import { Status } from '$lib/types/status';
 
-export const projects: Project[] = [
+export const projects: ProjectDeprecated[] = [
 	{
 		id: 0,
 		title: 'Portfolio',
@@ -48,7 +48,7 @@ export const projects: Project[] = [
 		contributers: [
 			{
 				name: 'jKm00',
-				githubLink: 'https://github.com/jKm00'
+				link: 'https://github.com/jKm00'
 			}
 		],
 		features: ['Server-side rendering', 'On load and scroll animations', 'Data prefecting'],
@@ -114,19 +114,19 @@ export const projects: Project[] = [
 		contributers: [
 			{
 				name: 'Eduard Christea',
-				githubLink: 'https://github.com/falniir'
+				link: 'https://github.com/falniir'
 			},
 			{
 				name: 'Joakim Edvardsen',
-				githubLink: 'https://github.com/jKm00'
+				link: 'https://github.com/jKm00'
 			},
 			{
 				name: 'Richileu Bailey',
-				githubLink: 'https://github.com/Richileu-A-Bailey'
+				link: 'https://github.com/Richileu-A-Bailey'
 			},
 			{
 				name: 'Torstein Eide',
-				githubLink: 'https://github.com/TorsteinEide'
+				link: 'https://github.com/TorsteinEide'
 			}
 		],
 		features: [
@@ -187,19 +187,19 @@ export const projects: Project[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				githubLink: 'https://github.com/jKm00'
+				link: 'https://github.com/jKm00'
 			},
 			{
 				name: 'Petter Molnes',
-				githubLink: 'https://github.com/PMolnes'
+				link: 'https://github.com/PMolnes'
 			},
 			{
 				name: 'Mateusz Picheta',
-				githubLink: 'https://github.com/tama3ti'
+				link: 'https://github.com/tama3ti'
 			},
 			{
 				name: 'Håkon Sætre',
-				githubLink: 'https://github.com/Haukaun'
+				link: 'https://github.com/Haukaun'
 			}
 		],
 		features: [
@@ -282,7 +282,7 @@ export const projects: Project[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				githubLink: 'https://github.com/jKm00'
+				link: 'https://github.com/jKm00'
 			}
 		],
 		features: [
@@ -342,7 +342,7 @@ export const projects: Project[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				githubLink: 'https://github.com/jKm00'
+				link: 'https://github.com/jKm00'
 			}
 		],
 		features: [
@@ -404,7 +404,7 @@ export const projects: Project[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				githubLink: 'https://github.com/jKm00'
+				link: 'https://github.com/jKm00'
 			}
 		],
 		features: [

@@ -17,7 +17,7 @@
 
 <input class="theme-toggler" id="theme-toggler" type="checkbox" bind:checked={lightMode} />
 <label class="theme-toggler-label" for="theme-toggler">
-	<span class:lightMode class="icon">
+	<span class:lightMode class="theme-icon">
 		{#if !lightMode}
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
 				><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
@@ -51,7 +51,7 @@
 
 		cursor: pointer;
 
-		& .icon {
+		& .theme-icon {
 			width: var(--size);
 			position: absolute;
 			top: 0;

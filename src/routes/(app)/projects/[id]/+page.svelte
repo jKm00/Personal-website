@@ -14,9 +14,11 @@
 		<ErrorPage />
 	{:else}
 		<article class="project content" id="project">
-			<!-- TODO: Change to swiper -->
+			<!-- Carousel -->
 			<Carousel images={project.images} spacingBottom={0.5} />
+			<!-- Stack -->
 			<Stats stats={project.stack} alignRight={false} />
+			<!-- Title w/ status and contributors-->
 			<div class="title--wrapper">
 				<p class="text">
 					Status: <span
@@ -30,7 +32,7 @@
 						<li class="horizontal-list__item">Authors:</li>
 						{#each project.contributers as contributer}
 							<li class="horizontal-list__item">
-								<a class="horizontal-list__link" href={contributer.githubLink} target="_blank"
+								<a class="horizontal-list__link" href={contributer.link} target="_blank"
 									>{contributer.name}</a
 								>
 							</li>
@@ -38,6 +40,7 @@
 					</ul>
 				</div>
 			</div>
+			<!-- Features -->
 			<div class="features">
 				<h2 class="title">Features</h2>
 				<ul class="vertical-list">
@@ -46,11 +49,13 @@
 					{/each}
 				</ul>
 			</div>
+			<!-- Text -->
 			<section id="project-text">
-				{#each project.text as paragraph}
-					<p class="paragraph">{paragraph}</p>
-				{/each}
+				<div class="paragraph">
+					{@html project.text}
+				</div>
 			</section>
+			<!-- Resources -->
 			{#if project.resources}
 				<section class="resources">
 					<h3 class="resource-header title">Resources:</h3>
@@ -100,6 +105,11 @@
 			margin-bottom: 2rem;
 			max-width: 80ch;
 			line-height: 2.5em;
+			white-space: pre-wrap;
+		}
+
+		:global(.paragraph a) {
+			color: var(--foreground);
 		}
 
 		& .vertical-list {
