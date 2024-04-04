@@ -2,7 +2,7 @@ import { ADMIN_TOKEN } from '$env/static/private';
 
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
-	if (!event.url.pathname.startsWith('/dashboard')) {
+	if (!event.url.pathname.startsWith('/dashboard') && !event.url.pathname.startsWith('/api')) {
 		return resolve(event);
 	}
 
