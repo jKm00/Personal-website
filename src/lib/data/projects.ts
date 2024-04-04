@@ -1,7 +1,7 @@
-import type { Project } from '$lib/types/project';
+import type { ProjectDeprecated } from '$lib/types/project';
 import { Status } from '$lib/types/status';
 
-export const projects: Project[] = [
+export const projects: ProjectDeprecated[] = [
 	{
 		id: 0,
 		title: 'Portfolio',

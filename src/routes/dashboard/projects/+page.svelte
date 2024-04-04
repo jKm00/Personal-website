@@ -81,7 +81,7 @@
 	<div class="table-row">
 		<p class="table-header">ID</p>
 		<p class="table-header">Title</p>
-		<p class="table-header table-header--center span-2">Action</p>
+		<p class="table-header table-header--center span-2">Actions</p>
 	</div>
 	{#if data.projects.length === 0}
 		<p class="muted">No projects available...</p>
@@ -89,7 +89,7 @@
 		{#each data.projects as project}
 			<div class="table-row">
 				{#if project.published}
-					<a href="/projects/{project.id}" class="table-item table-link"
+					<a href="/projects/{project.id}" target="_blank" class="table-item table-link"
 						>{project.id} <ExternalLink class="icon" /></a
 					>
 				{:else}
