@@ -1,7 +1,7 @@
-import type { ProjectDeprecated } from '$lib/types/project';
+import type { Project } from '$lib/types/project';
 import { Status } from '$lib/types/status';
 
-export const projects: ProjectDeprecated[] = [
+export const projects: Project[] = [
 	{
 		id: 0,
 		title: 'Portfolio',
@@ -48,7 +48,7 @@ export const projects: ProjectDeprecated[] = [
 		contributers: [
 			{
 				name: 'jKm00',
-				link: 'https://github.com/jKm00'
+				githubLink: 'https://github.com/jKm00'
 			}
 		],
 		features: ['Server-side rendering', 'On load and scroll animations', 'Data prefecting'],
@@ -114,19 +114,19 @@ export const projects: ProjectDeprecated[] = [
 		contributers: [
 			{
 				name: 'Eduard Christea',
-				link: 'https://github.com/falniir'
+				githubLink: 'https://github.com/falniir'
 			},
 			{
 				name: 'Joakim Edvardsen',
-				link: 'https://github.com/jKm00'
+				githubLink: 'https://github.com/jKm00'
 			},
 			{
 				name: 'Richileu Bailey',
-				link: 'https://github.com/Richileu-A-Bailey'
+				githubLink: 'https://github.com/Richileu-A-Bailey'
 			},
 			{
 				name: 'Torstein Eide',
-				link: 'https://github.com/TorsteinEide'
+				githubLink: 'https://github.com/TorsteinEide'
 			}
 		],
 		features: [
@@ -187,19 +187,19 @@ export const projects: ProjectDeprecated[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				link: 'https://github.com/jKm00'
+				githubLink: 'https://github.com/jKm00'
 			},
 			{
 				name: 'Petter Molnes',
-				link: 'https://github.com/PMolnes'
+				githubLink: 'https://github.com/PMolnes'
 			},
 			{
 				name: 'Mateusz Picheta',
-				link: 'https://github.com/tama3ti'
+				githubLink: 'https://github.com/tama3ti'
 			},
 			{
 				name: 'Håkon Sætre',
-				link: 'https://github.com/Haukaun'
+				githubLink: 'https://github.com/Haukaun'
 			}
 		],
 		features: [
@@ -282,7 +282,7 @@ export const projects: ProjectDeprecated[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				link: 'https://github.com/jKm00'
+				githubLink: 'https://github.com/jKm00'
 			}
 		],
 		features: [
@@ -342,7 +342,7 @@ export const projects: ProjectDeprecated[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				link: 'https://github.com/jKm00'
+				githubLink: 'https://github.com/jKm00'
 			}
 		],
 		features: [
@@ -404,7 +404,7 @@ export const projects: ProjectDeprecated[] = [
 		contributers: [
 			{
 				name: 'Joakim Edvardsen',
-				link: 'https://github.com/jKm00'
+				githubLink: 'https://github.com/jKm00'
 			}
 		],
 		features: [
