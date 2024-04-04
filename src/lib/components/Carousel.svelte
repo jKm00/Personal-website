@@ -29,12 +29,6 @@
 		}
 	});
 
-	function getFolderPath() {
-		if (images.length === 0) return '';
-
-		return images[0].path.split('/').slice(0, -1).join('/');
-	}
-
 	/**
 	 * Slides to the next iamge
 	 */

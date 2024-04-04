@@ -15,10 +15,7 @@
 	{:else}
 		<article class="project content" id="project">
 			<!-- Carousel -->
-			<Carousel
-				images={project.images.map((img) => ({ ...img, path: img.path }))}
-				spacingBottom={0.5}
-			/>
+			<Carousel images={project.images} spacingBottom={0.5} />
 			<!-- Stack -->
 			<Stats stats={project.stack} alignRight={false} />
 			<!-- Title w/ status and contributors-->
