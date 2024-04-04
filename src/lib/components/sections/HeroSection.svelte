@@ -41,7 +41,7 @@
 					Full stack software engineer
 				</h2>
 				<p in:fly={{ y: yValue, duration: duration, delay: 300 }} class="text">
-					Computer engineer student at NTNU Trondheim.
+					Computer engineer student at NTNU Trondheim. Soon to be professional full stack developer.
 				</p>
 				<a
 					in:fade={{ duration: duration, delay: 450 }}
