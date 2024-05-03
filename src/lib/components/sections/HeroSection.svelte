@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fly, fade } from 'svelte/transition';
+	import Memoji from '../memoji/Memoji.svelte';
 
 	// TODO: randomly select memoji on load
 	const IMAGES = [
@@ -65,11 +66,9 @@
 					>Check out GitHub</a
 				>
 			</div>
-			<img
-				in:fly={{ y: yValue, duration: duration * 1.5 }}
-				src={'/assets/img/memojis/memoji-computer.png'}
-				alt="Joakim Edvardsen emoji"
-			/>
+			<div in:fly={{ y: yValue, duration: duration * 1.5 }}>
+				<Memoji />
+			</div>
 		</div>
 	</section>
 {:else}
