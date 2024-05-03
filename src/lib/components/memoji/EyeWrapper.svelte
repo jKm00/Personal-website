@@ -19,8 +19,6 @@
 			const width = eyeWrapper.offsetWidth;
 			const height = eyeWrapper.offsetHeight;
 
-			console.log(left, top);
-
 			eyeWrapperCoords = { x: left + width / 2, y: top + height / 2 };
 		}
 	}
