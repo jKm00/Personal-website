@@ -108,19 +108,5 @@
 		& p {
 			margin-bottom: 2rem;
 		}
-
-		& img {
-			width: 25vh;
-			margin: 2rem auto 0 auto;
-		}
-	}
-
-	@media screen and (min-width: 50rem) {
-		.hero {
-			& img {
-				width: auto;
-				margin: 0;
-			}
-		}
 	}
 </style>
