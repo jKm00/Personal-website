@@ -18,16 +18,16 @@
 			// I don't like this, but it was the only
 			// solution I found to making sure the image
 			// had loaded before calculating the eye size
-			if (showMovingEyes) {
-				const interval = setInterval(() => {
-					if (imgElement && imgElement.clientWidth > 0) {
-						calculateEyeSize();
-						eyeWrapper.updateEyeWrapperCoords();
-						eyeWrapper.calculatePupilPosition();
-						clearInterval(interval);
-					}
-				});
-			}
+			const interval = setInterval(() => {
+				if (imgElement && imgElement.clientWidth > 0) {
+					calculateEyeSize();
+					eyeWrapper.updateEyeWrapperCoords();
+					eyeWrapper.calculatePupilPosition();
+					clearInterval(interval);
+				} else if (!showMovingEyes) {
+					clearInterval(interval);
+				}
+			});
 		}
 	});
 
