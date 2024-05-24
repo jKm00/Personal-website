@@ -144,10 +144,10 @@
 								class="bar {guessStatus[index] === 1
 									? 'correct'
 									: guessStatus[index] === -1
-									? 'wrong'
-									: currentQuestion.id === index
-									? 'current'
-									: ''}"
+										? 'wrong'
+										: currentQuestion.id === index
+											? 'current'
+											: ''}"
 							/>
 						{/each}
 					</div>
@@ -161,8 +161,8 @@
 							class="btn text {optionStatus[index] === -1
 								? 'wrong'
 								: optionStatus[index] === 1
-								? 'correct'
-								: ''}">{option}</button
+									? 'correct'
+									: ''}">{option}</button
 						>
 					{/each}
 				</div>
