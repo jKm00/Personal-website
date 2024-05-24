@@ -61,8 +61,6 @@
 		}
 	] as const;
 
-	console.log(questions[2]);
-
 	let gameState = 'on-going' as 'on-going' | 'finished';
 	let currentQuestion: Question = questions[0];
 	let shuffledOptions = shuffleOptions(currentQuestion.options);
