@@ -68,6 +68,8 @@
 	let optionStatus = [0, 0, 0, 0];
 	let guessStatus = new Array(questions.length).fill(0);
 
+	// retrigger pipeline
+
 	function shuffleOptions(array: string[]) {
 		let currentIndex = array.length;
 
@@ -144,10 +146,10 @@
 								class="bar {guessStatus[index] === 1
 									? 'correct'
 									: guessStatus[index] === -1
-									? 'wrong'
-									: currentQuestion.id === index
-									? 'current'
-									: ''}"
+										? 'wrong'
+										: currentQuestion.id === index
+											? 'current'
+											: ''}"
 							/>
 						{/each}
 					</div>
@@ -161,8 +163,8 @@
 							class="btn text {optionStatus[index] === -1
 								? 'wrong'
 								: optionStatus[index] === 1
-								? 'correct'
-								: ''}">{option}</button
+									? 'correct'
+									: ''}">{option}</button
 						>
 					{/each}
 				</div>
