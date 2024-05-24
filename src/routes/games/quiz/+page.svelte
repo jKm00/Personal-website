@@ -68,8 +68,6 @@
 	let optionStatus = [0, 0, 0, 0];
 	let guessStatus = new Array(questions.length).fill(0);
 
-	// retrigger pipeline
-
 	function shuffleOptions(array: string[]) {
 		let currentIndex = array.length;
 
