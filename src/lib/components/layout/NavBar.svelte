@@ -42,6 +42,9 @@
 				<li class="nav__list__item">
 					<a on:click={hideNav} class="nav__list__link link" href="/resume">Resume</a>
 				</li>
+				<li class="nav__list__item">
+					<a on:click={hideNav} class="nav__list__link link" href="/games/quiz">Quiz</a>
+				</li>
 				<li>
 					<ThemeToggler />
 				</li>
