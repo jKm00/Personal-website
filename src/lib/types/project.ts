@@ -18,5 +18,10 @@ export type Project = {
 	features: string[];
 	resources: { label: string; link: string }[];
 	desc: string;
+	content: Section[];
+};
+
+type Section = {
+	title?: string;
 	text: string[];
 };

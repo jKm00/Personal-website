@@ -46,11 +46,23 @@
 					{/each}
 				</ul>
 			</div>
-			<section id="project-text">
+			<div id="project-text">
+				{#each project.content as content}
+					<section class="content-section">
+						{#if content.title}
+							<h2 class="title">{content.title}</h2>
+						{/if}
+						{#each content.text as paragraph}
+							<p class="paragraph">{paragraph}</p>
+						{/each}
+					</section>
+				{/each}
+			</div>
+			<!-- <section id="project-text">
 				{#each project.text as paragraph}
 					<p class="paragraph">{paragraph}</p>
 				{/each}
-			</section>
+			</section> -->
 			{#if project.resources}
 				<section class="resources">
 					<h3 class="resource-header title">Resources:</h3>
@@ -89,17 +101,25 @@
 		}
 
 		& .features {
-			margin-bottom: 2.5rem;
+			margin-bottom: 4rem;
 
 			& .title {
 				margin-bottom: 1em;
 			}
 		}
 
-		& .paragraph {
-			margin-bottom: 2rem;
-			max-width: 80ch;
-			line-height: 2.5em;
+		& .content-section {
+			margin-bottom: 4rem;
+
+			& .title {
+				margin-bottom: 1rem;
+			}
+
+			& .paragraph {
+				margin-bottom: 2rem;
+				max-width: 80ch;
+				line-height: 2.5em;
+			}
 		}
 
 		& .vertical-list {
