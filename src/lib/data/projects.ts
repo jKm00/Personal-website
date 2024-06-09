@@ -4,6 +4,7 @@ import { Status } from '$lib/types/status';
 export const projects: Project[] = [
 	{
 		id: 0,
+		active: true,
 		title: 'Portfolio',
 		thumbnail: {
 			path: '/assets/img/projects/portfolio/portfolio-thumbnail-cropped-compressed.jpg',
@@ -70,6 +71,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 1,
+		active: true,
 		title: 'XXS - Hiking Equipments',
 		thumbnail: {
 			path: '/assets/img/projects/xxs/xxs-thumbnail-compressed.jpg',
@@ -154,6 +156,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 2,
+		active: true,
 		title: 'Trace Voice Pick',
 		thumbnail: {
 			path: '/assets/img/projects/voice-pick/figma-sketches.PNG',
@@ -238,6 +241,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 3,
+		active: true,
 		title: 'CSGO Nade App',
 		thumbnail: {
 			path: '/assets/img/projects/csgostrats/view-strat.PNG',
@@ -314,6 +318,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 4,
+		active: false,
 		title: 'Sphere',
 		thumbnail: {
 			path: '/assets/img/projects/sphere/dashboard.PNG',
@@ -372,6 +377,72 @@ export const projects: Project[] = [
 	},
 	{
 		id: 5,
+		active: true,
+		title: 'Svelte Param Store',
+		thumbnail: {
+			path: '/assets/img/projects/svelte-param-store/docs-page.png',
+			alt: 'Svelte-param-store documentation landing page'
+		},
+		images: [
+			{
+				path: '/assets/img/projects/svelte-param-store/docs-page.png',
+				alt: 'Svelte-param-store documentation landing page'
+			},
+			{
+				path: '/assets/img/projects/svelte-param-store/demo.png',
+				alt: 'Svelte-param-store demo page'
+			}
+		],
+		status: Status.FINISHED,
+		stack: ['SvelteKit', 'NPM', 'Vercel'],
+		contributers: [
+			{
+				name: 'Joakim Edvardsen',
+				githubLink: 'https://github.com/jKm00'
+			}
+		],
+		features: [
+			'Synchronized app and URL state',
+			'Debouncing',
+			'Multiple URL params',
+			'Programmatically managing',
+			'Documentation page',
+			'Full usage demo'
+		],
+		resources: [
+			{
+				label: 'Npm registry:',
+				link: 'https://www.npmjs.com/package/svelte-param-store'
+			},
+			{
+				label: 'Documentation page:',
+				link: 'https://svelte-param-store.vercel.app/'
+			},
+			{
+				label: 'Demo page:',
+				link: 'https://svelte-param-store.vercel.app/demo'
+			},
+			{
+				label: 'Demo source code:',
+				link: 'https://github.com/jKm00/svelte-param-store/tree/main/src/routes/demo'
+			},
+			{
+				label: 'GitHub repository:',
+				link: 'https://github.com/jKm00/svelte-param-store'
+			}
+		],
+		desc: 'Svelte-param-store is a npm package I wrote to help manage and synchronize the application and URL state in your SvelteKit applications.',
+		text: [
+			'Svelte-param-store is a npm package I wrote to help manage and synchronize the application and URL state in your SvelteKit applications.',
+			'For applications with search functions, you most often want the search filters to be reflected in the URL. This package helps by providing a custom stores that automatically updates the URL when the value of the store changes. The store re-triggers the load function with the new URL params, allowing you to fetch new and filtered data.',
+			'Together with the NPM package, a full documentation page was developed. The documentation page contains usage examples with source code and interactive displays for all the different options provided by the package. Additionally, the documentation page provides tables showcasing the package interface, explaining how to use it.',
+			"To get a better understand of the package and it's use case, a full demo was develop showcasing the use of the package. Link to the demo and the demo source code can be found belov.",
+			"During the development of this project I learn't a lot about how SvelteKit handles loading of data and how to write generic functions that can be used with different types of inputs. I also learn't a lot about how to make and publish packages with stuff like releases and versioning. Another thing I had to think about was how to communicate the purpose and how to use the package which ended up with the documentation and demo page."
+		]
+	},
+	{
+		id: 6,
+		active: true,
 		title: 'TF2DLE',
 		thumbnail: {
 			path: '/assets/img/projects/tf2dle/home-page.PNG',
