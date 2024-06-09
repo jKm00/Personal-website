@@ -58,11 +58,6 @@
 					</section>
 				{/each}
 			</div>
-			<!-- <section id="project-text">
-				{#each project.text as paragraph}
-					<p class="paragraph">{paragraph}</p>
-				{/each}
-			</section> -->
 			{#if project.resources}
 				<section class="resources">
 					<h3 class="resource-header title">Resources:</h3>
