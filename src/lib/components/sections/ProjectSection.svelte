@@ -1,10 +1,12 @@
 <script lang="ts">
-	import type { Project } from '$lib/types/project';
 	import ProjectCard from '../containers/ProjectCard.svelte';
+	import { projects } from '$lib/data/projects';
 
-	export let projects: Project[];
+	const data = projects;
 
-	$: reversedProjects = [...projects].reverse();
+	$: filteredProjects = data.filter((p) => p.active);
+
+	$: reversedProjects = [...filteredProjects].reverse();
 </script>
 
 <section id="projects" class="section projects">
