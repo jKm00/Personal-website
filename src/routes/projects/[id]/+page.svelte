@@ -87,7 +87,7 @@
 		font-family: var(--ff-primary);
 
 		& .title--wrapper {
-			margin: 3rem 0 2.5rem;
+			margin: 1rem 0 2.5rem;
 
 			& .title {
 				font-size: var(--fs-600);
