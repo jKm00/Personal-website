@@ -52,7 +52,7 @@
 							><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
 								d="M464 64C490.5 64 512 85.49 512 112C512 127.1 504.9 141.3 492.8 150.4L275.2 313.6C263.8 322.1 248.2 322.1 236.8 313.6L19.2 150.4C7.113 141.3 0 127.1 0 112C0 85.49 21.49 64 48 64H464zM217.6 339.2C240.4 356.3 271.6 356.3 294.4 339.2L512 176V384C512 419.3 483.3 448 448 448H64C28.65 448 0 419.3 0 384V176L217.6 339.2z"
 							/></svg
-						>joakimedvardsen2000@gmail.com</a
+						><span class="sr-only">Send mail to: </span>joakimedvardsen2000@gmail.com</a
 					>
 				</li>
 				<li class="footer__list__item">
@@ -61,7 +61,7 @@
 							><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
 								d="M320 0H64C37.5 0 16 21.5 16 48v416C16 490.5 37.5 512 64 512h256c26.5 0 48-21.5 48-48v-416C368 21.5 346.5 0 320 0zM240 447.1C240 456.8 232.8 464 224 464H159.1C151.2 464 144 456.8 144 448S151.2 432 160 432h64C232.8 432 240 439.2 240 447.1z"
 							/></svg
-						>+47 901 59 363</a
+						><span class="sr-only">Phone number: </span>+47 901 59 363</a
 					>
 				</li>
 				<li class="footer__list__item">
@@ -70,7 +70,7 @@
 							><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
 								d="M168.3 499.2C116.1 435 0 279.4 0 192C0 85.96 85.96 0 192 0C298 0 384 85.96 384 192C384 279.4 267 435 215.7 499.2C203.4 514.5 180.6 514.5 168.3 499.2H168.3zM192 256C227.3 256 256 227.3 256 192C256 156.7 227.3 128 192 128C156.7 128 128 156.7 128 192C128 227.3 156.7 256 192 256z"
 							/></svg
-						>Trondheim, NO</a
+						><span class="sr-only">Location: </span>Trondheim, NO</a
 					>
 				</li>
 			</ul>
@@ -78,7 +78,7 @@
 				<li class="footer__socials__item">
 					<a
 						href="https://github.com/jKm00"
-						aria-label="github"
+						aria-label="Visit my GitHub"
 						class="footer__socials__link"
 						target="_blank"
 						><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
@@ -91,7 +91,7 @@
 				<li class="footer__socials__item">
 					<a
 						href="https://codepen.io/Jaakim"
-						aria-label="codepen"
+						aria-label="Visit my Codepen"
 						class="footer__socials__link"
 						target="_blank"
 						><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -104,7 +104,7 @@
 				<li class="footer__socials__item">
 					<a
 						href="https://www.linkedin.com/in/joakim-edvardsen-665043220/"
-						aria-label="linkedin"
+						aria-label="Visit my LinkedIn"
 						class="footer__socials__link"
 						target="_blank"
 						><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
@@ -117,7 +117,7 @@
 				<li class="footer__socials__item">
 					<a
 						href="https://www.instagram.com/joakim_edvardsen/"
-						aria-label="instagram"
+						aria-label="Visit my Instagram"
 						class="footer__socials__link"
 						target="_blank"
 						><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"

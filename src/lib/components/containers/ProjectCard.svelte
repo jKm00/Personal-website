@@ -31,6 +31,7 @@
 			<p class="card__text text">{project.desc}</p>
 			<a href={'/projects/' + project.id} class="card__link link">View more details</a>
 		</div>
+		<p class="sr-only">Tools used in this project:</p>
 		<Stats stats={project.stack} {alignRight} />
 	</div>
 </div>

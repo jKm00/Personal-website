@@ -144,7 +144,10 @@ html {
 	text-rendering: optimizeSpeed;
 	line-height: 1.5;
 
-	transition: background-color 200ms ease-in-out, color 200ms ease-in-out, fill 200ms ease-in-out;
+	transition:
+		background-color 200ms ease-in-out,
+		color 200ms ease-in-out,
+		fill 200ms ease-in-out;
 }
 
 /* A elements that don't have a class get default styles */
@@ -201,6 +204,15 @@ picture {
 	font-weight: var(--fw-bold);
 	text-decoration: none;
 	color: var(--clr-neutral-800);
+}
+
+.sr-only {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
 }
 
 /* Typography */
@@ -268,7 +280,10 @@ picture {
 	text-decoration: none;
 	text-align: center;
 
-	transition: background 150ms ease-in-out, color 150ms ease-in-out, border 150ms ease-in-out,
+	transition:
+		background 150ms ease-in-out,
+		color 150ms ease-in-out,
+		border 150ms ease-in-out,
 		fill 150ms ease-in-out;
 }
 

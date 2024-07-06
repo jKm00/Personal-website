@@ -4,7 +4,7 @@
 	const stats = [
 		{
 			label: 'Born',
-			value: '15.02.2000'
+			value: new Date('2000-02-15')
 		},
 		{
 			label: 'Citizen',
@@ -24,6 +24,7 @@
 			src="/assets/img/me/me-hiking-compressed.jpg"
 			alt="Joakim Edvardsen"
 			loading="lazy"
+			aria-hidden="true"
 		/>
 		<div class="section__text">
 			<h2 class="title title--secondary about__title">About</h2>

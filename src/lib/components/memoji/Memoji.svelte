@@ -41,7 +41,7 @@
 
 <svelte:window on:resize={calculateEyeSize} bind:innerWidth={windowWidth} />
 
-<div class="memoji-wrapper">
+<div class="memoji-wrapper" aria-hidden="true">
 	{#if showMovingEyes}
 		<img
 			bind:this={imgElement}

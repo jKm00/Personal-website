@@ -25,6 +25,7 @@
 			src={'/assets/icons/' + technology.svg.file}
 			alt={technology.svg.alt}
 			loading="lazy"
+			aria-hidden="true"
 		/>
 		<h3 class="card__title title">{technology.title}</h3>
 		<p class="card__desc">{technology.desc}</p>
