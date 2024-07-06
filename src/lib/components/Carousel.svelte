@@ -60,7 +60,7 @@
 	$: transformAmount = currentSlide * carouselWidth + gap * currentSlide;
 </script>
 
-<div class="carousel--wrapper">
+<div class="carousel--wrapper" aria-hidden="true">
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div
 		on:mouseenter={() => (autoScroll = false)}
