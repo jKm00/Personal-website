@@ -15,16 +15,22 @@
 <article class="resume-card" class:resume-card--small={small}>
 	<div>
 		{#if item.company}
-			<p class="resume-card__label">{item.company}</p>
+			<p class="resume-card__label"><span class="sr-only">Company: </span>{item.company}</p>
 		{/if}
-		<h3 class="resume-card__title title">{item.title}</h3>
+		<h3 class="resume-card__title title" aria-label="Role: {item.title}">
+			{item.title}
+		</h3>
 	</div>
 	<div class="resume-card__stats">
-		<p class="resume-card__stats__date">
-			{item.start} - <br />
+		<p class="sr-only">From {item.start} {item.end !== '' ? `to ${item.end}` : ''}</p>
+		<p class="resume-card__stats__date" aria-hidden="true">
+			{item.start} -
+			<br />
 			{item.end}
 		</p>
-		<p class="resume-card__stats__place">{item.place}</p>
+		<p class="resume-card__stats__place">
+			<span class="sr-only">Work location: </span>{item.place}
+		</p>
 	</div>
 	<p class="resume-card__desc">{item.desc}</p>
 </article>
