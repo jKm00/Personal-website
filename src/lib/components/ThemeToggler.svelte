@@ -16,7 +16,7 @@
 </script>
 
 <input class="theme-toggler" id="theme-toggler" type="checkbox" bind:checked={lightMode} />
-<label class="theme-toggler-label" for="theme-toggler">
+<label class="theme-toggler-label" for="theme-toggler" aria-label="Toggle theme">
 	<span class:lightMode class="icon">
 		{#if !lightMode}
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"

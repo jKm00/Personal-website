@@ -13,7 +13,7 @@
 
 <header class="header">
 	<div class="content">
-		<a href="/" class="logo rounded">jKm</a>
+		<a href="/" class="logo rounded" aria-label="Go to home page">jKm</a>
 		<!-- Hamburger -->
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -151,7 +151,9 @@
 			height: 0.25rem;
 			border-radius: 50vh;
 
-			transition: transform var(--duration) ease-in-out, opacity var(--duration) ease-in-out;
+			transition:
+				transform var(--duration) ease-in-out,
+				opacity var(--duration) ease-in-out;
 		}
 	}
 

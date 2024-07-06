@@ -1,7 +1,7 @@
 <script lang="ts">
 	interface Stat {
 		label: string;
-		value: string;
+		value: string | Date;
 	}
 
 	export let stats: Stat[] | string[];
@@ -14,7 +14,15 @@
 			<p class="stats__item text">{stat}</p>
 		{:else}
 			<p class="stats__item text">
-				<span class="stats__label">{stat.label}: </span>{stat.value}
+				<span class="stats__label">{stat.label}: </span>
+				{#if stat.value instanceof Date}
+					{@const day = ('0' + stat.value.getDate()).slice(-2)}
+					{@const month = ('0' + (stat.value.getMonth() + 1)).slice(-2)}
+					{@const year = stat.value.getFullYear()}
+					<time datetime="{year}-{month}-{day}">{day}.{month}.{year}</time>
+				{:else}
+					{stat.value}
+				{/if}
 			</p>
 		{/if}
 	{/each}

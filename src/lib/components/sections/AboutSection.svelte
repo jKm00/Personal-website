@@ -4,7 +4,7 @@
 	const stats = [
 		{
 			label: 'Born',
-			value: '15.02.2000'
+			value: new Date('2000-02-15')
 		},
 		{
 			label: 'Citizen',
