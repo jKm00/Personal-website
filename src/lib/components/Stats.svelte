@@ -8,12 +8,12 @@
 	export let alignRight: boolean;
 </script>
 
-<div class="stats" class:align-right={alignRight}>
+<ul class="stats" class:align-right={alignRight}>
 	{#each stats as stat}
 		{#if typeof stat === 'string'}
-			<p class="stats__item text">{stat}</p>
+			<li class="stats__item text">{stat}</li>
 		{:else}
-			<p class="stats__item text">
+			<li class="stats__item text">
 				<span class="stats__label">{stat.label}: </span>
 				{#if stat.value instanceof Date}
 					{@const day = ('0' + stat.value.getDate()).slice(-2)}
@@ -23,10 +23,10 @@
 				{:else}
 					{stat.value}
 				{/if}
-			</p>
+			</li>
 		{/if}
 	{/each}
-</div>
+</ul>
 
 <style lang="scss">
 	.stats {

@@ -41,13 +41,12 @@
 
 <svelte:window on:resize={calculateEyeSize} bind:innerWidth={windowWidth} />
 
-<div class="memoji-wrapper">
+<div class="memoji-wrapper" aria-hidden="true">
 	{#if showMovingEyes}
 		<img
 			bind:this={imgElement}
 			src={'/assets/img/memojis/memoji-computer-no-eyes-transparent.png'}
 			alt="Joakim Edvardsen emoji"
-			aria-hidden
 		/>
 		<div class="eye-wrapper">
 			<EyeWrapper bind:this={eyeWrapper} {eyeGap} {eyeSize} />

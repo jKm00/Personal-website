@@ -24,6 +24,7 @@
 			src="/assets/img/me/me-hiking-compressed.jpg"
 			alt="Joakim Edvardsen"
 			loading="lazy"
+			aria-hidden="true"
 		/>
 		<div class="section__text">
 			<h2 class="title title--secondary about__title">About</h2>

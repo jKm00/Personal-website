@@ -2,6 +2,9 @@
 	import ThemeToggler from '$lib/components/ThemeToggler.svelte';
 
 	let isOpen = false;
+	let screenWidth: number;
+
+	$: isMobile = screenWidth <= 720;
 
 	/**
 	 * Hides the navigation bar
@@ -10,6 +13,8 @@
 		isOpen = false;
 	};
 </script>
+
+<svelte:window bind:innerWidth={screenWidth} />
 
 <header class="header">
 	<div class="content">
@@ -21,14 +26,16 @@
 			class="hamburger"
 			class:hamburger--open={isOpen}
 			on:click={() => (isOpen = !isOpen)}
+			aria-label={isOpen ? 'Close menu' : 'Open menu'}
 			aria-controls="nav"
+			aria-expanded={isOpen}
 		>
 			<span class="upper line" />
 			<span class="middle line" />
 			<span class="lower line" />
 		</div>
 		<!-- Nav -->
-		<nav id="nav" class="nav" class:nav--open={isOpen}>
+		<nav id="nav" class="nav" class:nav--open={isOpen} aria-hidden={isMobile && !isOpen}>
 			<ol class="nav__list">
 				<li class="nav__list__item">
 					<a on:click={hideNav} class="nav__list__link link" href="/">Home</a>
@@ -56,7 +63,7 @@
 						<a
 							class="nav__socials__link"
 							href="https://github.com/jKm00"
-							aria-label="github"
+							aria-label="Visit my GitHub"
 							target="_blank"
 							><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
 								><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
@@ -69,7 +76,7 @@
 						<a
 							class="nav__socials__link"
 							href="https://codepen.io/Jaakim"
-							aria-label="codepen"
+							aria-label="Visit my Codepen"
 							target="_blank"
 							><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
 								><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
@@ -82,7 +89,7 @@
 						<a
 							class="nav__socials__link"
 							href="https://www.linkedin.com/in/joakim-edvardsen-665043220/"
-							aria-label="linkedin"
+							aria-label="Visit my LinkedIn"
 							target="_blank"
 							><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
 								><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
@@ -95,7 +102,7 @@
 						<a
 							class="nav__socials__link"
 							href="https://www.instagram.com/joakim_edvardsen/"
-							aria-label="instagram"
+							aria-label="Visit my Instagram"
 							target="_blank"
 							><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
 								><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
