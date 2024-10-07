@@ -8,6 +8,7 @@ type Contributor = {
 
 export type Project = {
 	id: number;
+	order: number;
 	active: boolean;
 	title: string;
 	thumbnail: Image;

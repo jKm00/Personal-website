@@ -4,6 +4,7 @@ import { Status } from '$lib/types/status';
 export const projects: Project[] = [
 	{
 		id: 0,
+		order: 4,
 		active: true,
 		title: 'Portfolio',
 		thumbnail: {
@@ -75,6 +76,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 1,
+		order: 3,
 		active: true,
 		title: 'XXS - Hiking Equipments',
 		thumbnail: {
@@ -164,6 +166,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 2,
+		order: 1,
 		active: true,
 		title: 'Trace Voice Pick',
 		thumbnail: {
@@ -253,7 +256,8 @@ export const projects: Project[] = [
 	},
 	{
 		id: 3,
-		active: true,
+		order: 5,
+		active: false,
 		title: 'CSGO Nade App',
 		thumbnail: {
 			path: '/assets/img/projects/csgostrats/view-strat.PNG',
@@ -334,6 +338,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 4,
+		order: 6,
 		active: false,
 		title: 'Sphere',
 		thumbnail: {
@@ -397,6 +402,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 5,
+		order: 2,
 		active: true,
 		title: 'Svelte Param Store',
 		thumbnail: {
@@ -477,6 +483,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 6,
+		order: 0,
 		active: true,
 		title: 'TF2DLE',
 		thumbnail: {
