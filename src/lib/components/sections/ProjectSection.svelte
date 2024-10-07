@@ -5,15 +5,14 @@
 	const data = projects;
 
 	$: filteredProjects = data.filter((p) => p.active);
-
-	$: reversedProjects = [...filteredProjects].reverse();
+	$: orderedProjects = filteredProjects.sort((a, b) => a.order - b.order);
 </script>
 
 <section id="projects" class="section projects">
 	<div class="content">
 		<h2 class="title title--secondary projects__title">Projects I've worked on</h2>
 		<div class="projects--wrapper">
-			{#each reversedProjects as project, index (project.id)}
+			{#each orderedProjects as project, index (project.id)}
 				<ProjectCard {project} alignRight={index % 2 == 0} />
 			{/each}
 		</div>

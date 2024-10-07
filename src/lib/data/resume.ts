@@ -1,11 +1,19 @@
 export const experiences = [
 	{
-		title: 'Internship',
+		title: 'Summer Intern',
+		company: 'DNB',
+		start: '15. June 2024',
+		end: '15. August 2024',
+		place: 'Oslo',
+		desc: 'Developed an AI application that summarized news article published by DNB. The application used AWS services like Bedrock, Lambda, and DynamoDB. The frontend was developed using Next.js'
+	},
+	{
+		title: 'Part Time Software Developer',
 		company: 'Solwr',
 		start: '20. May 2022',
 		end: '',
 		place: 'Ålesund',
-		desc: 'As a summer intern, I assisted the insight team in developing data-driven reports. I continued working part-time during my final year as a bachelor student, gaining valuable industry experience, collaborating with senior developers, and strengthening my technical and teamwork skills.'
+		desc: 'As a summer intern, I assisted the insight team in developing data-driven reports. I continued working part-time during my studies, gaining valuable industry experience, collaborating with senior developers, and strengthening my technical and teamwork skills.'
 	},
 	{
 		title: 'Goods Flow Co-worker',
