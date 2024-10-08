@@ -12,8 +12,7 @@
 	}
 
 	.skip-to-main-content-link:focus {
-		left: 50%;
-		transform: translateX(-50%);
+		left: 0;
 		opacity: 1;
 	}
 </style>
