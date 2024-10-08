@@ -1,16 +1,45 @@
 <script lang="ts">
 	import ThemeToggler from '$lib/components/ThemeToggler.svelte';
 
+	const TABS = [
+		{
+			label: 'Home',
+			href: '/'
+		},
+		{
+			label: 'About',
+			href: '/#about'
+		},
+		{
+			label: 'Projects',
+			href: '/#projects'
+		},
+		{
+			label: 'Resume',
+			href: '/resume'
+		},
+		{
+			label: 'Quiz',
+			href: '/games/quiz'
+		}
+	];
+
+	let activeTab = TABS[0].label;
 	let isOpen = false;
 	let screenWidth: number;
 
 	$: isMobile = screenWidth <= 720;
 
 	/**
-	 * Hides the navigation bar
+	 * Handle nav item click
+	 *
+	 * @param label of the clicked nav item
 	 */
-	const hideNav = () => {
-		isOpen = false;
+	const handleClick = (label: string) => {
+		activeTab = label;
+		if (isMobile && isOpen) {
+			isOpen = false;
+		}
 	};
 </script>
 
@@ -18,7 +47,9 @@
 
 <header class="header">
 	<div class="content">
-		<a href="/" class="logo rounded" aria-label="Go to home page">jKm</a>
+		<a href="/" class="logo rounded" aria-label="Go to home page">
+			<img src="/assets/img/signatures/signature-3.png" alt="signature" class="signature" />
+		</a>
 		<!-- Hamburger -->
 		<!-- svelte-ignore a11y-click-events-have-key-events -->
 		<!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -37,21 +68,15 @@
 		<!-- Nav -->
 		<nav id="nav" class="nav" class:nav--open={isOpen} aria-hidden={isMobile && !isOpen}>
 			<ol class="nav__list">
-				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/">Home</a>
-				</li>
-				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/#about">About</a>
-				</li>
-				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/#projects">Projects</a>
-				</li>
-				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/resume">Resume</a>
-				</li>
-				<li class="nav__list__item">
-					<a on:click={hideNav} class="nav__list__link link" href="/games/quiz">Quiz</a>
-				</li>
+				{#each TABS as tab}
+					<li class="nav__list__item">
+						<a
+							on:click={() => handleClick(tab.label)}
+							class="nav__list__link {activeTab === tab.label && 'nav__list__link--active'}"
+							href={tab.href}>{tab.label}</a
+						>
+					</li>
+				{/each}
 				<li>
 					<ThemeToggler />
 				</li>
@@ -133,7 +158,7 @@
 
 		& .content {
 			display: flex;
-			justify-content: space-between;
+			// justify-content: center;
 			align-items: center;
 		}
 	}
@@ -206,6 +231,18 @@
 
 			&__link {
 				display: inline-block;
+				font-family: var(--ff-primary);
+				font-size: var(--fs-400);
+				text-decoration: none;
+				color: var(--clr-neutral-000);
+
+				&:hover {
+					color: var(--primary);
+				}
+
+				&--active {
+					text-decoration: underline;
+				}
 			}
 		}
 
@@ -246,8 +283,13 @@
 		}
 
 		.nav {
-			position: static;
-			transform: translateX(0);
+			position: fixed;
+			top: 1.25rem;
+			left: 50%;
+			transform: translateX(-50%);
+			height: fit-content;
+			width: fit-content;
+
 			padding: 0;
 			box-shadow: none;
 			background-color: transparent;
@@ -255,6 +297,16 @@
 			&__list {
 				flex-direction: row;
 				gap: 2rem;
+
+				margin-inline: auto;
+				padding-inline: 2rem;
+				padding-block: 0.5rem;
+				width: fit-content;
+				border-radius: 50vw;
+
+				background-color: var(--card-bg);
+				border: 1px solid var(--muted);
+				box-shadow: var(--shadow);
 
 				&__item {
 					position: relative;
@@ -270,7 +322,7 @@
 					top: 50%;
 					right: -1rem;
 					transform: translateY(-50%);
-					background-color: var(--clr-accent-400);
+					background-color: var(--primary);
 				}
 			}
 
