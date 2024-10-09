@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import ThemeToggler from '$lib/components/ThemeToggler.svelte';
 
 	const TABS = [
@@ -24,11 +25,12 @@
 		}
 	];
 
-	let activeTab = TABS[0].label;
 	let isOpen = false;
 	let screenWidth: number;
 
 	$: isMobile = screenWidth <= 720;
+
+	$: activeTab = TABS.find((tab) => tab.href === $page.url.pathname + $page.url.hash)?.label;
 
 	/**
 	 * Handle nav item click
@@ -36,7 +38,6 @@
 	 * @param label of the clicked nav item
 	 */
 	const handleClick = (label: string) => {
-		activeTab = label;
 		if (isMobile && isOpen) {
 			isOpen = false;
 		}
